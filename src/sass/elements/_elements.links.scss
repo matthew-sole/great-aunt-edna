@@ -1,0 +1,12 @@
+// ============================================================================
+// Links
+// ============================================================================
+
+a {
+  color: $color-dusty-blue;
+  text-decoration: underline;
+  transition: color 0.2s;
+  &:hover {
+    color: darken($color-dusty-blue, 10%);
+  }
+}

@@ -1,0 +1,20 @@
+// ============================================================================
+// Page elements
+// ============================================================================
+
+html {
+  font-family: $font-family-sans-serif;
+  font-size: rem($font-size-base);
+  font-weight: $font-weight-light;
+  line-height: $line-height-base;
+  background-color: $color-white;
+  color: $color-black;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  font-size: rem(16);
+}

@@ -1,0 +1,14 @@
+.nav {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  // TODO - make this better
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nav__item {
+  text-align: center;
+}
+
+.nav__link {
+}

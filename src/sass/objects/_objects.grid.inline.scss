@@ -1,0 +1,27 @@
+// ============================================================================
+// Grid inline
+// ============================================================================
+
+// Grid inline is a mixin as we use it as a fallback if 
+// the browser doesn't support flexbox... see ./_objects.grid.flex.scss
+
+@mixin grid-inline {
+    @include clearfix;
+    padding: 0;
+    list-style: none;
+    letter-spacing: -4px;
+
+    > * {
+        display: inline-block;
+        zoom: 1;
+        vertical-align: top;
+
+        width: 100%;
+        letter-spacing: normal;
+        text-justify: auto;
+    }
+}
+
+.grid {
+    @include grid-inline;
+}

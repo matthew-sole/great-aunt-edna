@@ -1,0 +1,41 @@
+.u-hidden {
+    display: none;
+}
+
+.u-hidden\@small {
+    @include small {
+        display: none;
+    }
+}
+
+.u-hidden\@medium {
+    @include medium {
+        display: none;
+    }
+}
+
+// Hidding elements on Touch devices
+.touch .u-hidden-touch {
+    display: none;
+    visibility: hidden;
+}
+
+// Hidding elements on Non Touch screens
+.no-touch .u-hidden-no-touch {
+    display: none;
+    visibility: hidden;
+}
+
+// .u-vis-hidden {
+//     visibility: hidden;
+//     opacity: 0;
+// }
+
+// .u-vis-show {
+//     visibility: visible;
+//     opacity: 1;
+// }
+
+// .u-fade-in {
+//     transition: opacity .2s ease, visibility .2s ease;
+// }

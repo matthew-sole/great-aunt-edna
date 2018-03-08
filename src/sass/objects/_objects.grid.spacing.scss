@@ -1,0 +1,35 @@
+// ============================================================================
+// Grid spacing
+// ============================================================================
+
+// Row spacing (Grid items) ---------------------------------------------------
+.grid--row-spacing {
+    > * {
+        margin-bottom: $spacing-xl;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.grid--row-spacing-s {
+    > * {
+        margin-bottom: $spacing;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// Column spacing -------------------------------------------------------------
+
+.grid--col-spacing {
+    margin-left: -$spacing-l;
+
+    > * {
+        padding-left: $spacing-l;
+    }
+}

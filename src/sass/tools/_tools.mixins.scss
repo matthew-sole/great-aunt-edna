@@ -1,0 +1,83 @@
+// ------------------------------------
+//    #MIXINS
+// ------------------------------------
+
+// Global mixins available to the entire project. Define file-specific
+// mixins inside the file to which they relate.
+
+// Mixin to drop micro clearfix into a selector.
+//
+// .simple-usage {
+//   @include clearfix;
+// }
+//
+// .detailed-usage {
+//   @include clearfix(important);
+// }
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin hover {
+  .no-touch &:hover {
+    @content;
+  }
+}
+
+// enable/disable font smoothing
+@mixin font-smoothing($toggle: true) {
+  @if ($toggle == true) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin font-smoothing-off {
+  @include font-smoothing(false);
+}
+
+@mixin section {
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+
+  @include medium {
+    padding-top: $spacing-xxl;
+    padding-bottom: $spacing-xxl;
+  }
+}
+
+@mixin section--small {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+
+  @include medium {
+    padding-top: $spacing-l;
+    padding-bottom: $spacing-l;
+  }
+}
+
+@mixin gutters {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-l;
+  padding-right: $spacing-l;
+
+  @include medium {
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+  }
+
+  @include xlarge {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

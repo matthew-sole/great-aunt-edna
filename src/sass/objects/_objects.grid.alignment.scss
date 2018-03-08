@@ -1,0 +1,29 @@
+/* SG
+# Objects/Grid alignment
+```
+*/
+.grid--middle {
+
+    .flexbox & {
+        align-items: center;
+        justify-content: center;
+    }
+
+    > * {
+        vertical-align: middle !important;
+    }
+}
+
+.grid--bottom {
+
+    .flexbox & {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    > * {
+        vertical-align: bottom !important;
+    }
+}
+
+

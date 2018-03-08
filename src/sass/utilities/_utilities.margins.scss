@@ -1,0 +1,44 @@
+/* SG
+# Utilities/Margins
+
+```
+<div style="background-color:#0F9850">
+	<p style="background-color:#efefef" class="u-mb--">mb--</p>
+	<p style="background-color:#efefef" class="u-mb-">mb-</p>
+	<p style="background-color:#efefef" class="u-mb">mb</p>
+	<p style="background-color:#efefef" class="u-mb+">mb+</p>
+	<p style="background-color:#efefef" class="u-mb++">mb++</p>
+</div>
+```
+*/
+
+.u-mb-0 {
+    margin-bottom: 0 !important;
+}
+
+
+.u-mb {
+    margin-bottom: $spacing !important;
+}
+
+.u-mb-xxs {
+    margin-bottom: $spacing-xxs !important;
+}
+
+.u-mb-xs {
+    margin-bottom: $spacing-xs !important;
+}
+
+.u-mb-s {
+    margin-bottom: $spacing-s !important;
+}
+
+.u-mb-l {
+    margin-bottom: $spacing-l !important;
+}
+
+.u-mb-xl {
+    margin-bottom: $spacing-xl !important;
+}
+
+

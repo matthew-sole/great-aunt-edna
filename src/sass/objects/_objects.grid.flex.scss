@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Grid Flex
+//
+// We use a js function to detect flexbox, see js/utils/index `initFlexboxSupport()`
+// if flexbox is enabled the class 'flexbox' is added to the html element
+//
+// -----------------------------------------------------------------------------
+
+// Fallback to inline-block grid if HTML element does not have `flexbox` class
+html:not(.flexbox) {
+    .grid-flex {
+        @include grid-inline;
+    }
+}
+
+.flexbox {
+    .grid-flex {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: stretch;
+
+        > * {
+            width: 100%;
+        }
+    }
+}
