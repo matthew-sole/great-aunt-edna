@@ -134,28 +134,29 @@ export default function(props) {
                     />
                 </div>
             }
-            
-            <div className="form__group">
-                <p>Does anyone have any dietry requirements</p>
-                <FormField 
-                    labelName="Yes" 
-                    type="radio" 
-                    id="diet-yes" 
-                    value="yes" 
-                    name="diet"
-                    checked={props.values["diet"] === "yes"}
-                    onChange={props.handleChange}
-                />
-                <FormField 
-                    labelName="No" 
-                    type="radio" 
-                    id="diet-no" 
-                    value="no" 
-                    name="diet"
-                    checked={props.values["diet"] === "no"}
-                    onChange={props.handleChange}
-                />
-            </div>
+            { (props.values["wedding-rsvp"] === "yes" || props.values["bbq-rsvp"] === "yes") &&
+                <div className="form__group">
+                    <p>Does anyone have any dietry requirements</p>
+                    <FormField 
+                        labelName="Yes" 
+                        type="radio" 
+                        id="diet-yes" 
+                        value="yes" 
+                        name="diet"
+                        checked={props.values["diet"] === "yes"}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="No" 
+                        type="radio" 
+                        id="diet-no" 
+                        value="no" 
+                        name="diet"
+                        checked={props.values["diet"] === "no"}
+                        onChange={props.handleChange}
+                    />
+                </div>
+            }
             { props.values["diet"] === "yes" &&
                 <div className="form__group">
                     <p>Who has dietry requirements</p>

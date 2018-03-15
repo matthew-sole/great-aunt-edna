@@ -61,6 +61,25 @@ body {
   font-size: 1rem; }
 
 /* SG
+# Elements/Focus states
+
+```
+<p>
+	You can change the selection colour, select this paragraph to see what colour it is.
+</p>
+```
+*/
+*:active,
+*:focus {
+  outline: solid 0.5px #9cabae; }
+
+::selection {
+  background: #9cabae; }
+
+::-moz-selection {
+  background: #9cabae; }
+
+/* SG
 # Elements/Headings
 */
 h1,
@@ -69,58 +88,20 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.3; }
+  line-height: 1.5; }
 
 h1 {
   font-size: 3.125rem;
-  font-family: "CrystalSky", "Georgia Italic", "Times New Roman", Times, serif;
-  font-weight: normal;
-  line-height: 0.7;
-  margin-bottom: 3rem; }
-  @media only screen and (min-width: 768px) {
-    h1 {
-      font-size: 3.125rem; } }
+  font-family: "CrystalSky", "Georgia Italic", "Times New Roman", Times, serif; }
 
 h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-family: "Avenir Medium", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  margin-bottom: 2.625rem;
-  letter-spacing: 1.5px; }
-  @media only screen and (min-width: 768px) {
-    h2 {
-      font-size: 2.1875rem;
-      margin-bottom: 2.5rem; } }
+  font-size: 2rem; }
 
 h3 {
-  font-size: 1.5rem;
-  font-weight: 400; }
-  @media only screen and (min-width: 768px) {
-    h3 {
-      font-size: 1.75rem; } }
+  font-size: 1.5rem; }
 
 h4 {
-  font-size: 2rem;
-  font-family: "CrystalSky", "Georgia Italic", "Times New Roman", Times, serif;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
-  line-height: 1;
-  letter-spacing: 1px; }
-
-h5 {
-  font-family: "Avenir Black", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px; }
-
-h6 {
-  font-family: "Avenir Black", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.0625rem;
-  margin-bottom: 6px;
-  margin-top: 2rem; }
+  font-size: 2rem; }
 
 a {
   color: #8695a0;
@@ -128,53 +109,6 @@ a {
   transition: color 0.2s; }
   a:hover {
     color: #6b7c88; }
-
-/* SG
-# Elements/Lists
-
-```
-<ul>
-	<li>List item one</li>
-	<li>List item two</li>
-</ul>
-
-<ol>
-    <li>List item one</li>
-    <li>List item two</li>
-</ol>
-
-<dl>
-    <dt>Coffee</dt>
-    <dd>Black hot drink</dd>
-    <dt>Milk</dt>
-    <dd>White cold drink</dd>
-</dl>
-```
-*/
-li > ul,
-li > ol {
-  margin-bottom: 0; }
-
-dt {
-  font-weight: 600; }
-
-img {
-  max-width: 100%;
-  font-style: italic;
-  vertical-align: middle; }
-
-img[width],
-img[height] {
-  max-width: none; }
-
-/* SG
-# Objects/ Wrappers
-*/
-.line-length {
-  max-width: 580px; }
-
-.line-length-large {
-  max-width: 800px; }
 
 .grid {
   padding: 0;
@@ -232,61 +166,6 @@ html:not(.flexbox) .grid-flex {
   .grid--col-spacing > * {
     padding-left: 2rem; }
 
-/* SG
-# Objects/Grid alignment
-```
-*/
-.flexbox .grid--middle {
-  align-items: center;
-  justify-content: center; }
-
-.grid--middle > * {
-  vertical-align: middle !important; }
-
-.flexbox .grid--bottom {
-  align-items: flex-end;
-  justify-content: flex-end; }
-
-.grid--bottom > * {
-  vertical-align: bottom !important; }
-
-/* SG
-# Objects/Inline list
-
-```
-<ul class="list-inline">
-	<li class="list-inline__item">List item one</li>
-	<li class="list-inline__item">List item two</li>
-</ul>
-```
-*/
-.list-inline {
-  margin-left: 0;
-  padding: 0;
-  list-style: none; }
-
-.list-inline__item {
-  display: inline-block; }
-  .list-inline__item + .list-inline__item {
-    margin-left: 1rem; }
-
-/* SG
-# Objects/Unstyled list
-
-```
-<ul class="list-unstyled">
-	<li>List item one</li>
-	<li>List item two</li>
-</ul>
-```
-*/
-.list-unstyled {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0; }
-
 .btn {
   display: inline-block;
   position: relative;
@@ -337,7 +216,6 @@ html:not(.flexbox) .grid-flex {
   padding: 1rem;
   min-width: 85px;
   text-align: center;
-  border-radius: 5px;
   margin-right: 1rem; }
   .form__item:last-of-type {
     margin-right: 0; }
@@ -452,52 +330,6 @@ input {
 .u-color-dusty-beige {
   background-color: #e6dcd3; }
 
-/* SG
-# Utilities/Align
-
-Here are some utility classes to help modify the vertical alignment, text alignment, margins and floats.
-
-```
-<h5>Vertical align</h5>
-<div class="u-align-middle">
-    <img src="https://placekitten.com/200/150" alt="">
-    <img src="https://placekitten.com/200/150" alt="">
-</div>
-<div>
-  <img src="https://placekitten.com/200/150">
-  <img src="https://placekitten.com/200/150" class="u-align-bottom">
-</div>
-<br />
-
-<h5>Text align</h5>
-
-<p class="u-text-left" style="background-color:#eee">Left Text</p>
-<p class="u-text-right" style="background-color:#eee">Right Text</p>
-<p class="u-text-center" style="background-color:#eee">Centered Text</p>
-<br />
-
-<h5>Margin center</h5>
-<div class="u-auto">
-  <img src="https://placekitten.com/200/150" alt="">
-</div>
-<div class="u-margin-center">
-  <img src="https://placekitten.com/200/150" alt="">
-</div>
-
-<h5>Floats</h5>
-<div class="u-clear">
-    <img class="u-left" src="https://placekitten.com/200/150" alt=""/>
-    <img class="u-right" src="https://placekitten.com/200/150" alt=""/>
-</div>
-
-```
-*/
-.u-align-middle {
-  vertical-align: middle !important; }
-
-.u-align-bottom {
-  vertical-align: bottom !important; }
-
 .u-text-left {
   text-align: left !important; }
 
@@ -512,72 +344,29 @@ Here are some utility classes to help modify the vertical alignment, text alignm
   margin-left: auto !important;
   margin-right: auto !important; }
 
-.u-left {
-  float: left !important; }
-
-.u-right {
-  float: right !important; }
-
-.u-clear {
-  clear: both !important;
-  overflow: hidden; }
-  .u-clear::after {
-    display: table;
-    content: '';
-    clear: both; }
-
 /* SG
-# Utilities/Margins
-
-```
-<div style="background-color:#0F9850">
-	<p style="background-color:#efefef" class="u-mb--">mb--</p>
-	<p style="background-color:#efefef" class="u-mb-">mb-</p>
-	<p style="background-color:#efefef" class="u-mb">mb</p>
-	<p style="background-color:#efefef" class="u-mb+">mb+</p>
-	<p style="background-color:#efefef" class="u-mb++">mb++</p>
-</div>
-```
+# Utilities/Spacinh
 */
 .u-mb-0 {
   margin-bottom: 0 !important; }
 
-.u-mb {
+.u-space {
   margin-bottom: 1.5rem !important; }
 
-.u-mb-xxs {
+.u-spacing-xxs {
   margin-bottom: 0.375rem !important; }
 
-.u-mb-xs {
+.u-spacingmb-xs {
   margin-bottom: 0.75rem !important; }
 
-.u-mb-s {
+.u-spacing-s {
   margin-bottom: 1rem !important; }
 
-.u-mb-l {
+.u-spacing-l {
   margin-bottom: 2rem !important; }
 
-.u-mb-xl {
+.u-spacing-xl {
   margin-bottom: 3rem !important; }
-
-.u-hidden {
-  display: none; }
-
-@media only screen and (max-width: 767px) {
-  .u-hidden\@small {
-    display: none; } }
-
-@media only screen and (min-width: 768px) {
-  .u-hidden\@medium {
-    display: none; } }
-
-.touch .u-hidden-touch {
-  display: none;
-  visibility: hidden; }
-
-.no-touch .u-hidden-no-touch {
-  display: none;
-  visibility: hidden; }
 
 /* SG
 # Utilities/Widths
@@ -782,69 +571,6 @@ For responsive widths, add one of the breakpoint specifiers at the end of the cl
     width: 80% !important; }
   .width-9\/10\@large {
     width: 90% !important; } }
-
-/* SG
-# Theming/Themes
-
-The default theme goes first. Following themes will override the default.
-
-```
-<div class="grid grid--row-spacing grid--col-spacing">
-    <div class="t-pink width-1/4@large width-1/2@medium">
-        <div class="u-current-bg-color">
-            <p>pink</p>
-        </div>
-        <div>
-            <p class="u-current-color">pink</p>
-        </div>
-    </div>
-    <div class="t-green width-1/4@large width-1/2@medium">
-        <div class="u-current-bg-color">
-            <p>green</p>
-        </div>
-        <div>
-            <p class="u-current-color">green</p>
-        </div>
-    </div>
-    <div class="t-blue width-1/4@large width-1/2@medium">
-        <div class="u-current-bg-color">
-            <p>blue</p>
-        </div>
-        <div>
-            <p class="u-current-color">blue</p>
-        </div>
-    </div>
-</div>
-```
-*/
-.t-white .u-current-color {
-  color: #fff; }
-
-.no-touch .t-white .u-current-color\:hover:hover {
-  color: #fff; }
-
-.t-white.t-white--bg,
-.t-white .u-current-bg-color {
-  background-color: #fff; }
-
-.t-white .u-current-text-color {
-  color: #222222; }
-  .t-white .u-current-text-color:after {
-    background-color: #222222; }
-
-.u-color-white {
-  color: #fff; }
-
-.u-link-color-white {
-  color: #fff; }
-  .u-link-color-white:hover {
-    color: #e6e6e6; }
-
-.u-bg-color-white {
-  background-color: #fff; }
-
-.u-text-color-white {
-  color: #222222; }
 
 /*
  * What follows is the result of much research on cross-browser styling.
