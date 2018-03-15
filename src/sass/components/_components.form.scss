@@ -4,6 +4,15 @@
   margin-bottom: $spacing;
 }
 
+.form__content {
+  font-family: $font-family-headings;
+  font-weight: $font-weight-medium;
+}
+
+.form__input {
+  margin-right: $spacing-xs;
+}
+
 .form__item {
   display: inline-block;
   border: 2px solid $color-dusty-pink;
@@ -36,8 +45,4 @@
   &:first-of-type {
     border-radius: 5px 0 0 5px;
   }
-}
-
-input {
-  margin-right: 0.75rem;
 }

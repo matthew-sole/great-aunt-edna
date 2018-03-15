@@ -46,7 +46,7 @@ dd {
   margin-left: 1.5rem; }
 
 html {
-  font-family: "Avenir Medium", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
@@ -61,25 +61,6 @@ body {
   font-size: 1rem; }
 
 /* SG
-# Elements/Focus states
-
-```
-<p>
-	You can change the selection colour, select this paragraph to see what colour it is.
-</p>
-```
-*/
-*:active,
-*:focus {
-  outline: solid 0.5px #9cabae; }
-
-::selection {
-  background: #9cabae; }
-
-::-moz-selection {
-  background: #9cabae; }
-
-/* SG
 # Elements/Headings
 */
 h1,
@@ -88,11 +69,11 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif; }
 
 h1 {
-  font-size: 3.125rem;
-  font-family: "CrystalSky", "Georgia Italic", "Times New Roman", Times, serif; }
+  font-size: 3.125rem; }
 
 h2 {
   font-size: 2rem; }
@@ -189,7 +170,7 @@ html:not(.flexbox) .grid-flex {
   font-weight: 400;
   border-radius: 2px;
   box-shadow: none;
-  font-family: "Avenir Medium", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.125rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -209,6 +190,13 @@ html:not(.flexbox) .grid-flex {
 
 .form__group {
   margin-bottom: 1.5rem; }
+
+.form__content {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600; }
+
+.form__input {
+  margin-right: 0.75rem; }
 
 .form__item {
   display: inline-block;
@@ -238,9 +226,6 @@ html:not(.flexbox) .grid-flex {
   .form__item--checkbox:first-of-type {
     border-radius: 5px 0 0 5px; }
 
-input {
-  margin-right: 0.75rem; }
-
 .nav {
   list-style: none;
   margin: 0;
@@ -250,47 +235,27 @@ input {
 .nav__item {
   text-align: center; }
 
-.header {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem; }
-  @media only screen and (min-width: 768px) {
-    .header {
-      padding-left: 3rem;
-      padding-right: 3rem; } }
-  @media only screen and (min-width: 1300px) {
-    .header {
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 768px) {
-    .header {
-      padding-top: 2rem;
-      padding-bottom: 2rem; } }
+.header__content {
+  position: absolute;
+  top: 19%;
+  right: 25%;
+  text-align: center;
+  left: 25%; }
 
-.content {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.section {
+  max-width: 840px;
+  margin: auto; }
+
+.section--center-text {
+  text-align: center; }
+
+.gutters {
   padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem; }
-  @media only screen and (min-width: 768px) {
-    .content {
-      padding-left: 3rem;
-      padding-right: 3rem; } }
-  @media only screen and (min-width: 1300px) {
-    .content {
-      padding-left: 0;
-      padding-right: 0; } }
-  @media only screen and (min-width: 768px) {
-    .content {
-      padding-top: 4rem;
-      padding-bottom: 4rem; } }
+  padding-right: 2rem; }
+
+.image {
+  width: 100%;
+  height: auto; }
 
 .u-disabled {
   pointer-events: none !important;

@@ -7,7 +7,7 @@ export default function(props) {
     return(
         <form onSubmit={props.handleSubmit}>
             <div className="form__group">
-                <p>Will you be able to make it to the big day?</p>
+                <p className="form__content">Will you be able to make it to the big day?</p>
                 <FormField 
                     labelName="Yes" 
                     type="radio" 
@@ -16,7 +16,6 @@ export default function(props) {
                     checked={props.values["wedding-rsvp"] === "yes"}
                     name="wedding-rsvp"
                     onChange={props.handleChange}
-
                 />
                 <FormField 
                     labelName="No" 
@@ -31,7 +30,7 @@ export default function(props) {
 
             { props.values["wedding-rsvp"] === "yes" &&
                 <div className="form__group">
-                    <p>Who will be able to make it? (2 people)</p>
+                    <p className="form__content">Who will be able to make it? (2 people)</p>
                     <FormField 
                         labelName="John Doe" 
                         type="checkbox" 
@@ -72,7 +71,7 @@ export default function(props) {
             }
 
             <div className="form__group">
-                <p>Will you be able to make it to the next day event?</p>
+                <p className="form__content">Will you be able to make it to the next day event?</p>
                 <FormField 
                     labelName="Yes" 
                     type="radio" 
@@ -95,7 +94,7 @@ export default function(props) {
 
             { props.values["bbq-rsvp"] === "yes" &&
                 <div className="form__group">
-                    <p>Who will be able to make it? (2 people)</p>
+                    <p className="form__content">Who will be able to make it? (2+ people)</p>
                     <FormField 
                         labelName="John Doe" 
                         type="checkbox" 
@@ -136,7 +135,7 @@ export default function(props) {
             }
             { (props.values["wedding-rsvp"] === "yes" || props.values["bbq-rsvp"] === "yes") &&
                 <div className="form__group">
-                    <p>Does anyone have any dietry requirements</p>
+                    <p className="form__content">Does anyone have any dietry requirements</p>
                     <FormField 
                         labelName="Yes" 
                         type="radio" 
@@ -157,9 +156,9 @@ export default function(props) {
                     />
                 </div>
             }
-            { props.values["diet"] === "yes" &&
+            { (props.values["wedding-rsvp"] === "yes" || props.values["bbq-rsvp"] === "yes") && (props.values["diet"] === "yes") &&
                 <div className="form__group">
-                    <p>Who has dietry requirements</p>
+                    <p className="form__content">Who has dietry requirements</p>
                     <FormField 
                         labelName="John Doe" 
                         type="checkbox" 
@@ -240,7 +239,7 @@ export default function(props) {
             }
 
             <div className="form__group">
-                <p>Please choose a group leader we can contact if we need to</p>
+                <p className="form__content">Please choose a group leader we can contact if we need to</p>
                 <FormField 
                     labelName="John Doe" 
                     type="radio" 
@@ -279,7 +278,7 @@ export default function(props) {
                 />
             </div>
             <div className="form__group">
-                <p>Please provide contact details for that person</p>
+                <p className="form__content">Please provide contact details for that person</p>
                 <FormField 
                     labelName="Address" 
                     type="text" 

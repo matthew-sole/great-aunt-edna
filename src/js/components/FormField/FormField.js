@@ -1,14 +1,13 @@
 import React from 'react';
 
-export default function({labelName, value, checked, ...props}) {
-    // console.log(props);
+export default function({values, labelName, value, checked, ...props}) {
     return(
         <div className={`form__item form__item--${props.type} ${checked}`}>
-            <input className={`input ${props.type}`} 
+            <input className={`form__input ${props.type}`} 
                 value={value || ''}
                 {...props}
             />
-            <label htmlFor={props.id}>{labelName}</label>
+            <label className="form__label" htmlFor={props.id}>{labelName}</label>
         </div>
     )
 }

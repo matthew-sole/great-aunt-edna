@@ -1,22 +1,22 @@
-/* SG
-# Elements/Focus states
+// /* SG
+// # Elements/Focus states
 
-```
-<p>
-	You can change the selection colour, select this paragraph to see what colour it is.
-</p>
-```
-*/
+// ```
+// <p>
+// 	You can change the selection colour, select this paragraph to see what colour it is.
+// </p>
+// ```
+// */
 
-*:active,
-*:focus {
-  outline: solid 0.5px $color-focus;
-}
+// *:active,
+// *:focus {
+//   outline: solid 0.5px $color-focus;
+// }
 
-::selection {
-  background: $color-select; // WebKit/Blink Browsers
-}
+// ::selection {
+//   background: $color-select; // WebKit/Blink Browsers
+// }
 
-::-moz-selection {
-  background: $color-select; // Gecko Browsers
-}
+// ::-moz-selection {
+//   background: $color-select; // Gecko Browsers
+// }

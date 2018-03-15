@@ -9,11 +9,11 @@ h4,
 h5,
 h6 {
   line-height: $line-height-base;
+  font-family: $font-family-headings;
 }
 
 h1 {
   font-size: rem(50);
-  font-family: $font-family-serif;
 }
 
 h2 {

@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import '../../src/App.css';
+
 import Form from './components/Form/Form.container';
+import Header from './components/Header/Header';
 
 class App extends Component {
     render() {
         return (
             <div className="app">
-                <div className="header">
-                    <h1>Claire &amp; Matt</h1>
-                    <p>April 6. 2019 | Wellington, New Zealand</p>
-                    <p>X days to go</p>
-                </div>
+                <Header />
                 <div className="content">
-                    <Form />
+                    <div className="section section--center-text gutters">
+                        <Form />
+                    </div>                    
                     <div className="color-palette">
                         <h2>Colors</h2>
                         <div className="color-palette__item">

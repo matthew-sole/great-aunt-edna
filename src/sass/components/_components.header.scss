@@ -1,4 +1,7 @@
-.header {
-  @include gutters;
-  @include section--small;
+.header__content {
+  position: absolute;
+  top: 19%;
+  right: 25%;
+  text-align: center;
+  left: 25%;
 }

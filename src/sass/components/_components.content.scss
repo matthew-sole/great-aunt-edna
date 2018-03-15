@@ -1,4 +1,13 @@
-.content {
-  @include gutters;
-  @include section;
+.section {
+  max-width: 840px;
+  margin: auto;
+}
+
+.section--center-text {
+  text-align: center;
+}
+
+.gutters {
+  padding-left: $spacing-l;
+  padding-right: $spacing-l;
 }
