@@ -3,7 +3,7 @@ import FormField from '../FormField/FormField';
 
 
 export default function(props) {
-    console.log(props.values)
+    
     return(
         <form onSubmit={props.handleSubmit}>
             <div className="form__group">
@@ -29,25 +29,47 @@ export default function(props) {
                 />
             </div>
 
-            <div className="form__group">
-                <p>Who will be able to make it? (2 people)</p>
-                <FormField 
-                    labelName="John Doe" 
-                    type="checkbox" 
-                    id="wedding-guest-1" 
-                    value="john-doe" 
-                    name="wedding-rsvp-multi-guest"
-                    onChange={props.handleChange}
-                />
-                <FormField 
-                    labelName="Jane Doe" 
-                    type="checkbox" 
-                    id="wedding-guest-2" 
-                    value="jane-doe" 
-                    name="wedding-rsvp-multi-guest"
-                    onChange={props.handleChange}
-                />
-            </div>
+            { props.values["wedding-rsvp"] === "yes" &&
+                <div className="form__group">
+                    <p>Who will be able to make it? (2 people)</p>
+                    <FormField 
+                        labelName="John Doe" 
+                        type="checkbox" 
+                        id="wedding-guest-1" 
+                        value="john-doe"
+                        name="wedding-rsvp-multi-guest.0"
+                        checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][0]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Jane Doe" 
+                        type="checkbox" 
+                        id="wedding-guest-2" 
+                        value="jane-doe" 
+                        name="wedding-rsvp-multi-guest.1"
+                        checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][1]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Jack Doe" 
+                        type="checkbox" 
+                        id="wedding-guest-3" 
+                        value="jack-doe"
+                        name="wedding-rsvp-multi-guest.2"
+                        checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][2]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Janie Doe" 
+                        type="checkbox" 
+                        id="wedding-guest-4" 
+                        value="janie-doe" 
+                        name="wedding-rsvp-multi-guest.3"
+                        checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][3]}
+                        onChange={props.handleChange}
+                    />
+                </div>
+            }
 
             <div className="form__group">
                 <p>Will you be able to make it to the next day event?</p>
@@ -70,26 +92,48 @@ export default function(props) {
                     onChange={props.handleChange}
                 />
             </div>
-            
-            <div className="form__group"> 
-                <p>Who will be able to make it? (2 people)</p>
-                <FormField 
-                    labelName="John Doe" 
-                    type="checkbox" 
-                    id="bbq-guest-1" 
-                    value="john-doe" 
-                    name="bbq-rsvp-multi-guest"
-                    onChange={props.handleChange}
-                />
-                <FormField 
-                    labelName="Jane Doe" 
-                    type="checkbox" 
-                    id="bbq-guest-2" 
-                    value="jane-doe" 
-                    name="bbq-rsvp-multi-guest"
-                    onChange={props.handleChange}
-                />
-            </div>
+
+            { props.values["bbq-rsvp"] === "yes" &&
+                <div className="form__group">
+                    <p>Who will be able to make it? (2 people)</p>
+                    <FormField 
+                        labelName="John Doe" 
+                        type="checkbox" 
+                        id="bbq-guest-1" 
+                        value="john-doe"
+                        name="bbq-rsvp-multi-guest.0"
+                        checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][0]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Jane Doe" 
+                        type="checkbox" 
+                        id="bbq-guest-2" 
+                        value="jane-doe" 
+                        name="bbq-rsvp-multi-guest.1"
+                        checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][1]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Jack Doe" 
+                        type="checkbox" 
+                        id="bbq-guest-3" 
+                        value="jack-doe"
+                        name="bbq-rsvp-multi-guest.2"
+                        checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][2]}
+                        onChange={props.handleChange}
+                    />
+                    <FormField 
+                        labelName="Janie Doe" 
+                        type="checkbox" 
+                        id="bbq-guest-4" 
+                        value="janie-doe" 
+                        name="bbq-rsvp-multi-guest.3"
+                        checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][3]}
+                        onChange={props.handleChange}
+                    />
+                </div>
+            }
             
             <div className="form__group">
                 <p>Does anyone have any dietry requirements</p>
@@ -139,6 +183,10 @@ export default function(props) {
                     value={props.values.email} 
                     name="email"
                 />
+                <ul>
+                    <li></li>
+                    <li className="class"></li>
+                </ul>
             </div>
             <div>
                 <button type="submit">Submit</button>

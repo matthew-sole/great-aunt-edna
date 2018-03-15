@@ -5,25 +5,35 @@ import Form from './components/Form/Form.container';
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 <div className="header">
-                    {/* <ul className="nav">
-                        <li className="nav__item">
-                            <a href="#" className="nav__link">What</a>
-                        </li>
-                        <li className="nav__item">
-                            <a href="#" className="nav__link">When</a>
-                        </li>
-                        <li className="nav__item">
-                            <a href="#" className="nav__link">Where</a>
-                        </li>
-                        <li className="nav__item">
-                            <a href="#" className="nav__link">rsvp</a>
-                        </li>
-                    </ul> */}
                 </div>
                 <div className="content">
                     <Form />
+                    <div className="color-palette">
+                        <h2>Colors</h2>
+                        <div className="color-palette__item">
+                            <h4>$color-dusty-blue</h4>
+                            <span className="u-color-dusty-blue"></span>
+                        </div>
+                        <div className="color-palette__item">
+                            <h4>$color-dusty-teal</h4>
+                            <span className="u-color-dusty-teal"></span>
+                        </div>
+                        <div className="color-palette__item">
+                            <h4>$color-dusty-pink</h4>
+                            <span className="u-color-dusty-pink"></span>
+                        </div>
+                        <div className="color-palette__item">
+                            <h4>$color-dusty-peach</h4>
+                            <span className="u-color-dusty-peach"></span>
+                        </div>
+                        <div className="color-palette__item">
+                            <h4>$color-dusty-beige</h4>
+                            <span className="u-color-dusty-beige"></span>
+                        </div>
+                        
+                    </div>
                 </div>
                 <div className="footer">
 

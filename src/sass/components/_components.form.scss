@@ -6,7 +6,7 @@
 
 .form__item {
   display: inline-block;
-  border: 1px solid $color-black;
+  border: 2px solid $color-dusty-pink;
   padding: 1rem;
   min-width: 85px;
   text-align: center;
@@ -18,7 +18,12 @@
   }
 }
 
-.form__item--radio {
+.form__item.true {
+  background-color: $color-dusty-peach;
+}
+
+.form__item--radio,
+.form__item--checkbox {
   margin-right: 0;
   border-left: 1px solid $color-black;
   border-top: 1px solid $color-black;
