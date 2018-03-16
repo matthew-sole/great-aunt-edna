@@ -1,13 +1,22 @@
-.section {
-  max-width: 840px;
+.content-width {
+  max-width: 940px;
   margin: auto;
 }
 
-.section--center-text {
-  text-align: center;
+.section {
+  padding-top: $spacing-l;
+  padding-bottom: $spacing-l;
+  @include large {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
 }
 
 .gutters {
   padding-left: $spacing-l;
   padding-right: $spacing-l;
+  @include large {
+    padding-left: $spacing-xl;
+    padding-right: $spacing-xl;
+  }
 }

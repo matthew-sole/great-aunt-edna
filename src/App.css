@@ -73,16 +73,28 @@ h6 {
   font-family: "Open Sans", sans-serif; }
 
 h1 {
-  font-size: 3.125rem; }
+  font-size: 2.25rem; }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem; } }
 
 h2 {
   font-size: 2rem; }
+  @media only screen and (min-width: 768px) {
+    h2 {
+      font-size: 2.5rem; } }
 
 h3 {
   font-size: 1.5rem; }
+  @media only screen and (min-width: 768px) {
+    h3 {
+      font-size: 2rem; } }
 
 h4 {
-  font-size: 2rem; }
+  font-size: 1.125rem; }
+  @media only screen and (min-width: 768px) {
+    h4 {
+      font-size: 1.5rem; } }
 
 a {
   color: #8695a0;
@@ -235,23 +247,62 @@ html:not(.flexbox) .grid-flex {
 .nav__item {
   text-align: center; }
 
+.header {
+  position: relative; }
+
 .header__content {
   position: absolute;
-  top: 19%;
-  right: 25%;
-  text-align: center;
-  left: 25%; }
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
 
-.section {
-  max-width: 840px;
+@media only screen and (max-width: 767px) {
+  .header__title {
+    margin-bottom: 0.75rem; } }
+
+.header__intro-item {
+  display: block;
+  margin-bottom: 0.375rem; }
+  @media only screen and (min-width: 768px) {
+    .header__intro-item {
+      display: inline-block; } }
+
+@media only screen and (min-width: 768px) {
+  .header__intro-item:first-of-type:after {
+    content: '|';
+    margin-left: 0.75rem;
+    margin-right: 0.75rem; } }
+
+.header__image {
+  background-color: rgba(255, 255, 255, 0.65);
+  z-index: 99; }
+  .header__image > * {
+    position: relative;
+    z-index: -1; }
+  @media only screen and (min-width: 768px) {
+    .header__image {
+      background-color: rgba(255, 255, 255, 0.3); } }
+
+.content-width {
+  max-width: 940px;
   margin: auto; }
 
-.section--center-text {
-  text-align: center; }
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media only screen and (min-width: 1000px) {
+    .section {
+      padding-top: 3rem;
+      padding-bottom: 3rem; } }
 
 .gutters {
   padding-left: 2rem;
   padding-right: 2rem; }
+  @media only screen and (min-width: 1000px) {
+    .gutters {
+      padding-left: 3rem;
+      padding-right: 3rem; } }
 
 .image {
   width: 100%;
