@@ -2,13 +2,17 @@ import React from 'react';
 import FormField from '../FormField/FormField';
 
 
-export default function(props) {
-    
+const Form = (props) => {
+    const {
+        values,
+        handleSubmit,
+        handleChange
+    } = props;
     return(
         <div>
             <h2>RSVP</h2>
             <p>Please let us know if you are able to make it by filling out the below form</p>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="form__group">
                     <p className="form__content">Will you be able to make it to the big day?</p>
                     <FormField 
@@ -16,9 +20,9 @@ export default function(props) {
                         type="radio" 
                         id="rsvp-yes" 
                         value="yes"
-                        checked={props.values["wedding-rsvp"] === "yes"}
+                        checked={values["wedding-rsvp"] === "yes"}
                         name="wedding-rsvp"
-                        onChange={props.handleChange}
+                        onChange={handleChange}
                     />
                     <FormField 
                         labelName="No" 
@@ -26,12 +30,12 @@ export default function(props) {
                         id="rsvp-no" 
                         value="no" 
                         name="wedding-rsvp"
-                        checked={props.values["wedding-rsvp"] === "no"}
-                        onChange={props.handleChange}
+                        checked={values["wedding-rsvp"] === "no"}
+                        onChange={handleChange}
                     />
                 </div>
 
-                { props.values["wedding-rsvp"] === "yes" &&
+                { values["wedding-rsvp"] === "yes" &&
                     <div className="form__group">
                         <p className="form__content">Who will be able to make it? (2 people)</p>
                         <FormField 
@@ -40,8 +44,8 @@ export default function(props) {
                             id="wedding-guest-1" 
                             value="john-doe"
                             name="wedding-rsvp-multi-guest.0"
-                            checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][0]}
-                            onChange={props.handleChange}
+                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][0]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Jane Doe" 
@@ -49,8 +53,8 @@ export default function(props) {
                             id="wedding-guest-2" 
                             value="jane-doe" 
                             name="wedding-rsvp-multi-guest.1"
-                            checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][1]}
-                            onChange={props.handleChange}
+                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][1]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Jack Doe" 
@@ -58,8 +62,8 @@ export default function(props) {
                             id="wedding-guest-3" 
                             value="jack-doe"
                             name="wedding-rsvp-multi-guest.2"
-                            checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][2]}
-                            onChange={props.handleChange}
+                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][2]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Janie Doe" 
@@ -67,8 +71,8 @@ export default function(props) {
                             id="wedding-guest-4" 
                             value="janie-doe" 
                             name="wedding-rsvp-multi-guest.3"
-                            checked={props.values["wedding-rsvp-multi-guest"] && props.values["wedding-rsvp-multi-guest"][3]}
-                            onChange={props.handleChange}
+                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][3]}
+                            onChange={handleChange}
                         />
                     </div>
                 }
@@ -81,8 +85,8 @@ export default function(props) {
                         id="bbq-rsvp-yes" 
                         value="yes" 
                         name="bbq-rsvp"
-                        checked={props.values["bbq-rsvp"] === "yes"}
-                        onChange={props.handleChange}
+                        checked={values["bbq-rsvp"] === "yes"}
+                        onChange={handleChange}
                     />
                     <FormField 
                         labelName="No" 
@@ -90,12 +94,12 @@ export default function(props) {
                         id="bbq-rsvp-no" 
                         value="no" 
                         name="bbq-rsvp"
-                        checked={props.values["bbq-rsvp"] === "no"}
-                        onChange={props.handleChange}
+                        checked={values["bbq-rsvp"] === "no"}
+                        onChange={handleChange}
                     />
                 </div>
 
-                { props.values["bbq-rsvp"] === "yes" &&
+                { values["bbq-rsvp"] === "yes" &&
                     <div className="form__group">
                         <p className="form__content">Who will be able to make it? (2+ people)</p>
                         <FormField 
@@ -104,8 +108,8 @@ export default function(props) {
                             id="bbq-guest-1" 
                             value="john-doe"
                             name="bbq-rsvp-multi-guest.0"
-                            checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][0]}
-                            onChange={props.handleChange}
+                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][0]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Jane Doe" 
@@ -113,8 +117,8 @@ export default function(props) {
                             id="bbq-guest-2" 
                             value="jane-doe" 
                             name="bbq-rsvp-multi-guest.1"
-                            checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][1]}
-                            onChange={props.handleChange}
+                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][1]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Jack Doe" 
@@ -122,8 +126,8 @@ export default function(props) {
                             id="bbq-guest-3" 
                             value="jack-doe"
                             name="bbq-rsvp-multi-guest.2"
-                            checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][2]}
-                            onChange={props.handleChange}
+                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][2]}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="Janie Doe" 
@@ -131,12 +135,12 @@ export default function(props) {
                             id="bbq-guest-4" 
                             value="janie-doe" 
                             name="bbq-rsvp-multi-guest.3"
-                            checked={props.values["bbq-rsvp-multi-guest"] && props.values["bbq-rsvp-multi-guest"][3]}
-                            onChange={props.handleChange}
+                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][3]}
+                            onChange={handleChange}
                         />
                     </div>
                 }
-                { (props.values["wedding-rsvp"] === "yes" || props.values["bbq-rsvp"] === "yes") &&
+                { (values["wedding-rsvp"] === "yes" || values["bbq-rsvp"] === "yes") &&
                     <div className="form__group">
                         <p className="form__content">Does anyone have any dietry requirements</p>
                         <FormField 
@@ -145,8 +149,8 @@ export default function(props) {
                             id="diet-yes" 
                             value="yes" 
                             name="diet"
-                            checked={props.values["diet"] === "yes"}
-                            onChange={props.handleChange}
+                            checked={values["diet"] === "yes"}
+                            onChange={handleChange}
                         />
                         <FormField 
                             labelName="No" 
@@ -154,13 +158,13 @@ export default function(props) {
                             id="diet-no" 
                             value="no" 
                             name="diet"
-                            checked={props.values["diet"] === "no"}
-                            onChange={props.handleChange}
+                            checked={values["diet"] === "no"}
+                            onChange={handleChange}
                         />
                     </div>
                 }
-                { (props.values["wedding-rsvp"] === "yes" || props.values["bbq-rsvp"] === "yes") && (props.values["diet"] === "yes") &&
-                    <div className="form__group">
+                { (values["wedding-rsvp"] === "yes" || values["bbq-rsvp"] === "yes") && (values["diet"] === "yes") &&
+                    <div className="form__group form__group--stacked">
                         <p className="form__content">Who has dietry requirements</p>
                         <FormField 
                             labelName="John Doe" 
@@ -168,16 +172,16 @@ export default function(props) {
                             id="diet-multi-guest-1" 
                             value="john-doe"
                             name="diet-multi.0"
-                            checked={props.values["diet-multi"] && props.values["diet-multi"][0]}
-                            onChange={props.handleChange}
+                            checked={values["diet-multi"] && values["diet-multi"][0]}
+                            onChange={handleChange}
                         />
-                        { props.values["diet-multi"] && props.values["diet-multi"][0] &&
+                        { values["diet-multi"] && values["diet-multi"][0] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
                                 id="johnDoeDiet" 
-                                onChange={props.handleChange}
-                                value={props.values.johnDoeDiet} 
+                                onChange={handleChange}
+                                value={values.johnDoeDiet} 
                                 name="johnDoeDiet"
                             />
                         }
@@ -187,16 +191,16 @@ export default function(props) {
                             id="diet-multi-guest-2" 
                             value="jane-doe" 
                             name="diet-multi.1"
-                            checked={props.values["diet-multi"] && props.values["diet-multi"][1]}
-                            onChange={props.handleChange}
+                            checked={values["diet-multi"] && values["diet-multi"][1]}
+                            onChange={handleChange}
                         />
-                        { props.values["diet-multi"] && props.values["diet-multi"][1] &&
+                        { values["diet-multi"] && values["diet-multi"][1] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
                                 id="janeDoeDiet" 
-                                onChange={props.handleChange}
-                                value={props.values.janeDoeDiet} 
+                                onChange={handleChange}
+                                value={values.janeDoeDiet} 
                                 name="janeDoeDiet"
                             />
                         }
@@ -206,16 +210,16 @@ export default function(props) {
                             id="diet-multi-guest-3" 
                             value="jack-doe"
                             name="diet-multi.2"
-                            checked={props.values["diet-multi"] && props.values["diet-multi"][2]}
-                            onChange={props.handleChange}
+                            checked={values["diet-multi"] && values["diet-multi"][2]}
+                            onChange={handleChange}
                         />
-                        { props.values["diet-multi"] && props.values["diet-multi"][2] &&
+                        { values["diet-multi"] && values["diet-multi"][2] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
                                 id="jackDoeDiet" 
-                                onChange={props.handleChange}
-                                value={props.values.jackDoeDiet} 
+                                onChange={handleChange}
+                                value={values.jackDoeDiet} 
                                 name="jackDoeDiet"
                             />
                         }
@@ -225,16 +229,16 @@ export default function(props) {
                             id="diet-multi-guest-4" 
                             value="janie-doe" 
                             name="diet-multi.3"
-                            checked={props.values["diet-multi"] && props.values["diet-multi"][3]}
-                            onChange={props.handleChange}
+                            checked={values["diet-multi"] && values["diet-multi"][3]}
+                            onChange={handleChange}
                         />
-                        { props.values["diet-multi"] && props.values["diet-multi"][3] &&
+                        { values["diet-multi"] && values["diet-multi"][3] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
                                 id="janieDoeDiet" 
-                                onChange={props.handleChange}
-                                value={props.values.janieDoeDiet} 
+                                onChange={handleChange}
+                                value={values.janieDoeDiet} 
                                 name="janieDoeDiet"
                             />
                         }
@@ -249,8 +253,8 @@ export default function(props) {
                         id="leader-guest-1" 
                         value="leader-john"
                         name="nominated-leader"
-                        checked={props.values["nominated-leader"] === "leader-john"}
-                        onChange={props.handleChange}
+                        checked={values["nominated-leader"] === "leader-john"}
+                        onChange={handleChange}
                     />
                     <FormField 
                         labelName="Jane Doe" 
@@ -258,8 +262,8 @@ export default function(props) {
                         id="leader-guest-2" 
                         value="leader-jane" 
                         name="nominated-leader"
-                        checked={props.values["nominated-leader"] === "leader-jane"}
-                        onChange={props.handleChange}
+                        checked={values["nominated-leader"] === "leader-jane"}
+                        onChange={handleChange}
                     />
                     <FormField 
                         labelName="Jack Doe" 
@@ -267,8 +271,8 @@ export default function(props) {
                         id="leader-guest-3" 
                         value="leader-jack"
                         name="nominated-leader"
-                        checked={props.values["nominated-leader"] === "leader-jack"}
-                        onChange={props.handleChange}
+                        checked={values["nominated-leader"] === "leader-jack"}
+                        onChange={handleChange}
                     />
                     <FormField 
                         labelName="Janie Doe" 
@@ -276,8 +280,8 @@ export default function(props) {
                         id="leader-guest-4" 
                         value="leader-janie" 
                         name="nominated-leader"
-                        checked={props.values["nominated-leader"] === "leader-janie"}
-                        onChange={props.handleChange}
+                        checked={values["nominated-leader"] === "leader-janie"}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="form__group">
@@ -286,24 +290,24 @@ export default function(props) {
                         labelName="Address" 
                         type="text" 
                         id="address" 
-                        onChange={props.handleChange}
-                        value={props.values.address} 
+                        onChange={handleChange}
+                        value={values.address} 
                         name="address"
                     />
                     <FormField 
                         labelName="Contact number" 
                         type="text" 
                         id="phone" 
-                        onChange={props.handleChange}
-                        value={props.values.phone} 
+                        onChange={handleChange}
+                        value={values.phone} 
                         name="phone"
                     />
                     <FormField 
                         labelName="Email" 
                         type="text" 
                         id="email" 
-                        onChange={props.handleChange}
-                        value={props.values.email} 
+                        onChange={handleChange}
+                        value={values.email} 
                         name="email"
                     />
                 </div>
@@ -314,3 +318,5 @@ export default function(props) {
         </div>
     )
 }
+
+export default Form;

@@ -1,13 +1,30 @@
 import React from 'react';
 
-export default function({values, labelName, value, checked, ...props}) {
+const FormField = props => {
+    const {
+        labelName,
+        type,
+        id,
+        value,
+        name,
+        checked,
+        onChange           
+    } = props;
     return(
-        <div className={`form__item form__item--${props.type} ${checked}`}>
-            <input className={`form__input ${props.type}`} 
-                value={value || ''}
-                {...props}
-            />
-            <label className="form__label" htmlFor={props.id}>{labelName}</label>
+        <div className={`form__item form__item--${type} ${checked}`}>
+            <label className="form__label" htmlFor={id}>
+                <input className={`form__input ${type}`} 
+                    value={value || ''}
+                    type={type} 
+                    id={id}
+                    name={name}
+                    checked={checked}
+                    onChange={onChange}
+                />
+                {labelName}
+            </label>
         </div>
     )
 }
+
+export default FormField;

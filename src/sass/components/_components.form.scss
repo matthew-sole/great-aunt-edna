@@ -1,25 +1,19 @@
 // Form
-
-.form__group {
-  margin-bottom: $spacing;
-}
-
 .form__content {
   font-family: $font-family-headings;
   font-weight: $font-weight-medium;
 }
 
-.form__input {
-  margin-right: $spacing-xs;
+.form__group {
+  margin-bottom: $spacing;
 }
 
 .form__item {
   display: inline-block;
   border: 2px solid $color-dusty-pink;
-  padding: 1rem;
-  min-width: 85px;
+  line-height: 2.3;
+  min-width: 100px;
   text-align: center;
-
   margin-right: 1rem;
 
   &:last-of-type {
@@ -33,6 +27,7 @@
 
 .form__item--radio,
 .form__item--checkbox {
+  line-height: 3;
   margin-right: 0;
   border-left: 1px solid $color-black;
   border-top: 1px solid $color-black;
@@ -45,4 +40,19 @@
   &:first-of-type {
     border-radius: 5px 0 0 5px;
   }
+}
+
+.form__group--stacked {
+  .form__item {
+    display: block;
+  }
+}
+
+.form__label {
+  display: inline-block;
+  padding: 0 0.75rem;
+}
+
+.form__input {
+  margin-right: $spacing-xs;
 }
