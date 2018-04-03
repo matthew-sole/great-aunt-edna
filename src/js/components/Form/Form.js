@@ -1,27 +1,30 @@
 import React from 'react';
 import FormField from '../FormField/FormField';
-
+import './form.css';
 
 const Form = (props) => {
     const {
         values,
         handleSubmit,
-        handleChange
+        handleChange,
+        errors
     } = props;
     return(
         <div>
             <h2>RSVP</h2>
             <p>Please let us know if you are able to make it by filling out the below form</p>
             <form onSubmit={handleSubmit}>
-                <div className="form__group">
+                {/* TODO - check if that way of doing the classes are right */}
+                {/* TODO - can this be refactored */}
+                <div className={"form__group" + (errors.weddingRsvp ? ' form__group--error' : '')}>
                     <p className="form__content">Will you be able to make it to the big day?</p>
                     <FormField 
                         labelName="Yes" 
                         type="radio" 
                         id="rsvp-yes" 
                         value="yes"
-                        checked={values["wedding-rsvp"] === "yes"}
-                        name="wedding-rsvp"
+                        checked={values["weddingRsvp"] === "yes"}
+                        name="weddingRsvp"
                         onChange={handleChange}
                     />
                     <FormField 
@@ -29,22 +32,25 @@ const Form = (props) => {
                         type="radio" 
                         id="rsvp-no" 
                         value="no" 
-                        name="wedding-rsvp"
-                        checked={values["wedding-rsvp"] === "no"}
+                        name="weddingRsvp"
+                        checked={values["weddingRsvp"] === "no"}
                         onChange={handleChange}
                     />
+                    {errors.weddingRsvp && (
+                        <div className="input-feedback">{errors.weddingRsvp}</div>
+                    )}
                 </div>
 
-                { values["wedding-rsvp"] === "yes" &&
-                    <div className="form__group">
+                { values["weddingRsvp"] === "yes" &&
+                    <div className={"form__group" + (errors.weddingRsvpMultiGuest ? ' form__group--error' : '')}>
                         <p className="form__content">Who will be able to make it? (2 people)</p>
                         <FormField 
                             labelName="John Doe" 
                             type="checkbox" 
                             id="wedding-guest-1" 
                             value="john-doe"
-                            name="wedding-rsvp-multi-guest.0"
-                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][0]}
+                            name="weddingRsvpMultiGuest.0"
+                            checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][0]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -52,8 +58,8 @@ const Form = (props) => {
                             type="checkbox" 
                             id="wedding-guest-2" 
                             value="jane-doe" 
-                            name="wedding-rsvp-multi-guest.1"
-                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][1]}
+                            name="weddingRsvpMultiGuest.1"
+                            checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][1]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -61,8 +67,8 @@ const Form = (props) => {
                             type="checkbox" 
                             id="wedding-guest-3" 
                             value="jack-doe"
-                            name="wedding-rsvp-multi-guest.2"
-                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][2]}
+                            name="weddingRsvpMultiGuest.2"
+                            checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][2]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -70,10 +76,13 @@ const Form = (props) => {
                             type="checkbox" 
                             id="wedding-guest-4" 
                             value="janie-doe" 
-                            name="wedding-rsvp-multi-guest.3"
-                            checked={values["wedding-rsvp-multi-guest"] && values["wedding-rsvp-multi-guest"][3]}
+                            name="weddingRsvpMultiGuest.3"
+                            checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
+                        {errors.weddingRsvpMultiGuest &&(
+                            <div className="input-feedback">{errors.weddingRsvpMultiGuest}</div>
+                        )}
                     </div>
                 }
 
@@ -82,24 +91,27 @@ const Form = (props) => {
                     <FormField 
                         labelName="Yes" 
                         type="radio" 
-                        id="bbq-rsvp-yes" 
+                        id="bbqRsvp-yes" 
                         value="yes" 
-                        name="bbq-rsvp"
-                        checked={values["bbq-rsvp"] === "yes"}
+                        name="bbqRsvp"
+                        checked={values["bbqRsvp"] === "yes"}
                         onChange={handleChange}
                     />
                     <FormField 
                         labelName="No" 
                         type="radio" 
-                        id="bbq-rsvp-no" 
+                        id="bbqRsvp-no" 
                         value="no" 
-                        name="bbq-rsvp"
-                        checked={values["bbq-rsvp"] === "no"}
+                        name="bbqRsvp"
+                        checked={values["bbqRsvp"] === "no"}
                         onChange={handleChange}
                     />
+                    {errors.bbqRsvp && (
+                        <div className="input-feedback">{errors.bbqRsvp}</div>
+                    )}
                 </div>
 
-                { values["bbq-rsvp"] === "yes" &&
+                { values["bbqRsvp"] === "yes" &&
                     <div className="form__group">
                         <p className="form__content">Who will be able to make it? (2+ people)</p>
                         <FormField 
@@ -107,8 +119,8 @@ const Form = (props) => {
                             type="checkbox" 
                             id="bbq-guest-1" 
                             value="john-doe"
-                            name="bbq-rsvp-multi-guest.0"
-                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][0]}
+                            name="bbqRsvpMultiGuest.0"
+                            checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][0]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -116,8 +128,8 @@ const Form = (props) => {
                             type="checkbox" 
                             id="bbq-guest-2" 
                             value="jane-doe" 
-                            name="bbq-rsvp-multi-guest.1"
-                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][1]}
+                            name="bbqRsvpMultiGuest.1"
+                            checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][1]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -125,8 +137,8 @@ const Form = (props) => {
                             type="checkbox" 
                             id="bbq-guest-3" 
                             value="jack-doe"
-                            name="bbq-rsvp-multi-guest.2"
-                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][2]}
+                            name="bbqRsvpMultiGuest.2"
+                            checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][2]}
                             onChange={handleChange}
                         />
                         <FormField 
@@ -134,13 +146,16 @@ const Form = (props) => {
                             type="checkbox" 
                             id="bbq-guest-4" 
                             value="janie-doe" 
-                            name="bbq-rsvp-multi-guest.3"
-                            checked={values["bbq-rsvp-multi-guest"] && values["bbq-rsvp-multi-guest"][3]}
+                            name="bbqRsvpMultiGuest.3"
+                            checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
+                        {errors.bbqRsvpMultiGuest && (
+                            <div className="input-feedback">{errors.bbqRsvpMultiGuest}</div>
+                        )}
                     </div>
                 }
-                { (values["wedding-rsvp"] === "yes" || values["bbq-rsvp"] === "yes") &&
+                { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") &&
                     <div className="form__group">
                         <p className="form__content">Does anyone have any dietry requirements</p>
                         <FormField 
@@ -161,21 +176,24 @@ const Form = (props) => {
                             checked={values["diet"] === "no"}
                             onChange={handleChange}
                         />
+                        {errors.diet && (
+                            <div className="input-feedback">{errors.diet}</div>
+                        )}
                     </div>
                 }
-                { (values["wedding-rsvp"] === "yes" || values["bbq-rsvp"] === "yes") && (values["diet"] === "yes") &&
+                { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") && (values["diet"] === "yes") &&
                     <div className="form__group form__group--stacked">
                         <p className="form__content">Who has dietry requirements</p>
                         <FormField 
                             labelName="John Doe" 
                             type="checkbox" 
-                            id="diet-multi-guest-1" 
+                            id="dietMultiguest-1" 
                             value="john-doe"
-                            name="diet-multi.0"
-                            checked={values["diet-multi"] && values["diet-multi"][0]}
+                            name="dietMulti.0"
+                            checked={values["dietMulti"] && values["dietMulti"][0]}
                             onChange={handleChange}
                         />
-                        { values["diet-multi"] && values["diet-multi"][0] &&
+                        { values["dietMulti"] && values["dietMulti"][0] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
@@ -185,16 +203,19 @@ const Form = (props) => {
                                 name="johnDoeDiet"
                             />
                         }
+                        {errors.johnDoeDiet && (
+                            <div className="input-feedback">{errors.johnDoeDiet}</div>
+                        )}
                         <FormField 
                             labelName="Jane Doe" 
                             type="checkbox" 
-                            id="diet-multi-guest-2" 
+                            id="dietMultiguest-2" 
                             value="jane-doe" 
-                            name="diet-multi.1"
-                            checked={values["diet-multi"] && values["diet-multi"][1]}
+                            name="dietMulti.1"
+                            checked={values["dietMulti"] && values["dietMulti"][1]}
                             onChange={handleChange}
                         />
-                        { values["diet-multi"] && values["diet-multi"][1] &&
+                        { values["dietMulti"] && values["dietMulti"][1] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
@@ -207,13 +228,13 @@ const Form = (props) => {
                         <FormField 
                             labelName="Jack Doe" 
                             type="checkbox" 
-                            id="diet-multi-guest-3" 
+                            id="dietMultiguest-3" 
                             value="jack-doe"
-                            name="diet-multi.2"
-                            checked={values["diet-multi"] && values["diet-multi"][2]}
+                            name="dietMulti.2"
+                            checked={values["dietMulti"] && values["dietMulti"][2]}
                             onChange={handleChange}
                         />
-                        { values["diet-multi"] && values["diet-multi"][2] &&
+                        { values["dietMulti"] && values["dietMulti"][2] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
@@ -226,13 +247,13 @@ const Form = (props) => {
                         <FormField 
                             labelName="Janie Doe" 
                             type="checkbox" 
-                            id="diet-multi-guest-4" 
+                            id="dietMultiguest-4" 
                             value="janie-doe" 
-                            name="diet-multi.3"
-                            checked={values["diet-multi"] && values["diet-multi"][3]}
+                            name="dietMulti.3"
+                            checked={values["dietMulti"] && values["dietMulti"][3]}
                             onChange={handleChange}
                         />
-                        { values["diet-multi"] && values["diet-multi"][3] &&
+                        { values["dietMulti"] && values["dietMulti"][3] &&
                             <FormField 
                                 labelName="Please enter requirement" 
                                 type="text" 
@@ -242,6 +263,9 @@ const Form = (props) => {
                                 name="janieDoeDiet"
                             />
                         }
+                        {errors.dietMulti && (
+                            <div className="input-feedback">{errors.dietMulti}</div>
+                        )}
                     </div>
                 }
 
@@ -252,8 +276,8 @@ const Form = (props) => {
                         type="radio" 
                         id="leader-guest-1" 
                         value="leader-john"
-                        name="nominated-leader"
-                        checked={values["nominated-leader"] === "leader-john"}
+                        name="nominatedLeader"
+                        checked={values["nominatedLeader"] === "leader-john"}
                         onChange={handleChange}
                     />
                     <FormField 
@@ -261,8 +285,8 @@ const Form = (props) => {
                         type="radio" 
                         id="leader-guest-2" 
                         value="leader-jane" 
-                        name="nominated-leader"
-                        checked={values["nominated-leader"] === "leader-jane"}
+                        name="nominatedLeader"
+                        checked={values["nominatedLeader"] === "leader-jane"}
                         onChange={handleChange}
                     />
                     <FormField 
@@ -270,8 +294,8 @@ const Form = (props) => {
                         type="radio" 
                         id="leader-guest-3" 
                         value="leader-jack"
-                        name="nominated-leader"
-                        checked={values["nominated-leader"] === "leader-jack"}
+                        name="nominatedLeader"
+                        checked={values["nominatedLeader"] === "leader-jack"}
                         onChange={handleChange}
                     />
                     <FormField 
@@ -279,10 +303,13 @@ const Form = (props) => {
                         type="radio" 
                         id="leader-guest-4" 
                         value="leader-janie" 
-                        name="nominated-leader"
-                        checked={values["nominated-leader"] === "leader-janie"}
+                        name="nominatedLeader"
+                        checked={values["nominatedLeader"] === "leader-janie"}
                         onChange={handleChange}
                     />
+                    {errors.nominatedLeader && (
+                            <div className="input-feedback">{errors.nominatedLeader}</div>
+                        )}
                 </div>
                 <div className="form__group">
                     <p className="form__content">Please provide contact details for that person</p>
@@ -293,6 +320,7 @@ const Form = (props) => {
                         onChange={handleChange}
                         value={values.address} 
                         name="address"
+                        errors={errors.address}
                     />
                     <FormField 
                         labelName="Contact number" 
@@ -301,6 +329,7 @@ const Form = (props) => {
                         onChange={handleChange}
                         value={values.phone} 
                         name="phone"
+                        errors={errors.phone}
                     />
                     <FormField 
                         labelName="Email" 
@@ -309,6 +338,7 @@ const Form = (props) => {
                         onChange={handleChange}
                         value={values.email} 
                         name="email"
+                        errors={errors.email}
                     />
                 </div>
                 <div>

@@ -4,10 +4,12 @@ import Form from '../Form/Form.container'
 import Header from '../Header/Header';
 import Section from '../Section/Section'
 
+import './content.css'
+
 export default function() {
     return (
         <div className="app">
-            <div className="content content-width">
+            <div className="content">
                 <div className="section gutters">
                     <Form />
 
