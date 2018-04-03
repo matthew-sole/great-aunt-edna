@@ -1,0 +1,21 @@
+// For gap between edges of viewport and content.
+$spacing-gutter: 20px;
+$spacing-gutter-tablet: 30px;
+
+// For gaps between columns, or spacing between arbitrary elements.
+$spacing-margin-tight: 10px;
+$spacing-margin-mobile: 20px;
+$spacing-margin: 30px;
+$spacing-margin-loose: 40px;
+
+// Used for vertical separation between sections.
+$spacing-section: 50px;
+$spacing-section-mobile: 30px;
+
+// Used for vertical spacing between the inner containers.
+$spacing-inner-lg: 70px;
+$spacing-inner-md: 50px;
+
+// Used for paddings of form elements like inputs, textareas, selects.
+$spacing-field-vertical: 10px;
+$spacing-field-horizontal: 15px;

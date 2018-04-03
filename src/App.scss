@@ -1,14 +1,17 @@
-// -----------------------------------------------------------------------------
-// MAIN
-// -----------------------------------------------------------------------------
+@import '../src/common/tools/tools.scss';
+@import '../src/common/settings/settings.scss';
+@import '../src/common/elements/elements.scss';
 
-@import 'sass/settings';
-@import 'sass/tools';
+// @import '../../lib/fonts/';
 
-@import 'sass/generic';
-@import 'sass/elements';
-@import 'sass/objects';
-@import 'sass/components';
-@import 'sass/utilities';
-
-@import 'sass/print';
+// @import '../src/common/elements/page.scss';
+// @import '../../lib/elements/body.scss';
+// @import '../../lib/elements/hr.scss';
+// @import '../../lib/elements/*.scss';
+// @import '../../lib/elements/a.scss';
+// @import '../../lib/elements/headings.scss';
+// @import '../../lib/elements/p.scss';
+// @import '../../lib/elements/table.scss';
+// @import '../../lib/elements/ul.scss';
+// @import '../../lib/elements/li.scss';
+// @import '../../lib/elements/button.scss';

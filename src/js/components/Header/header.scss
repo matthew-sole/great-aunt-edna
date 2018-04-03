@@ -1,0 +1,51 @@
+@import '../../../common/settings/tools';
+@import '../../../common/settings/settings';
+
+.header {
+  position: relative;
+}
+
+.header__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header__title {
+  @include small {
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.header__intro-item {
+  display: block;
+  margin-bottom: $spacing-xxs;
+  @include medium {
+    display: inline-block;
+  }
+}
+
+.header__intro-item:first-of-type {
+  @include medium {
+    &:after {
+      content: '|';
+      margin-left: $spacing-xs;
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+.header__image {
+  background-color: rgba($color: #fff, $alpha: 0.65);
+  z-index: 99;
+  > * {
+    position: relative;
+    z-index: -1;
+  }
+
+  @include medium {
+    background-color: rgba($color: #fff, $alpha: 0.3);
+  }
+}

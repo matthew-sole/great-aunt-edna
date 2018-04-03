@@ -1,0 +1,9 @@
+@import '../../../common/tools/tools';
+@import '../../../common/settings/settings';
+
+.section {
+  padding: $spacing-l;
+  @include large {
+    padding: $spacing-xl;
+  }
+}
