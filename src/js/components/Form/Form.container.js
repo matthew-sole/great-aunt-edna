@@ -2,13 +2,23 @@ import { withFormik } from 'formik';
 import Form from './Form';
 
 export default withFormik({
-    handleSubmit: (values, touched) => {
-    },
+    mapPropsToValues: () => (
+        { 
+            weddingRsvp: '',
+            weddingRsvpMultiGuest: '',
+            bbqRsvp: '',
+            bbqRsvpMultiGuest: '',
+            diet: '',
+            dietMulti: '',
+            johnDoeDiet: '',
+            nominatedLeader: '',
+            address: '',
+            phone: '',
+            email: '',
+        }
+    ),
 
-    // TODO What does the below do?
-    // mapPropsToValues: () => ({ email: '' }),
-
-    validate: values => {
+    validate: (values, props) => {
         let errors = {};
         
         if (!values.weddingRsvp) {
@@ -55,10 +65,12 @@ export default withFormik({
         } else if ( !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
             errors.email = 'Invalid email address';
         }  
-
-        
-        console.log(errors);
-
         return errors;
     },
+
+    handleSubmit: (values, touched) => {
+    },
+
+
+
 })(Form)

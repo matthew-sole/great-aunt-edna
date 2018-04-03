@@ -7,7 +7,9 @@ const Form = (props) => {
         values,
         handleSubmit,
         handleChange,
-        errors
+        handleBlur,
+        errors,
+        touched
     } = props;
     return(
         <div>
@@ -26,6 +28,7 @@ const Form = (props) => {
                         checked={values["weddingRsvp"] === "yes"}
                         name="weddingRsvp"
                         onChange={handleChange}
+                        onBlur={handleBlur}
                     />
                     <FormField 
                         labelName="No" 
@@ -35,8 +38,10 @@ const Form = (props) => {
                         name="weddingRsvp"
                         checked={values["weddingRsvp"] === "no"}
                         onChange={handleChange}
+                        onBlur={handleBlur}
                     />
-                    {errors.weddingRsvp && (
+                    {errors.weddingRsvp &&
+                    touched.weddingRsvp && (
                         <div className="form__error-message">{errors.weddingRsvp}</div>
                     )}
                 </div>
@@ -80,7 +85,8 @@ const Form = (props) => {
                             checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
-                        {errors.weddingRsvpMultiGuest &&(
+                        {errors.weddingRsvpMultiGuest &&
+                        touched.weddingRsvpMultiGuest && (
                             <div className="form__error-message">{errors.weddingRsvpMultiGuest}</div>
                         )}
                     </div>
@@ -106,7 +112,8 @@ const Form = (props) => {
                         checked={values["bbqRsvp"] === "no"}
                         onChange={handleChange}
                     />
-                    {errors.bbqRsvp && (
+                    {errors.bbqRsvp &&
+                    touched.bbqRsvp && (
                         <div className="form__error-message">{errors.bbqRsvp}</div>
                     )}
                 </div>
@@ -150,7 +157,8 @@ const Form = (props) => {
                             checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
-                        {errors.bbqRsvpMultiGuest && (
+                        {errors.bbqRsvpMultiGuest && 
+                        touched.bbqRsvpMultiGuest && (
                             <div className="form__error-message">{errors.bbqRsvpMultiGuest}</div>
                         )}
                     </div>
@@ -176,7 +184,8 @@ const Form = (props) => {
                             checked={values["diet"] === "no"}
                             onChange={handleChange}
                         />
-                        {errors.diet && (
+                        {errors.diet && 
+                        touched.diet &&(
                             <div className="form__error-message">{errors.diet}</div>
                         )}
                     </div>
@@ -203,7 +212,8 @@ const Form = (props) => {
                                 name="johnDoeDiet"
                             />
                         }
-                        {errors.johnDoeDiet && (
+                        {errors.johnDoeDiet && 
+                        touched.johnDoeDiet && (
                             <div className="form__error-message">{errors.johnDoeDiet}</div>
                         )}
                         <FormField 
@@ -263,7 +273,8 @@ const Form = (props) => {
                                 name="janieDoeDiet"
                             />
                         }
-                        {errors.dietMulti && (
+                        {errors.dietMulti && 
+                        touched.dietMulti &&(
                             <div className="form__error-message">{errors.dietMulti}</div>
                         )}
                     </div>
@@ -307,39 +318,58 @@ const Form = (props) => {
                         checked={values["nominatedLeader"] === "leader-janie"}
                         onChange={handleChange}
                     />
-                    {errors.nominatedLeader && (
+                    {errors.nominatedLeader && 
+                    touched.nominatedLeader && (
                             <div className="form__error-message">{errors.nominatedLeader}</div>
                         )}
                 </div>
                 <div className="form__group">
                     <h4 className="form__header">Please provide contact details for that person</h4>
-                    <FormField 
-                        labelName="Address" 
-                        type="text" 
-                        id="address" 
-                        onChange={handleChange}
-                        value={values.address} 
-                        name="address"
-                        errors={errors.address}
-                    />
-                    <FormField 
-                        labelName="Contact number" 
-                        type="text" 
-                        id="phone" 
-                        onChange={handleChange}
-                        value={values.phone} 
-                        name="phone"
-                        errors={errors.phone}
-                    />
-                    <FormField 
-                        labelName="Email" 
-                        type="text" 
-                        id="email" 
-                        onChange={handleChange}
-                        value={values.email} 
-                        name="email"
-                        errors={errors.email}
-                    />
+                    <div>
+                        <FormField 
+                            labelName="Address" 
+                            type="text" 
+                            id="address" 
+                            onChange={handleChange}
+                            value={values.address} 
+                            name="address"
+                            errors={errors.address}
+                        />
+                        {errors.address && 
+                        touched.address && (
+                            <div className="form__error-message">{errors.address}</div>
+                        )}
+                    </div>
+                    <div>
+                        <FormField 
+                            labelName="Contact number" 
+                            type="text" 
+                            id="phone" 
+                            onChange={handleChange}
+                            value={values.phone} 
+                            name="phone"
+                            errors={errors.phone}
+                        />
+                        {errors.phone && 
+                        touched.phone && (
+                            <div className="form__error-message">{errors.phone}</div>
+                        )}
+                    </div>
+                    <div>
+                        <FormField 
+                            labelName="Email" 
+                            type="text" 
+                            id="email" 
+                            onChange={handleChange}
+                            value={values.email} 
+                            name="email"
+                            errors={errors.email}
+                        />
+                        {errors.email && 
+                        touched.email && (
+                            <div className="form__error-message">{errors.email}</div>
+                        )}
+                    </div>
                 </div>
                 <div>
                     <button type="submit">Submit</button>

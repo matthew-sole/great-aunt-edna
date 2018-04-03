@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Form from '../Form/Form.container'
-import Header from '../Header/Header';
 import Section from '../Section/Section'
 
 import './content.css'

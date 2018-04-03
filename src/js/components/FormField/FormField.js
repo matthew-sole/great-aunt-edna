@@ -9,25 +9,22 @@ const FormField = props => {
         name,
         checked,
         onChange,
-        errors           
+        onBlur    
     } = props;
-    console.log(errors)
     return(
         <div className={`form__item form__item--${type} ${checked}`}>
             <label className="form__label" htmlFor={id}>
-                <input className={`form__input ${type} ${errors}`} 
+                <input className={`form__input ${type}`} 
                     value={value || ''}
                     type={type} 
                     id={id}
                     name={name}
                     checked={checked}
                     onChange={onChange}
+                    onBlur={onBlur}
                 />
                 {labelName}
             </label>
-            {errors && (
-                <div className="input-feedback">{errors}</div>
-            )}
         </div>
     )
 }
