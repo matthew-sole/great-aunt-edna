@@ -20,22 +20,22 @@ h1 {
 }
 
 h2 {
-  font-size: rem(32);
+  font-size: rem(24);
   @include medium {
-    font-size: rem(40);
+    font-size: rem(36);
   }
 }
 
 h3 {
-  font-size: rem(24);
+  font-size: rem(18);
   @include medium {
-    font-size: rem(32);
+    font-size: rem(24);
   }
 }
 
 h4 {
-  font-size: rem(18);
+  font-size: rem(16);
   @include medium {
-    font-size: rem(24);
+    font-size: rem(18);
   }
 }

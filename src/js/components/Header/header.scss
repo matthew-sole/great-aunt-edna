@@ -1,4 +1,4 @@
-@import '../../../common/settings/tools';
+@import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
 .header {
@@ -16,13 +16,22 @@
 .header__title {
   @include small {
     margin-bottom: $spacing-xs;
+    margin-top: 0.5rem;
+  }
+}
+
+.header__intro {
+  @include small {
+    margin-top: 0;
   }
 }
 
 .header__intro-item {
   display: block;
-  margin-bottom: $spacing-xxs;
+  margin-bottom: $spacing-xs;
+  font-size: rem(14);
   @include medium {
+    font-size: rem(16);
     display: inline-block;
   }
 }

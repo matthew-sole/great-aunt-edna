@@ -17,7 +17,7 @@ const Form = (props) => {
                 {/* TODO - check if that way of doing the classes are right */}
                 {/* TODO - can this be refactored */}
                 <div className={"form__group" + (errors.weddingRsvp ? ' form__group--error' : '')}>
-                    <p className="form__content">Will you be able to make it to the big day?</p>
+                    <h4 className="form__header">Will you be able to make it to the big day?</h4>
                     <FormField 
                         labelName="Yes" 
                         type="radio" 
@@ -37,13 +37,13 @@ const Form = (props) => {
                         onChange={handleChange}
                     />
                     {errors.weddingRsvp && (
-                        <div className="input-feedback">{errors.weddingRsvp}</div>
+                        <div className="form__error-message">{errors.weddingRsvp}</div>
                     )}
                 </div>
 
                 { values["weddingRsvp"] === "yes" &&
                     <div className={"form__group" + (errors.weddingRsvpMultiGuest ? ' form__group--error' : '')}>
-                        <p className="form__content">Who will be able to make it? (2 people)</p>
+                        <h4 className="form__header">Who will be able to make it?</h4>
                         <FormField 
                             labelName="John Doe" 
                             type="checkbox" 
@@ -81,13 +81,13 @@ const Form = (props) => {
                             onChange={handleChange}
                         />
                         {errors.weddingRsvpMultiGuest &&(
-                            <div className="input-feedback">{errors.weddingRsvpMultiGuest}</div>
+                            <div className="form__error-message">{errors.weddingRsvpMultiGuest}</div>
                         )}
                     </div>
                 }
 
                 <div className="form__group">
-                    <p className="form__content">Will you be able to make it to the next day event?</p>
+                    <h4 className="form__header">Will you be able to make it to the next day event?</h4>
                     <FormField 
                         labelName="Yes" 
                         type="radio" 
@@ -107,13 +107,13 @@ const Form = (props) => {
                         onChange={handleChange}
                     />
                     {errors.bbqRsvp && (
-                        <div className="input-feedback">{errors.bbqRsvp}</div>
+                        <div className="form__error-message">{errors.bbqRsvp}</div>
                     )}
                 </div>
 
                 { values["bbqRsvp"] === "yes" &&
                     <div className="form__group">
-                        <p className="form__content">Who will be able to make it? (2+ people)</p>
+                        <h4 className="form__header">Who will be able to make it? (2+ people)</h4>
                         <FormField 
                             labelName="John Doe" 
                             type="checkbox" 
@@ -151,13 +151,13 @@ const Form = (props) => {
                             onChange={handleChange}
                         />
                         {errors.bbqRsvpMultiGuest && (
-                            <div className="input-feedback">{errors.bbqRsvpMultiGuest}</div>
+                            <div className="form__error-message">{errors.bbqRsvpMultiGuest}</div>
                         )}
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") &&
                     <div className="form__group">
-                        <p className="form__content">Does anyone have any dietry requirements</p>
+                        <h4 className="form__header">Does anyone have any dietry requirements</h4>
                         <FormField 
                             labelName="Yes" 
                             type="radio" 
@@ -177,13 +177,13 @@ const Form = (props) => {
                             onChange={handleChange}
                         />
                         {errors.diet && (
-                            <div className="input-feedback">{errors.diet}</div>
+                            <div className="form__error-message">{errors.diet}</div>
                         )}
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") && (values["diet"] === "yes") &&
                     <div className="form__group form__group--stacked">
-                        <p className="form__content">Who has dietry requirements</p>
+                        <h4 className="form__header">Who has dietry requirements</h4>
                         <FormField 
                             labelName="John Doe" 
                             type="checkbox" 
@@ -204,7 +204,7 @@ const Form = (props) => {
                             />
                         }
                         {errors.johnDoeDiet && (
-                            <div className="input-feedback">{errors.johnDoeDiet}</div>
+                            <div className="form__error-message">{errors.johnDoeDiet}</div>
                         )}
                         <FormField 
                             labelName="Jane Doe" 
@@ -264,13 +264,13 @@ const Form = (props) => {
                             />
                         }
                         {errors.dietMulti && (
-                            <div className="input-feedback">{errors.dietMulti}</div>
+                            <div className="form__error-message">{errors.dietMulti}</div>
                         )}
                     </div>
                 }
 
                 <div className="form__group">
-                    <p className="form__content">Please choose a group leader we can contact if we need to</p>
+                    <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
                     <FormField 
                         labelName="John Doe" 
                         type="radio" 
@@ -308,11 +308,11 @@ const Form = (props) => {
                         onChange={handleChange}
                     />
                     {errors.nominatedLeader && (
-                            <div className="input-feedback">{errors.nominatedLeader}</div>
+                            <div className="form__error-message">{errors.nominatedLeader}</div>
                         )}
                 </div>
                 <div className="form__group">
-                    <p className="form__content">Please provide contact details for that person</p>
+                    <h4 className="form__header">Please provide contact details for that person</h4>
                     <FormField 
                         labelName="Address" 
                         type="text" 

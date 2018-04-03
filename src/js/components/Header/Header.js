@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from '../Image/Image';
 import './header.css';
 
 export default function() {
@@ -12,7 +13,12 @@ export default function() {
                 </p>
             </div>
             <div className="header__image">
-                <img className="image" src="/assets/images/flower-banner.jpg" alt="flower banner" height="900"/>
+                <Image
+                    className="image" 
+                    src="/assets/images/flower-banner.jpg" 
+                    alt="flower banner"
+                    height="900px"
+                />
             </div>
         </div>     
     )

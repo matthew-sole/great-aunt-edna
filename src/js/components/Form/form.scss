@@ -1,58 +1,59 @@
-// // Form
-// .form__content {
-//   font-family: $font-family-headings;
-//   font-weight: $font-weight-medium;
-// }
+@import '../../../common/tools/tools';
+@import '../../../common/settings/settings';
 
-// .form__group {
-//   margin-bottom: $spacing;
-// }
+.form__group {
+  margin-bottom: $spacing-l;
+}
 
-// .form__item {
-//   display: inline-block;
-//   border: 2px solid $color-dusty-pink;
-//   line-height: 2.3;
-//   min-width: 100px;
-//   text-align: center;
-//   margin-right: 1rem;
+.form__error-message {
+  color: $color-red;
+}
 
-//   &:last-of-type {
-//     margin-right: 0;
-//   }
-// }
+.form__item {
+  display: inline-block;
+  border: 2px solid $color-dusty-pink;
+  line-height: 2.3;
+  min-width: 100px;
+  text-align: center;
+  margin-right: 1rem;
 
-// .form__item.true {
-//   background-color: $color-dusty-peach;
-// }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
 
-// .form__item--radio,
-// .form__item--checkbox {
-//   line-height: 3;
-//   margin-right: 0;
-//   border-left: 1px solid $color-black;
-//   border-top: 1px solid $color-black;
-//   border-bottom: 1px solid $color-black;
-//   border-right: 0;
-//   &:last-of-type {
-//     border-right: 1px solid $color-black;
-//     border-radius: 0 5px 5px 0;
-//   }
-//   &:first-of-type {
-//     border-radius: 5px 0 0 5px;
-//   }
-// }
+.form__item.true {
+  background-color: $color-dusty-peach;
+}
 
-// .form__group--stacked {
-//   .form__item {
-//     display: block;
-//   }
-// }
+.form__item--radio,
+.form__item--checkbox {
+  line-height: 3;
+  margin-right: 0;
+  border-left: 1px solid $color-black;
+  border-top: 1px solid $color-black;
+  border-bottom: 1px solid $color-black;
+  border-right: 0;
+  &:last-of-type {
+    border-right: 1px solid $color-black;
+    border-radius: 0 5px 5px 0;
+  }
+  &:first-of-type {
+    border-radius: 5px 0 0 5px;
+  }
+}
 
-// .form__label {
-//   display: inline-block;
-//   padding: 0 0.75rem;
-// }
+.form__group--stacked {
+  .form__item {
+    display: block;
+  }
+}
 
-// .form__input {
-//   margin-right: $spacing-xs;
-// }
+.form__label {
+  display: inline-block;
+  padding: 0 0.75rem;
+}
+
+.form__input {
+  margin-right: $spacing-xs;
+}

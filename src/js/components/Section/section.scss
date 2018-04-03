@@ -2,8 +2,8 @@
 @import '../../../common/settings/settings';
 
 .section {
-  padding: $spacing-l;
+  padding: $spacing;
   @include large {
-    padding: $spacing-xl;
+    padding: $spacing-l;
   }
 }
