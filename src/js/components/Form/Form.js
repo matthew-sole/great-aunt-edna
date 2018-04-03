@@ -7,7 +7,6 @@ const Form = (props) => {
         values,
         handleSubmit,
         handleChange,
-        handleBlur,
         errors,
         touched
     } = props;
@@ -28,7 +27,6 @@ const Form = (props) => {
                         checked={values["weddingRsvp"] === "yes"}
                         name="weddingRsvp"
                         onChange={handleChange}
-                        onBlur={handleBlur}
                     />
                     <FormField 
                         labelName="No" 
@@ -38,7 +36,6 @@ const Form = (props) => {
                         name="weddingRsvp"
                         checked={values["weddingRsvp"] === "no"}
                         onChange={handleChange}
-                        onBlur={handleBlur}
                     />
                     {errors.weddingRsvp &&
                     touched.weddingRsvp && (

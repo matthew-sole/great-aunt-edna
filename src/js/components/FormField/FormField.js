@@ -9,7 +9,6 @@ const FormField = props => {
         name,
         checked,
         onChange,
-        onBlur    
     } = props;
     return(
         <div className={`form__item form__item--${type} ${checked}`}>
@@ -21,7 +20,6 @@ const FormField = props => {
                     name={name}
                     checked={checked}
                     onChange={onChange}
-                    onBlur={onBlur}
                 />
                 {labelName}
             </label>
