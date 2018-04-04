@@ -1,5 +1,6 @@
 import React from 'react';
 import FormField from '../FormField/FormField';
+import classNames from 'classnames';
 import './form.css';
 
 const Form = (props) => {
@@ -7,7 +8,8 @@ const Form = (props) => {
         values,
         handleSubmit,
         handleChange,
-        errors
+        errors,
+        touched
     } = props;
     return(
         <div>
@@ -16,7 +18,7 @@ const Form = (props) => {
             <form onSubmit={handleSubmit}>
                 {/* TODO - check if that way of doing the classes are right */}
                 {/* TODO - can this be refactored */}
-                <div className={"form__group" + (errors.weddingRsvp ? ' form__group--error' : '')}>
+                <div className={classNames('form__group', {'form__group--error': errors.weddingRsvp})}>
                     <h4 className="form__header">Will you be able to make it to the big day?</h4>
                     <FormField 
                         labelName="Yes" 
@@ -36,13 +38,14 @@ const Form = (props) => {
                         checked={values["weddingRsvp"] === "no"}
                         onChange={handleChange}
                     />
-                    {errors.weddingRsvp && (
+                    {errors.weddingRsvp &&
+                    touched.weddingRsvp && (
                         <div className="form__error-message">{errors.weddingRsvp}</div>
                     )}
                 </div>
 
                 { values["weddingRsvp"] === "yes" &&
-                    <div className={"form__group" + (errors.weddingRsvpMultiGuest ? ' form__group--error' : '')}>
+                    <div className={classNames('form__group', {'form__group--error': errors.weddingRsvpMultiGuest})}>
                         <h4 className="form__header">Who will be able to make it?</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -80,13 +83,14 @@ const Form = (props) => {
                             checked={values["weddingRsvpMultiGuest"] && values["weddingRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
-                        {errors.weddingRsvpMultiGuest &&(
+                        {errors.weddingRsvpMultiGuest &&
+                        touched.weddingRsvpMultiGuest && (
                             <div className="form__error-message">{errors.weddingRsvpMultiGuest}</div>
                         )}
                     </div>
                 }
 
-                <div className="form__group">
+                <div className={classNames('form__group', {'form__group--error': errors.bbqRsvp})}>
                     <h4 className="form__header">Will you be able to make it to the next day event?</h4>
                     <FormField 
                         labelName="Yes" 
@@ -106,13 +110,14 @@ const Form = (props) => {
                         checked={values["bbqRsvp"] === "no"}
                         onChange={handleChange}
                     />
-                    {errors.bbqRsvp && (
+                    {errors.bbqRsvp &&
+                    touched.bbqRsvp && (
                         <div className="form__error-message">{errors.bbqRsvp}</div>
                     )}
                 </div>
 
                 { values["bbqRsvp"] === "yes" &&
-                    <div className="form__group">
+                    <div className={classNames('form__group', {'form__group--error': errors.bbqRsvpMultiGuest})}>
                         <h4 className="form__header">Who will be able to make it? (2+ people)</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -150,13 +155,14 @@ const Form = (props) => {
                             checked={values["bbqRsvpMultiGuest"] && values["bbqRsvpMultiGuest"][3]}
                             onChange={handleChange}
                         />
-                        {errors.bbqRsvpMultiGuest && (
+                        {errors.bbqRsvpMultiGuest && 
+                        touched.bbqRsvpMultiGuest && (
                             <div className="form__error-message">{errors.bbqRsvpMultiGuest}</div>
                         )}
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") &&
-                    <div className="form__group">
+                    <div className={classNames('form__group', {'form__group--error': errors.diet})}>
                         <h4 className="form__header">Does anyone have any dietry requirements</h4>
                         <FormField 
                             labelName="Yes" 
@@ -176,13 +182,14 @@ const Form = (props) => {
                             checked={values["diet"] === "no"}
                             onChange={handleChange}
                         />
-                        {errors.diet && (
+                        {errors.diet && 
+                        touched.diet &&(
                             <div className="form__error-message">{errors.diet}</div>
                         )}
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") && (values["diet"] === "yes") &&
-                    <div className="form__group form__group--stacked">
+                    <div className={classNames('form__group', 'form__group--stacked', {'form__group--error': errors.diet})}>
                         <h4 className="form__header">Who has dietry requirements</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -203,7 +210,8 @@ const Form = (props) => {
                                 name="johnDoeDiet"
                             />
                         }
-                        {errors.johnDoeDiet && (
+                        {errors.johnDoeDiet && 
+                        touched.johnDoeDiet && (
                             <div className="form__error-message">{errors.johnDoeDiet}</div>
                         )}
                         <FormField 
@@ -263,13 +271,14 @@ const Form = (props) => {
                                 name="janieDoeDiet"
                             />
                         }
-                        {errors.dietMulti && (
+                        {errors.dietMulti && 
+                        touched.dietMulti &&(
                             <div className="form__error-message">{errors.dietMulti}</div>
                         )}
                     </div>
                 }
 
-                <div className="form__group">
+                <div className={classNames('form__group', {'form__group--error': errors.nominatedLeader})}>
                     <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
                     <FormField 
                         labelName="John Doe" 
@@ -307,39 +316,58 @@ const Form = (props) => {
                         checked={values["nominatedLeader"] === "leader-janie"}
                         onChange={handleChange}
                     />
-                    {errors.nominatedLeader && (
+                    {errors.nominatedLeader && 
+                    touched.nominatedLeader && (
                             <div className="form__error-message">{errors.nominatedLeader}</div>
                         )}
                 </div>
-                <div className="form__group">
+                <div className='form__group'>
                     <h4 className="form__header">Please provide contact details for that person</h4>
-                    <FormField 
-                        labelName="Address" 
-                        type="text" 
-                        id="address" 
-                        onChange={handleChange}
-                        value={values.address} 
-                        name="address"
-                        errors={errors.address}
-                    />
-                    <FormField 
-                        labelName="Contact number" 
-                        type="text" 
-                        id="phone" 
-                        onChange={handleChange}
-                        value={values.phone} 
-                        name="phone"
-                        errors={errors.phone}
-                    />
-                    <FormField 
-                        labelName="Email" 
-                        type="text" 
-                        id="email" 
-                        onChange={handleChange}
-                        value={values.email} 
-                        name="email"
-                        errors={errors.email}
-                    />
+                    <div>
+                        <FormField 
+                            labelName="Address" 
+                            type="text" 
+                            id="address" 
+                            onChange={handleChange}
+                            value={values.address} 
+                            name="address"
+                            errors={errors.address}
+                        />
+                        {errors.address && 
+                        touched.address && (
+                            <div className="form__error-message">{errors.address}</div>
+                        )}
+                    </div>
+                    <div>
+                        <FormField 
+                            labelName="Contact number" 
+                            type="text" 
+                            id="phone" 
+                            onChange={handleChange}
+                            value={values.phone} 
+                            name="phone"
+                            errors={errors.phone}
+                        />
+                        {errors.phone && 
+                        touched.phone && (
+                            <div className="form__error-message">{errors.phone}</div>
+                        )}
+                    </div>
+                    <div>
+                        <FormField 
+                            labelName="Email" 
+                            type="text" 
+                            id="email" 
+                            onChange={handleChange}
+                            value={values.email} 
+                            name="email"
+                            errors={errors.email}
+                        />
+                        {errors.email && 
+                        touched.email && (
+                            <div className="form__error-message">{errors.email}</div>
+                        )}
+                    </div>
                 </div>
                 <div>
                     <button type="submit">Submit</button>

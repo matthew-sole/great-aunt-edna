@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Form from '../Form/Form.container'
-import Header from '../Header/Header';
 import Section from '../Section/Section'
 
 import './content.css'
@@ -14,7 +13,7 @@ export default function() {
                     <Form />
                 </Section>
 
-                <Section noTop>
+                {/* <Section noTop>
                     <h2>Location</h2>
                     <p>The ceremony and wedding will all take place at the The Boatshed on the Wellington waterfront.</p>
                     <p>There is no parking on site at the venue, but there should be some free weekend parking spots nearby and around the city (time restrictions may apply). </p>
@@ -36,7 +35,7 @@ export default function() {
                         <p>Ben McKeown - Groomsman</p>
                         <p>Matthew Lister - Groomsman</p>
                     </div>
-                </Section>
+                </Section> */}
             </div>
         </div>
     );
