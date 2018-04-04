@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const FormField = props => {
     const {
@@ -10,8 +11,12 @@ const FormField = props => {
         checked,
         onChange,
     } = props;
+
+    const classes = classNames('form__item', {
+        'form__item--active': checked,
+    })
     return(
-        <div className={`form__item form__item--${type} ${checked}`}>
+        <div className={classes}>
             <label className="form__label" htmlFor={id}>
                 <input className={`form__input ${type}`} 
                     value={value || ''}
