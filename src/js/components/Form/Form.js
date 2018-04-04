@@ -17,7 +17,7 @@ const Form = (props) => {
             <form onSubmit={handleSubmit}>
                 {/* TODO - check if that way of doing the classes are right */}
                 {/* TODO - can this be refactored */}
-                <div className={"form__group" + (errors.weddingRsvp ? ' form__group--error' : '')}>
+                <div className={"form__group-radio" + (errors.weddingRsvp ? ' form__group--error' : '')}>
                     <h4 className="form__header">Will you be able to make it to the big day?</h4>
                     <FormField 
                         labelName="Yes" 
@@ -44,7 +44,7 @@ const Form = (props) => {
                 </div>
 
                 { values["weddingRsvp"] === "yes" &&
-                    <div className={"form__group" + (errors.weddingRsvpMultiGuest ? ' form__group--error' : '')}>
+                    <div className={"form__group-checkbox" + (errors.weddingRsvpMultiGuest ? ' form__group--error' : '')}>
                         <h4 className="form__header">Who will be able to make it?</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -89,7 +89,7 @@ const Form = (props) => {
                     </div>
                 }
 
-                <div className="form__group">
+                <div className="form__group-radio">
                     <h4 className="form__header">Will you be able to make it to the next day event?</h4>
                     <FormField 
                         labelName="Yes" 
@@ -116,7 +116,7 @@ const Form = (props) => {
                 </div>
 
                 { values["bbqRsvp"] === "yes" &&
-                    <div className="form__group">
+                    <div className="form__group-checkbox">
                         <h4 className="form__header">Who will be able to make it? (2+ people)</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -161,7 +161,7 @@ const Form = (props) => {
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") &&
-                    <div className="form__group">
+                    <div className="form__group-radio">
                         <h4 className="form__header">Does anyone have any dietry requirements</h4>
                         <FormField 
                             labelName="Yes" 
@@ -188,7 +188,7 @@ const Form = (props) => {
                     </div>
                 }
                 { (values["weddingRsvp"] === "yes" || values["bbqRsvp"] === "yes") && (values["diet"] === "yes") &&
-                    <div className="form__group form__group--stacked">
+                    <div className="form__group-checkbox--stacked">
                         <h4 className="form__header">Who has dietry requirements</h4>
                         <FormField 
                             labelName="John Doe" 
@@ -277,7 +277,7 @@ const Form = (props) => {
                     </div>
                 }
 
-                <div className="form__group">
+                <div className="form__group-checkbox">
                     <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
                     <FormField 
                         labelName="John Doe" 
@@ -320,7 +320,7 @@ const Form = (props) => {
                             <div className="form__error-message">{errors.nominatedLeader}</div>
                         )}
                 </div>
-                <div className="form__group">
+                <div className="form__group-text">
                     <h4 className="form__header">Please provide contact details for that person</h4>
                     <div>
                         <FormField 

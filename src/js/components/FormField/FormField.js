@@ -11,7 +11,7 @@ const FormField = props => {
         onChange,
     } = props;
     return(
-        <div className={`form__item form__item--${type} ${checked}`}>
+        <div className={`form__item ${checked}`}>
             <label className="form__label" htmlFor={id}>
                 <input className={`form__input ${type}`} 
                     value={value || ''}
