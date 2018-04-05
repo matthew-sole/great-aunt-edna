@@ -1,59 +1,58 @@
 @import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
-// .form__group {
-//   margin-bottom: $spacing-l;
-// }
-
 .form__error-message {
   color: $color-red;
 }
 
-// .form__item {
-//   display: inline-block;
-//   border: 2px solid $color-dusty-pink;
-//   line-height: 2.3;
-//   min-width: 100px;
-//   text-align: center;
-//   margin-right: 1rem;
+.form__item {
+  display: inline-block;
+  line-height: 2.3;
+  min-width: 100px;
+  text-align: center;
+  margin-right: 1rem;
 
-//   &:last-of-type {
-//     margin-right: 0;
-//   }
-// }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
 
-// .form__item.true {
-//   background-color: $color-dusty-peach;
-// }
+.form__item.true {
+  background-color: $color-dusty-peach;
+}
 
-// .form__item--radio,
-// .form__item--checkbox {
-//   line-height: 3;
-//   margin-right: 0;
-//   border-left: 1px solid $color-black;
-//   border-top: 1px solid $color-black;
-//   border-bottom: 1px solid $color-black;
-//   border-right: 0;
-//   &:last-of-type {
-//     border-right: 1px solid $color-black;
-//     border-radius: 0 5px 5px 0;
-//   }
-//   &:first-of-type {
-//     border-radius: 5px 0 0 5px;
-//   }
-// }
+.form__group-radio,
+.form__group-checkbox {
+  .form__item {
+    line-height: 3;
+    margin-right: 0;
+    border-left: 1px solid $color-black;
+    border-top: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    border-right: 0;
 
-// .form__group--stacked {
-//   .form__item {
-//     display: block;
-//   }
-// }
+    &:last-of-type {
+      border-right: 1px solid $color-black;
+      border-radius: 0 5px 5px 0;
+    }
 
-// .form__label {
-//   display: inline-block;
-//   padding: 0 0.75rem;
-// }
+    &:first-of-type {
+      border-radius: 5px 0 0 5px;
+    }
 
-// .form__input {
-//   margin-right: $spacing-xs;
-// }
+    .form__label {
+      display: inline-block;
+      padding: 0 0.75rem;
+    }
+
+    .form__input {
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+.form__group-checkbox--stacked {
+  .form__item {
+    display: block;
+  }
+}
