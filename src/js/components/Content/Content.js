@@ -1,7 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom'
 
 import Form from '../Form/Form.container'
-import Section from '../Section/Section'
+// import Section from '../Section/Section'
 
 import './content.css'
 
@@ -9,9 +10,7 @@ export default function() {
     return (
         <div className="app">
             <div className="content">
-                <Section>
-                    <Form />
-                </Section>
+            <Route component={Form} />
 
                 {/* <Section noTop>
                     <h2>Location</h2>
