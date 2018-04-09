@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const FormField = props => {
+export default function(props) {
     const {
         labelName,
         type,
@@ -10,15 +10,17 @@ const FormField = props => {
         name,
         checked,
         onChange,
+        errors,
+        touched
     } = props;
-
-    const classes = classNames('form__item', {
+    const classes = classNames(`form__item form__item--${type}`, {
         'form__item--active': checked,
+        'form__group--error': errors && touched,
     })
     return(
-        <div className={classes}>
+        <div className={classes}> 
             <label className="form__label" htmlFor={id}>
-                <input className={`form__input ${type}`} 
+                <input className={`form__input`} 
                     value={value || ''}
                     type={type} 
                     id={id}
@@ -28,8 +30,7 @@ const FormField = props => {
                 />
                 {labelName}
             </label>
+            {(errors && touched && (<div className="form__error-message">{errors}</div>))}
         </div>
     )
 }
-
-export default FormField;
