@@ -1,0 +1,392 @@
+{
+    "phillips": {
+        "id": "",
+        "displayName": "Barb &amp; Warwick",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Barbara Phillips",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Warwick Phillips",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Erin Phillips",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Linda Phillips",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Nana Snakes",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "lisa-bastik": {
+        "id": "",
+        "displayName": "Lisa Bastik",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "rob-campbell": {
+        "id": "",
+        "displayName": "Robert Campbell",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "sexton": {
+        "id": "",
+        "displayName": "Steve & Jo Sexton",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Jo Sexton",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Steve Sexton",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "diamond": {
+        "id": "",
+        "displayName": "Andrea & Michael Diamond",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Andrea Diamond",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Michael Diamond",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "sundgren": {
+        "id": "",
+        "displayName": "Gary Sundgren & Jodi Olsen",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Gary Sundgren",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Jodi Olsen",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "matthews": {
+        "id": "",
+        "displayName": "Missy & Dave Matthews",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Missy Matthews",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Dave Matthews",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "taylor": {
+        "id": "",
+        "displayName": "Sally & Kirk Taylor",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Sally Taylor",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Kirk Taylor",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "charlotte-griffin": {
+        "id": "",
+        "displayName": "Charlotte Griffin",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "ellie-kelman": {
+        "id": "",
+        "displayName": "Ellie Kelman",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "gough": {
+        "id": "",
+        "displayName": "Anneke & Dan",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Anneke Gough",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Dan TODO",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "churchill": {
+        "id": "",
+        "displayName": "Josh & Ali",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Ali Churchill",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Josh Whittiker",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "james": {
+        "id": "",
+        "displayName": "Leonie & Marty",
+        "group": {
+            "members": [
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Leonie James",
+                    "nominatedLeader": false
+                },
+                {
+                    "bbqRsvp": false,
+                    "weddingRsvp": false,
+                    "diet": false,
+                    "dietRequirement": "",
+                    "weddingGuest": "Martin Yeatman",
+                    "nominatedLeader": false
+                }
+            ]
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "debra-buckingham": {
+        "id": "",
+        "displayName": "Debra Buckingham",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "hannah-mcclintock": {
+        "id": "",
+        "displayName": "Hannah McClintock",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    },
+    "geri-harvey": {
+        "id": "",
+        "displayName": "Geri Harvey",
+        "single": {
+            "bbqRsvp": false,
+            "weddingRsvp": false,
+            "diet": false,
+            "dietRequirement": ""
+        },
+        "contactDetails": {
+            "address": "",
+            "email": "",
+            "phone": ""
+        }
+    }
+}
