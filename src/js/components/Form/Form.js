@@ -6,11 +6,10 @@ import classNames from 'classnames';
 import './form.css';
 
 const Form = props => {
-    const { values, handleSubmit, handleChange, errors, touched, match } = props;
+    const { values, handleSubmit, handleChange, errors, touched, data } = props;
+    console.log('data', data);
     return (
         <Section>
-            <p>{match.params.name}</p>
-            <h2>RSVP</h2>
             <p>Please let us know if you are able to make it by filling out the below form</p>
             <form onSubmit={handleSubmit}>
                 <h4 className="form__header">Will you be able to make it to the big day?</h4>

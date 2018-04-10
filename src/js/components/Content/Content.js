@@ -25,13 +25,17 @@ class Content extends Component {
 
     render() {
         const { displayName } = this.state;
+        console.log(this.state);
+        console.log('this.props.match', this.props.match);
         return (
             <div className="app">
                 <div className="content">
                     <Section>
                         <h2>Hi {displayName}</h2>
                     </Section>
-                    <Route path="/:name" component={Form} />
+                    <Route path="/:name">
+                        <Form data={this.state} />
+                    </Route>
 
                     <Section noTop>
                         <h2>Location</h2>
