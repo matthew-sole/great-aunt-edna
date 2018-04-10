@@ -24,7 +24,6 @@ class Content extends Component {
     }
 
     render() {
-        console.log(this.state);
         const { displayName } = this.state;
         return (
             <div className="app">
@@ -32,13 +31,7 @@ class Content extends Component {
                     <Section>
                         <h2>Hi {displayName}</h2>
                     </Section>
-                    <Route
-                        path="/:name"
-                        component={Form}
-                        displayName={displayName}
-                        contactDetails={this.state.contactDetails}
-                        inviteType={this.state.group ? 'group' : 'single'}
-                    />
+                    <Route path="/:name" component={Form} />
 
                     <Section noTop>
                         <h2>Location</h2>
