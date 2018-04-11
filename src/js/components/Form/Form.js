@@ -7,7 +7,6 @@ import './form.css';
 
 const Form = props => {
     const { values, handleSubmit, handleChange, errors, touched, data } = props;
-    console.log('data', data);
     return (
         <Section>
             <p>Please let us know if you are able to make it by filling out the below form</p>
@@ -36,57 +35,42 @@ const Form = props => {
                 {errors.weddingRsvp &&
                     touched.weddingRsvp && <div className="form__error-message">{errors.weddingRsvp}</div>}
 
-                {values['weddingRsvp'] === 'yes' && (
-                    <div>
-                        <h4 className="form__header">Who will be able to make it?</h4>
-                        <div
-                            className={classNames('form__group form__group--checkbox', {
-                                'form__group--error': errors.weddingRsvpMultiGuest && touched.weddingRsvpMultiGuest,
-                            })}
-                        >
-                            <FormField
-                                labelName="John Doe"
-                                type="checkbox"
-                                id="weddingGuest-1"
-                                value="john-doe"
-                                name="weddingRsvpMultiGuest.0"
-                                checked={values['weddingRsvpMultiGuest'] && values['weddingRsvpMultiGuest'][0]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jane Doe"
-                                type="checkbox"
-                                id="weddingGuest-2"
-                                value="jane-doe"
-                                name="weddingRsvpMultiGuest.1"
-                                checked={values['weddingRsvpMultiGuest'] && values['weddingRsvpMultiGuest'][1]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jack Doe"
-                                type="checkbox"
-                                id="weddingGuest-3"
-                                value="jack-doe"
-                                name="weddingRsvpMultiGuest.2"
-                                checked={values['weddingRsvpMultiGuest'] && values['weddingRsvpMultiGuest'][2]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Janie Doe"
-                                type="checkbox"
-                                id="weddingGuest-4"
-                                value="janie-doe"
-                                name="weddingRsvpMultiGuest.3"
-                                checked={values['weddingRsvpMultiGuest'] && values['weddingRsvpMultiGuest'][3]}
-                                onChange={handleChange}
-                            />
-                            {errors.weddingRsvpMultiGuest &&
-                                touched.weddingRsvpMultiGuest && (
-                                    <div className="form__error-message">{errors.weddingRsvpMultiGuest}</div>
-                                )}
+                {data.members &&
+                    data.members.length > 1 &&
+                    values['weddingRsvp'] === 'yes' && (
+                        <div>
+                            <h4 className="form__header">Who will be able to make it?</h4>
+                            <div
+                                className={classNames('form__group form__group--checkbox', {
+                                    'form__group--error': errors.weddingRsvpMultiGuest && touched.weddingRsvpMultiGuest,
+                                })}
+                            >
+                                {data.members.map((item, index) => {
+                                    const value = item.guestName.replace(' ', '-').toLowerCase();
+                                    return (
+                                        <FormField
+                                            id={`weddingRsvpMultiGuest.${value}`}
+                                            key={`${value}.${index}`}
+                                            labelName={item.guestName}
+                                            type="checkbox"
+                                            value={value}
+                                            name={`weddingRsvpMultiGuest.${index}`}
+                                            defaultChecked={
+                                                values['weddingRsvpMultiGuest'] &&
+                                                values['weddingRsvpMultiGuest'][index]
+                                            }
+                                            onChange={handleChange}
+                                        />
+                                    );
+                                })}
+
+                                {errors.weddingRsvpMultiGuest &&
+                                    touched.weddingRsvpMultiGuest && (
+                                        <div className="form__error-message">{errors.weddingRsvpMultiGuest}</div>
+                                    )}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
                 <h4 className="form__header">Will you be able to make it to the next day event?</h4>
                 <div
@@ -115,57 +99,40 @@ const Form = props => {
                     {errors.bbqRsvp && touched.bbqRsvp && <div className="form__error-message">{errors.bbqRsvp}</div>}
                 </div>
 
-                {values['bbqRsvp'] === 'yes' && (
-                    <div>
-                        <h4 className="form__header">Who will be able to make it? (2+ people)</h4>
-                        <div
-                            className={classNames('form__group form__group--checkbox', {
-                                'form__group--error': errors.bbqRsvpMultiGuest && touched.bbqRsvpMultiGuest,
-                            })}
-                        >
-                            <FormField
-                                labelName="John Doe"
-                                type="checkbox"
-                                id="bbq-guest-1"
-                                value="john-doe"
-                                name="bbqRsvpMultiGuest.0"
-                                checked={values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][0]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jane Doe"
-                                type="checkbox"
-                                id="bbq-guest-2"
-                                value="jane-doe"
-                                name="bbqRsvpMultiGuest.1"
-                                checked={values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][1]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jack Doe"
-                                type="checkbox"
-                                id="bbq-guest-3"
-                                value="jack-doe"
-                                name="bbqRsvpMultiGuest.2"
-                                checked={values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][2]}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Janie Doe"
-                                type="checkbox"
-                                id="bbq-guest-4"
-                                value="janie-doe"
-                                name="bbqRsvpMultiGuest.3"
-                                checked={values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][3]}
-                                onChange={handleChange}
-                            />
-                            {errors.bbqRsvpMultiGuest &&
-                                touched.bbqRsvpMultiGuest && (
-                                    <div className="form__error-message">{errors.bbqRsvpMultiGuest}</div>
-                                )}
+                {data.members &&
+                    data.members.length > 1 &&
+                    values['bbqRsvp'] === 'yes' && (
+                        <div>
+                            <h4 className="form__header">Who will be able to make it?</h4>
+                            <div
+                                className={classNames('form__group form__group--checkbox', {
+                                    'form__group--error': errors.bbqRsvpMultiGuest && touched.bbqRsvpMultiGuest,
+                                })}
+                            >
+                                {data.members.map((item, index) => {
+                                    const value = item.guestName.replace(' ', '-').toLowerCase();
+                                    return (
+                                        <FormField
+                                            id={`bbqRsvpMultiGuest.${value}`}
+                                            key={`${value}.${index}`}
+                                            labelName={item.guestName}
+                                            type="checkbox"
+                                            value={value}
+                                            name={`bbqRsvpMultiGuest.${index}`}
+                                            defaultChecked={
+                                                values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][index]
+                                            }
+                                            onChange={handleChange}
+                                        />
+                                    );
+                                })}
+                                {errors.bbqRsvpMultiGuest &&
+                                    touched.bbqRsvpMultiGuest && (
+                                        <div className="form__error-message">{errors.bbqRsvpMultiGuest}</div>
+                                    )}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
                 {(values['weddingRsvp'] === 'yes' || values['bbqRsvp'] === 'yes') && (
                     <div>
@@ -197,7 +164,9 @@ const Form = props => {
                         </div>
                     </div>
                 )}
-                {(values['weddingRsvp'] === 'yes' || values['bbqRsvp'] === 'yes') &&
+                {data.members &&
+                    data.members.length > 1 &&
+                    (values['weddingRsvp'] === 'yes' || values['bbqRsvp'] === 'yes') &&
                     values['diet'] === 'yes' && (
                         <div>
                             <h4 className="form__header">Who has dietry requirements</h4>
@@ -303,51 +272,56 @@ const Form = props => {
                             </div>
                         </div>
                     )}
-                <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
-                <div
-                    className={classNames('form__group form__group--checkbox', {
-                        'form__group--error': errors.nominatedLeader && touched.nominatedLeader,
-                    })}
-                >
-                    <FormField
-                        labelName="John Doe"
-                        type="radio"
-                        id="leader-guest-1"
-                        value="leader-john"
-                        name="nominatedLeader"
-                        checked={values['nominatedLeader'] === 'leader-john'}
-                        onChange={handleChange}
-                    />
-                    <FormField
-                        labelName="Jane Doe"
-                        type="radio"
-                        id="leader-guest-2"
-                        value="leader-jane"
-                        name="nominatedLeader"
-                        checked={values['nominatedLeader'] === 'leader-jane'}
-                        onChange={handleChange}
-                    />
-                    <FormField
-                        labelName="Jack Doe"
-                        type="radio"
-                        id="leader-guest-3"
-                        value="leader-jack"
-                        name="nominatedLeader"
-                        checked={values['nominatedLeader'] === 'leader-jack'}
-                        onChange={handleChange}
-                    />
-                    <FormField
-                        labelName="Janie Doe"
-                        type="radio"
-                        id="leader-guest-4"
-                        value="leader-janie"
-                        name="nominatedLeader"
-                        checked={values['nominatedLeader'] === 'leader-janie'}
-                        onChange={handleChange}
-                    />
-                    {errors.nominatedLeader &&
-                        touched.nominatedLeader && <div className="form__error-message">{errors.nominatedLeader}</div>}
-                </div>
+                {data.members &&
+                    data.members.length > 1 && (
+                        <div
+                            className={classNames('form__group form__group--checkbox', {
+                                'form__group--error': errors.nominatedLeader && touched.nominatedLeader,
+                            })}
+                        >
+                            <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
+                            <FormField
+                                labelName="John Doe"
+                                type="radio"
+                                id="leader-guest-1"
+                                value="leader-john"
+                                name="nominatedLeader"
+                                checked={values['nominatedLeader'] === 'leader-john'}
+                                onChange={handleChange}
+                            />
+                            <FormField
+                                labelName="Jane Doe"
+                                type="radio"
+                                id="leader-guest-2"
+                                value="leader-jane"
+                                name="nominatedLeader"
+                                checked={values['nominatedLeader'] === 'leader-jane'}
+                                onChange={handleChange}
+                            />
+                            <FormField
+                                labelName="Jack Doe"
+                                type="radio"
+                                id="leader-guest-3"
+                                value="leader-jack"
+                                name="nominatedLeader"
+                                checked={values['nominatedLeader'] === 'leader-jack'}
+                                onChange={handleChange}
+                            />
+                            <FormField
+                                labelName="Janie Doe"
+                                type="radio"
+                                id="leader-guest-4"
+                                value="leader-janie"
+                                name="nominatedLeader"
+                                checked={values['nominatedLeader'] === 'leader-janie'}
+                                onChange={handleChange}
+                            />
+                            {errors.nominatedLeader &&
+                                touched.nominatedLeader && (
+                                    <div className="form__error-message">{errors.nominatedLeader}</div>
+                                )}
+                        </div>
+                    )}
                 <h4 className="form__header">Please provide contact details for that person</h4>
                 <div className="form__group form__group-text">
                     <div className="form__group-item">

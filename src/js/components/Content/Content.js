@@ -17,7 +17,6 @@ class Content extends Component {
         const name = this.props.match.params.name;
         if (name) {
             axios.get(`https://great-aunt-edna.firebaseio.com/${name}.json`).then(response => {
-                console.log(response);
                 this.setState(response.data);
             });
         }
@@ -25,8 +24,6 @@ class Content extends Component {
 
     render() {
         const { displayName } = this.state;
-        console.log(this.state);
-        console.log('this.props.match', this.props.match);
         return (
             <div className="app">
                 <div className="content">
