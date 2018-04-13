@@ -9,7 +9,6 @@ export default withFormik({
         bbqRsvpMultiGuest: '',
         diet: '',
         dietMulti: '',
-        dietRequirement: [],
         johnDoeDiet: '',
         nominatedLeader: '',
         address: '',
