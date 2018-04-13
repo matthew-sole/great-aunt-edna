@@ -175,100 +175,39 @@ const Form = props => {
                                     'form__group--error': errors.diet && touched.diet,
                                 })}
                             >
-                                <div className="form__group-stacked-item">
-                                    <FormField
-                                        labelName="John Doe"
-                                        type="checkbox"
-                                        id="dietMultiguest-1"
-                                        value="john-doe"
-                                        name="dietMulti.0"
-                                        checked={values['dietMulti'] && values['dietMulti'][0]}
-                                        onChange={handleChange}
-                                    />
-                                    {values['dietMulti'] &&
-                                        values['dietMulti'][0] && (
-                                            <FormFieldText
-                                                placeholder="Please enter requirement"
-                                                type="text"
-                                                id="johnDoeDiet"
+                                {data.members.map((item, index) => {
+                                    const value = item.guestName.replace(' ', '-').toLowerCase();
+                                    return (
+                                        <div key={`${value}.${index}`}>
+                                            <FormField
+                                                id={`dietMulti.${value}`}
+                                                labelName={item.guestName}
+                                                type="checkbox"
+                                                value={value}
+                                                name={`dietMulti.${index}`}
+                                                defaultChecked={values['dietMulti'] && values['dietMulti'][index]}
                                                 onChange={handleChange}
-                                                value={values.johnDoeDiet}
-                                                name="johnDoeDiet"
-                                                errors={errors.johnDoeDiet}
-                                                touched={touched.johnDoeDiet}
                                             />
-                                        )}
-                                </div>
-                                <div className="form__group-stacked-item">
-                                    <FormField
-                                        labelName="Jane Doe"
-                                        type="checkbox"
-                                        id="dietMultiguest-2"
-                                        value="jane-doe"
-                                        name="dietMulti.1"
-                                        checked={values['dietMulti'] && values['dietMulti'][1]}
-                                        onChange={handleChange}
-                                    />
-                                    {values['dietMulti'] &&
-                                        values['dietMulti'][1] && (
-                                            <FormFieldText
-                                                placeholder="Please enter requirement"
-                                                type="text"
-                                                id="janeDoeDiet"
-                                                onChange={handleChange}
-                                                value={values.janeDoeDiet}
-                                                name="janeDoeDiet"
-                                            />
-                                        )}
-                                </div>
-                                <div className="form__group-stacked-item">
-                                    <FormField
-                                        labelName="Jack Doe"
-                                        type="checkbox"
-                                        id="dietMultiguest-3"
-                                        value="jack-doe"
-                                        name="dietMulti.2"
-                                        checked={values['dietMulti'] && values['dietMulti'][2]}
-                                        onChange={handleChange}
-                                    />
-                                    {values['dietMulti'] &&
-                                        values['dietMulti'][2] && (
-                                            <FormFieldText
-                                                placeholder="Please enter requirement"
-                                                type="text"
-                                                id="jackDoeDiet"
-                                                onChange={handleChange}
-                                                value={values.jackDoeDiet}
-                                                name="jackDoeDiet"
-                                            />
-                                        )}
-                                </div>
-                                <div className="form__group-stacked-item">
-                                    <FormField
-                                        labelName="Janie Doe"
-                                        type="checkbox"
-                                        id="dietMultiguest-4"
-                                        value="janie-doe"
-                                        name="dietMulti.3"
-                                        checked={values['dietMulti'] && values['dietMulti'][3]}
-                                        onChange={handleChange}
-                                    />
-                                    {values['dietMulti'] &&
-                                        values['dietMulti'][3] && (
-                                            <FormFieldText
-                                                placeholder="Please enter requirement"
-                                                type="text"
-                                                id="janieDoeDiet"
-                                                onChange={handleChange}
-                                                value={values.janieDoeDiet}
-                                                name="janieDoeDiet"
-                                            />
-                                        )}
-                                    {errors.dietMulti &&
-                                        touched.dietMulti && (
-                                            <div className="form__error-message">{errors.dietMulti}</div>
-                                        )}
-                                </div>
+                                            {values['dietMulti'] &&
+                                                values['dietMulti'][index] && (
+                                                    <FormFieldText
+                                                        placeholder="Please enter requirement"
+                                                        key={`dietRequirement.${value}.${index}`}
+                                                        type="text"
+                                                        id={`dietRequirement.${value}`}
+                                                        onChange={handleChange}
+                                                        value={values.dietRequirement[index]}
+                                                        name={`dietRequirement.${index}`}
+                                                        errors={errors.dietRequirement}
+                                                        touched={touched.dietRequirement}
+                                                    />
+                                                )}
+                                        </div>
+                                    );
+                                })}
+
+                                {errors.dietMulti &&
+                                    touched.dietMulti && <div className="form__error-message">{errors.dietMulti}</div>}
                             </div>
                         </div>
                     )}
@@ -280,42 +219,21 @@ const Form = props => {
                             })}
                         >
                             <h4 className="form__header">Please choose a group leader we can contact if we need to</h4>
-                            <FormField
-                                labelName="John Doe"
-                                type="radio"
-                                id="leader-guest-1"
-                                value="leader-john"
-                                name="nominatedLeader"
-                                checked={values['nominatedLeader'] === 'leader-john'}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jane Doe"
-                                type="radio"
-                                id="leader-guest-2"
-                                value="leader-jane"
-                                name="nominatedLeader"
-                                checked={values['nominatedLeader'] === 'leader-jane'}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Jack Doe"
-                                type="radio"
-                                id="leader-guest-3"
-                                value="leader-jack"
-                                name="nominatedLeader"
-                                checked={values['nominatedLeader'] === 'leader-jack'}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                labelName="Janie Doe"
-                                type="radio"
-                                id="leader-guest-4"
-                                value="leader-janie"
-                                name="nominatedLeader"
-                                checked={values['nominatedLeader'] === 'leader-janie'}
-                                onChange={handleChange}
-                            />
+                            {data.members.map((item, index) => {
+                                const value = item.guestName.replace(' ', '-').toLowerCase();
+                                return (
+                                    <FormField
+                                        id={`nominatedLeader.${value}`}
+                                        key={`${value}.${index}`}
+                                        labelName={item.guestName}
+                                        type="radio"
+                                        value={value}
+                                        name="nominatedLeader"
+                                        defaultChecked={values['nominatedLeader'] === value}
+                                        onChange={handleChange}
+                                    />
+                                );
+                            })}
                             {errors.nominatedLeader &&
                                 touched.nominatedLeader && (
                                     <div className="form__error-message">{errors.nominatedLeader}</div>

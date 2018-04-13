@@ -9,6 +9,7 @@ export default withFormik({
         bbqRsvpMultiGuest: '',
         diet: '',
         dietMulti: '',
+        dietRequirement: [],
         johnDoeDiet: '',
         nominatedLeader: '',
         address: '',
@@ -58,6 +59,6 @@ export default withFormik({
     // },
 
     handleSubmit: values => {
-        console.log('values', values);
+        console.log(values);
     },
 })(Form);
