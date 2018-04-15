@@ -14,6 +14,7 @@ export default withFormik({
         address: '',
         phone: '',
         email: '',
+        dietRequirement: [],
     }),
 
     // validate: values => {
