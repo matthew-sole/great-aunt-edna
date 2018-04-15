@@ -1,10 +1,10 @@
 import { withFormik } from 'formik';
-import Form from './Form';
+import FormContainer from './Form';
 
 export default withFormik({
     mapPropsToValues: () => ({
         weddingRsvp: '',
-        weddingRsvpMultiGuest: '',
+        weddingRsvpMultiGuest: [],
         bbqRsvp: '',
         bbqRsvpMultiGuest: '',
         diet: '',
@@ -61,4 +61,4 @@ export default withFormik({
     handleSubmit: values => {
         console.log(values);
     },
-})(Form);
+})(FormContainer);
