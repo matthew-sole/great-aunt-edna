@@ -8,6 +8,7 @@ import './form.css';
 
 const FormContainer = props => {
     const { values, handleChange, errors, touched, data } = props;
+    console.log(errors);
     return (
         <Section>
             <p>Please let us know if you are able to make it by filling out the below form</p>
@@ -18,7 +19,7 @@ const FormContainer = props => {
                         labelName="Yes"
                         type="radio"
                         id="rsvp-yes"
-                        value="yes"
+                        value={true}
                         defaultChecked={values.weddingRsvp}
                         name="weddingRsvp"
                         onChange={handleChange}
@@ -27,7 +28,7 @@ const FormContainer = props => {
                         labelName="No"
                         type="radio"
                         id="rsvp-no"
-                        value="no"
+                        value={false}
                         name="weddingRsvp"
                         defaultChecked={values.weddingRsvp}
                         onChange={handleChange}
@@ -38,7 +39,7 @@ const FormContainer = props => {
 
                 {data.members &&
                     data.members.length > 1 &&
-                    values['weddingRsvp'] === 'yes' && (
+                    values.weddingRsvp && (
                         <div>
                             <h4 className="form__header">Who will be able to make it?</h4>
                             <div
@@ -80,7 +81,7 @@ const FormContainer = props => {
                         labelName="Yes"
                         type="radio"
                         id="bbqRsvp-yes"
-                        value="yes"
+                        value={true}
                         name="bbqRsvp"
                         defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
@@ -89,7 +90,7 @@ const FormContainer = props => {
                         labelName="No"
                         type="radio"
                         id="bbqRsvp-no"
-                        value="no"
+                        value={false}
                         name="bbqRsvp"
                         defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
@@ -99,7 +100,7 @@ const FormContainer = props => {
 
                 {data.members &&
                     data.members.length > 1 &&
-                    values['bbqRsvp'] === 'yes' && (
+                    values.bbqRsvp && (
                         <div>
                             <h4 className="form__header">Who will be able to make it?</h4>
                             <div
@@ -130,7 +131,7 @@ const FormContainer = props => {
                         </div>
                     )}
 
-                {(values['weddingRsvp'] === 'yes' || values['bbqRsvp'] === 'yes') && (
+                {(values.weddingRsvp || values.bbqRsvp) && (
                     <div>
                         <h4 className="form__header">Does anyone have any dietry requirements</h4>
                         <div
@@ -142,7 +143,7 @@ const FormContainer = props => {
                                 labelName="Yes"
                                 type="radio"
                                 id="diet-yes"
-                                value="yes"
+                                value={true}
                                 name="diet"
                                 defaultChecked={values.diet}
                                 onChange={handleChange}
@@ -151,7 +152,7 @@ const FormContainer = props => {
                                 labelName="No"
                                 type="radio"
                                 id="diet-no"
-                                value="no"
+                                value={false}
                                 name="diet"
                                 defaultChecked={values.diet}
                                 onChange={handleChange}
@@ -162,8 +163,8 @@ const FormContainer = props => {
                 )}
                 {data.members &&
                     data.members.length > 1 &&
-                    (values['weddingRsvp'] === 'yes' || values['bbqRsvp'] === 'yes') &&
-                    values['diet'] === 'yes' && (
+                    (values.weddingRsvp || values.bbqRsvp) &&
+                    values.diet && (
                         <div>
                             <h4 className="form__header">Who has dietry requirements</h4>
                             <div
