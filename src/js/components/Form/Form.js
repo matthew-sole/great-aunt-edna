@@ -3,14 +3,15 @@ import Section from '../Section/Section';
 import FormField from './FormField/FormField';
 import FormFieldText from './FormFieldText/FormFieldText';
 import classNames from 'classnames';
+import { Form } from 'formik';
 import './form.css';
 
-const Form = props => {
-    const { values, handleSubmit, handleChange, errors, touched, data } = props;
+const FormContainer = props => {
+    const { values, handleChange, errors, touched, data } = props;
     return (
         <Section>
             <p>Please let us know if you are able to make it by filling out the below form</p>
-            <form onSubmit={handleSubmit}>
+            <Form>
                 <h4 className="form__header">Will you be able to make it to the big day?</h4>
                 <div className="form__group form__group--radio">
                     <FormField
@@ -18,7 +19,7 @@ const Form = props => {
                         type="radio"
                         id="rsvp-yes"
                         value="yes"
-                        checked={values['weddingRsvp'] === 'yes'}
+                        defaultChecked={values.weddingRsvp}
                         name="weddingRsvp"
                         onChange={handleChange}
                     />
@@ -28,7 +29,7 @@ const Form = props => {
                         id="rsvp-no"
                         value="no"
                         name="weddingRsvp"
-                        checked={values['weddingRsvp'] === 'no'}
+                        defaultChecked={values.weddingRsvp}
                         onChange={handleChange}
                     />
                 </div>
@@ -54,11 +55,8 @@ const Form = props => {
                                             labelName={item.guestName}
                                             type="checkbox"
                                             value={value}
-                                            name={`weddingRsvpMultiGuest.${index}`}
-                                            defaultChecked={
-                                                values['weddingRsvpMultiGuest'] &&
-                                                values['weddingRsvpMultiGuest'][index]
-                                            }
+                                            name="weddingRsvpMultiGuest"
+                                            defaultChecked={values.weddingRsvpMultiGuest}
                                             onChange={handleChange}
                                         />
                                     );
@@ -84,7 +82,7 @@ const Form = props => {
                         id="bbqRsvp-yes"
                         value="yes"
                         name="bbqRsvp"
-                        checked={values['bbqRsvp'] === 'yes'}
+                        defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
                     />
                     <FormField
@@ -93,7 +91,7 @@ const Form = props => {
                         id="bbqRsvp-no"
                         value="no"
                         name="bbqRsvp"
-                        checked={values['bbqRsvp'] === 'no'}
+                        defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
                     />
                     {errors.bbqRsvp && touched.bbqRsvp && <div className="form__error-message">{errors.bbqRsvp}</div>}
@@ -118,10 +116,8 @@ const Form = props => {
                                             labelName={item.guestName}
                                             type="checkbox"
                                             value={value}
-                                            name={`bbqRsvpMultiGuest.${index}`}
-                                            defaultChecked={
-                                                values['bbqRsvpMultiGuest'] && values['bbqRsvpMultiGuest'][index]
-                                            }
+                                            name="bbqRsvpMultiGuest"
+                                            defaultChecked={values.bbqRsvpMultiGuest}
                                             onChange={handleChange}
                                         />
                                     );
@@ -148,7 +144,7 @@ const Form = props => {
                                 id="diet-yes"
                                 value="yes"
                                 name="diet"
-                                checked={values['diet'] === 'yes'}
+                                defaultChecked={values.diet}
                                 onChange={handleChange}
                             />
                             <FormField
@@ -157,7 +153,7 @@ const Form = props => {
                                 id="diet-no"
                                 value="no"
                                 name="diet"
-                                checked={values['diet'] === 'no'}
+                                defaultChecked={values.diet}
                                 onChange={handleChange}
                             />
                             {errors.diet && touched.diet && <div className="form__error-message">{errors.diet}</div>}
@@ -185,11 +181,11 @@ const Form = props => {
                                                 type="checkbox"
                                                 value={value}
                                                 name={`dietMulti.${index}`}
-                                                defaultChecked={values['dietMulti'] && values['dietMulti'][index]}
+                                                defaultChecked={values.dietMulti}
                                                 onChange={handleChange}
                                             />
-                                            {values['dietMulti'] &&
-                                                values['dietMulti'][index] && (
+                                            {values.dietMulti &&
+                                                values.dietMulti[index] && (
                                                     <FormFieldText
                                                         placeholder="Please enter requirement"
                                                         key={`dietRequirement.${value}.${index}`}
@@ -283,9 +279,9 @@ const Form = props => {
                 <div>
                     <button type="submit">Submit</button>
                 </div>
-            </form>
+            </Form>
         </Section>
     );
 };
 
-export default Form;
+export default FormContainer;

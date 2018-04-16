@@ -1,15 +1,15 @@
 import { withFormik } from 'formik';
-import Form from './Form';
+import FormContainer from './Form';
+import Yup from 'yup'
 
 export default withFormik({
     mapPropsToValues: () => ({
         weddingRsvp: '',
-        weddingRsvpMultiGuest: '',
+        weddingRsvpMultiGuest: false,
         bbqRsvp: '',
-        bbqRsvpMultiGuest: '',
+        bbqRsvpMultiGuest: false,
         diet: '',
-        dietMulti: '',
-        johnDoeDiet: '',
+        dietMulti: false,
         nominatedLeader: '',
         address: '',
         phone: '',
@@ -17,48 +17,21 @@ export default withFormik({
         dietRequirement: [],
     }),
 
-    // validate: values => {
-    //     let errors = {};
-
-    //     if (!values.weddingRsvp) {
-    //         errors.weddingRsvp = 'Required';
-    //     }
-    //     if (!values.weddingRsvpMultiGuest) {
-    //         errors.weddingRsvpMultiGuest = 'Please choose at least one person attending';
-    //     }
-    //     if (!values.bbqRsvp) {
-    //         errors.bbqRsvp = 'Required';
-    //     }
-    //     if (!values.bbqRsvpMultiGuest) {
-    //         errors.bbqRsvpMultiGuest = 'Please choose at least one person attending';
-    //     }
-    //     if (!values.diet) {
-    //         errors.diet = 'Required';
-    //     }
-    //     if (!values.dietMulti) {
-    //         errors.dietMulti = 'Please click on each person with a dietery requirment';
-    //     }
-    //     if (!values.johnDoeDiet) {
-    //         errors.johnDoeDiet = 'Please enter dietery requirement';
-    //     }
-    //     if (!values.nominatedLeader) {
-    //         errors.nominatedLeader = 'Please nominate someone as a contact for your group';
-    //     }
-    //     if (!values.address) {
-    //         errors.address = 'Required';
-    //     }
-    //     if (!values.phone) {
-    //         errors.phone = 'Required';
-    //     }
-    //     if (!values.email) {
-    //         errors.email = 'Required';
-    //     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    //         errors.email = 'Invalid email address';
-    //     }
-    //     return errors;
-    // },
+    validationSchema: Yup.object().shape({
+        weddingRsvp: Yup.bool().required('Required'),
+        weddingRsvpMultiGuest:  Yup.bool().required('Please select at least one person attending'),
+        bbqRsvp:  Yup.bool().required('Required'),
+        bbqRsvpMultiGuest:  Yup.bool().required('Please choose at least one person attending'),
+        diet:  Yup.bool().required('Required'),
+        dietMulti:  Yup.bool().required('Please select each person with a dietery requirment'),
+        nominatedLeader:  Yup.bool().required('Please nominate someone as a contact for your group'),
+        address: Yup.string().required('Required'),
+        phone: Yup.number().required('Required'),
+        email: Yup.string().email('Invalid email address').required('Required'),
+        dietRequirement: Yup.bool().required('Please enter a diet requirement'),
+    }),
 
     handleSubmit: values => {
         console.log(values);
     },
-})(Form);
+})(FormContainer);
