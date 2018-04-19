@@ -10,15 +10,19 @@ import './content.css';
 class Content extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            data: null,
+        };
     }
 
     componentDidMount() {
         const name = this.props.match.params.name;
         if (name) {
-            axios.get(`https://great-aunt-edna.firebaseio.com/${name}.json`).then(response => {
-                this.setState(response.data);
-            });
+            axios
+                .get(`https://great-aunt-edna.firebaseio.com/${name}.json`)
+                .then(response => {
+                    this.setState({ data: response.data });
+                });
         }
     }
 
@@ -31,10 +35,10 @@ class Content extends Component {
                         <h2>Hi {displayName}</h2>
                     </Section>
                     <Route path="/:name">
-                        <Form data={this.state} />
+                        {this.state.data && <Form data={this.state.data} />}
                     </Route>
 
-                    <Section noTop>
+                    {/* <Section noTop>
                         <h2>Location</h2>
                         <p>
                             The ceremony and wedding will all take place at the The Boatshed on the Wellington
@@ -70,7 +74,7 @@ class Content extends Component {
                             <p>Ben McKeown - Groomsman</p>
                             <p>Matthew Lister - Groomsman</p>
                         </div>
-                    </Section>
+                    </Section> */}
                 </div>
             </div>
         );
