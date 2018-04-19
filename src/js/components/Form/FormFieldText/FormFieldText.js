@@ -2,7 +2,18 @@ import React from 'react';
 import classNames from 'classnames';
 
 export default function(props) {
-    const { labelName, placeholder, type, id, value, name, checked, onChange, errors, touched } = props;
+    const {
+        labelName,
+        placeholder,
+        type,
+        id,
+        value,
+        name,
+        checked,
+        onChange,
+        errors,
+        touched,
+    } = props;
 
     const classes = classNames('form__item form__item--text', {
         'form__item--active': checked,
@@ -13,7 +24,7 @@ export default function(props) {
                 {labelName}
             </label>
             <input
-                className={`form__input`}
+                className="form__input"
                 value={value || ''}
                 placeholder={placeholder}
                 type={type}
@@ -22,7 +33,8 @@ export default function(props) {
                 checked={checked}
                 onChange={onChange}
             />
-            {errors && touched && <div className="form__error-message">{errors}</div>}
+            {errors &&
+                touched && <div className="form__error-message">{errors}</div>}
         </div>
     );
 }

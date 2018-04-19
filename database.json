@@ -8,35 +8,40 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Barbara Phillips"
+                "guestName": "Barbara Phillips",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Warwick Phillips"
+                "guestName": "Warwick Phillips",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Erin Phillips"
+                "guestName": "Erin Phillips",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Linda Phillips"
+                "guestName": "Linda Phillips",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Nana Snakes"
+                "guestName": "Nana Snakes",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -90,14 +95,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Jo Sexton"
+                "guestName": "Jo Sexton",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Steve Sexton"
+                "guestName": "Steve Sexton",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -115,14 +122,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Andrea Diamond"
+                "guestName": "Andrea Diamond",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Michael Diamond"
+                "guestName": "Michael Diamond",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -140,14 +149,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Gary Sundgren"
+                "guestName": "Gary Sundgren",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Jodi Olsen"
+                "guestName": "Jodi Olsen",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -165,14 +176,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Missy Matthews"
+                "guestName": "Missy Matthews",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Dave Matthews"
+                "guestName": "Dave Matthews",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -190,14 +203,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Sally Taylor"
+                "guestName": "Sally Taylor",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Kirk Taylor"
+                "guestName": "Kirk Taylor",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -251,14 +266,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Anneke Gough"
+                "guestName": "Anneke Gough",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Dan TODO"
+                "guestName": "Dan TODO",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -276,14 +293,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Ali Churchill"
+                "guestName": "Ali Churchill",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Josh Whittiker"
+                "guestName": "Josh Whittiker",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -301,14 +320,16 @@
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Leonie James"
+                "guestName": "Leonie James",
+                "nominatedLeader": false
             },
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Martin Yeatman"
+                "guestName": "Martin Yeatman",
+                "nominatedLeader": false
             }
         ],
         "contactDetails": {
@@ -337,14 +358,14 @@
     },
     "geri-harvey": {
         "id": "",
-        "displayName": "Geri Harvey",
+        "displayName": "Mrs Harvey",
         "members": [
             {
                 "bbqRsvp": false,
                 "weddingRsvp": false,
                 "diet": false,
                 "dietRequirement": "",
-                "guestName": "Debra Buckingham"
+                "guestName": "Geri Harvey"
             }
         ],
         "contactDetails": {
