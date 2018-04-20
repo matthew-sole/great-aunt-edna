@@ -1,6 +1,7 @@
 import { withFormik } from 'formik';
-import FormContainer from './Form';
 import Yup from 'yup';
+
+import FormContainer from './Form';
 
 export default withFormik({
     mapPropsToValues: ({ data }) => {

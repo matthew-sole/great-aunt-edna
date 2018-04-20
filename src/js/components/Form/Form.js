@@ -1,9 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
+import { Form } from 'formik';
+
 import Section from '../Section/Section';
 import FormField from './FormField/FormField';
 import FormFieldText from './FormFieldText/FormFieldText';
-import classNames from 'classnames';
-import { Form } from 'formik';
+
 import './form.css';
 
 const FormContainer = props => {
@@ -68,7 +70,7 @@ const FormContainer = props => {
                                 return (
                                     <FormField
                                         id={`weddingRsvp.${value}`}
-                                        key={`${value}.${index}`}
+                                        key={`${value}`}
                                         labelName={item.guestName}
                                         type="checkbox"
                                         value={value}
@@ -146,7 +148,7 @@ const FormContainer = props => {
                                     return (
                                         <FormField
                                             id={`bbqRsvp.${value}`}
-                                            key={`${value}.${index}`}
+                                            key={`${value}`}
                                             labelName={item.guestName}
                                             type="checkbox"
                                             value={value}
@@ -226,7 +228,7 @@ const FormContainer = props => {
                                         .replace(' ', '-')
                                         .toLowerCase();
                                     return (
-                                        <div key={`${value}.${index}`}>
+                                        <div key={`${value}`}>
                                             <FormField
                                                 id={`dietMulti.${value}`}
                                                 labelName={item.guestName}
@@ -242,7 +244,7 @@ const FormContainer = props => {
                                                 values.dietMulti[index] && (
                                                     <FormFieldText
                                                         placeholder="Please enter requirement"
-                                                        key={`dietRequirement.${value}.${index}`}
+                                                        key={`dietRequirement.${value}`}
                                                         type="text"
                                                         id={`dietRequirement.${value}`}
                                                         onChange={handleChange}
@@ -297,7 +299,7 @@ const FormContainer = props => {
                                 return (
                                     <FormField
                                         id={`nominatedLeader.${value}`}
-                                        key={`${value}.${index}`}
+                                        key={`${value}`}
                                         labelName={item.guestName}
                                         type="radio"
                                         value={value}

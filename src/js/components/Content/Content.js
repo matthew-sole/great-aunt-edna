@@ -16,7 +16,7 @@ class Content extends Component {
     }
 
     componentDidMount() {
-        const name = this.props.match.params.name;
+        const { name } = this.props.match.params;
         if (name) {
             axios
                 .get(`https://great-aunt-edna.firebaseio.com/${name}.json`)
