@@ -1,7 +1,21 @@
+// @flow
+
 import React from 'react';
 import classNames from 'classnames';
 
-export default function(props) {
+type FormFieldProps = {
+    labelName: string,
+    type: string,
+    id: string,
+    value: string,
+    name: string,
+    checked: boolean,
+    onChange: Function,
+    errors: Object,
+    touched: boolean,
+};
+
+export default function(props: FormFieldProps) {
     const {
         labelName,
         type,
