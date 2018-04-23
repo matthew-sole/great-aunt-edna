@@ -25,8 +25,7 @@
     "scripts": {
         "build-css": "node-sass-chokidar src/ -o src/",
         "lint": "eslint .",
-        "watch-css":
-            "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+        "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
         "start-js": "react-scripts start",
         "start": "npm-run-all -p watch-css start-js",
         "build-js": "react-scripts build",
@@ -49,6 +48,7 @@
         "eslint-plugin-jsx-a11y": "^6.0.2",
         "eslint-plugin-prettier": "^2.6.0",
         "eslint-plugin-react": "^7.4.0",
+        "flow-bin": "^0.70.0",
         "postcss-loader": "^2.1.4",
         "prettier": "^1.12.0"
     }
