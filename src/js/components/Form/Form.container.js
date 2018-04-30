@@ -1,23 +1,21 @@
+// @flow
 import { withFormik } from 'formik';
-import Yup from 'yup';
+// import Yup from 'yup';
 
 import FormContainer from './Form';
 
 export default withFormik({
-    mapPropsToValues: ({ data }) => {
-        console.log(data);
-        return {
-            weddingRsvp: [],
-            bbqRsvp: [],
-            diet: null,
-            dietMulti: '',
-            dietRequirement: '',
-            nominatedLeader: '',
-            address: data.contactDetails.address,
-            phone: '',
-            email: '',
-        };
-    },
+    mapPropsToValues: ({ data }) => ({
+        weddingRsvp: [],
+        bbqRsvp: [],
+        diet: null,
+        dietMulti: '',
+        dietRequirement: '',
+        nominatedLeader: '',
+        address: data.contactDetails.address,
+        phone: '',
+        email: '',
+    }),
 
     // validationSchema: Yup.object().shape({
     //     weddingRsvp: Yup.bool()

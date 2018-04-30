@@ -217,6 +217,6 @@ declare module "formik" {
 
   declare export function withFormik<Props, Values>({
     mapPropsToValues: (props: Props) => Values,
-    validationSchema: (props: Props) => any,
+    validationSchema?: (props: Props) => any,
   }): (ComponentType<Props>) => ComponentType<$Diff<Props, FormikProps<Values>>>;
 }
