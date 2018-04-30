@@ -2,6 +2,7 @@
 
 import React from 'react';
 import classNames from 'classnames';
+import { type FormikErrors } from 'formik';
 
 type FormFieldProps = {
     labelName: string,

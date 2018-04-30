@@ -1,6 +1,8 @@
+// @flow
+
 import React from 'react';
 import classNames from 'classnames';
-import { Form } from 'formik';
+import { Form, type FormikProps } from 'formik';
 
 import Section from '../Section/Section';
 import FormField from './FormField/FormField';
@@ -8,7 +10,23 @@ import FormFieldText from './FormFieldText/FormFieldText';
 
 import './form.css';
 
-const FormContainer = props => {
+type Values = {
+    weddingRsvp: Array<string>,
+    bbqRsvp: Array<string>,
+    diet: boolean,
+    dietMulti: string,
+    dietRequirement: string,
+    nominatedLeader: string,
+    address: string,
+    phone: string,
+    email: string,
+};
+
+type FormProps = FormikProps<Values> & {
+    data: Object,
+};
+
+const FormContainer = (props: FormProps) => {
     const { values, handleChange, errors, touched, data } = props;
 
     return (
