@@ -10,13 +10,14 @@ import FormFieldText from './FormFieldText/FormFieldText';
 
 import './form.css';
 
-type Values = {
+export type Values = {
     weddingRsvp: Array<string>,
+    weddingMulti: Array<string>,
     bbqRsvp: Array<string>,
-    diet: boolean,
-    dietMulti: string,
+    bbqMulti: Array<string>,
+    diet: Array<string>,
+    dietMulti: Array<string>,
     dietRequirement: string,
-    nominatedLeader: string,
     address: string,
     phone: string,
     email: string,
@@ -28,7 +29,6 @@ type FormProps = FormikProps<Values> & {
 
 const FormContainer = (props: FormProps) => {
     const { values, handleChange, errors, touched, data } = props;
-
     return (
         <Section>
             <p>
@@ -36,16 +36,16 @@ const FormContainer = (props: FormProps) => {
                 below form
             </p>
             <Form>
-                <h4 className="form__header">
-                    Will you be able to make it to the big day?
-                </h4>
-                {data.members && data.members.length === 1 ? (
+                <div>
+                    <h4 className="form__header">
+                        Will you be able to make it to the big day?
+                    </h4>
                     <div className="form__group form__group--radio">
                         <FormField
                             labelName="Yes"
                             type="radio"
                             id="rsvp-yes"
-                            value
+                            value="true"
                             defaultChecked={values.weddingRsvp}
                             name="weddingRsvp.0"
                             onChange={handleChange}
@@ -54,7 +54,7 @@ const FormContainer = (props: FormProps) => {
                             labelName="No"
                             type="radio"
                             id="rsvp-no"
-                            value={false}
+                            value="false"
                             name="weddingRsvp.0"
                             defaultChecked={values.weddingRsvp}
                             onChange={handleChange}
@@ -66,48 +66,50 @@ const FormContainer = (props: FormProps) => {
                                 </div>
                             )}
                     </div>
-                ) : (
-                    <div>
-                        <h4 className="form__header">
-                            Who will be able to make it?
-                        </h4>
-                        <div
-                            className={classNames(
-                                'form__group form__group--checkbox',
-                                {
-                                    'form__group--error':
-                                        errors.weddingRsvp &&
-                                        touched.weddingRsvp,
-                                },
-                            )}
-                        >
-                            {data.members.map((item, index) => {
-                                const value = item.guestName
-                                    .replace(' ', '-')
-                                    .toLowerCase();
-                                return (
-                                    <FormField
-                                        id={`weddingRsvp.${value}`}
-                                        key={`${value}`}
-                                        labelName={item.guestName}
-                                        type="checkbox"
-                                        value={value}
-                                        name={`weddingRsvp.${index}`}
-                                        defaultChecked={values.weddingRsvp}
-                                        onChange={handleChange}
-                                    />
-                                );
-                            })}
-
-                            {errors.weddingRsvp &&
-                                touched.weddingRsvp && (
-                                    <div className="form__error-message">
-                                        {errors.weddingRsvp}
-                                    </div>
+                </div>
+                {data.members &&
+                    data.members.length > 1 && (
+                        <div>
+                            <h4 className="form__header">
+                                Who will be able to make it?
+                            </h4>
+                            <div
+                                className={classNames(
+                                    'form__group form__group--checkbox',
+                                    {
+                                        'form__group--error':
+                                            errors.weddingMulti &&
+                                            touched.weddingMulti,
+                                    },
                                 )}
+                            >
+                                {data.members.map((item, index) => {
+                                    const value = item.guestName
+                                        .replace(' ', '-')
+                                        .toLowerCase();
+                                    return (
+                                        <FormField
+                                            id={`weddingMulti.${value}`}
+                                            key={`${value}`}
+                                            labelName={item.guestName}
+                                            type="checkbox"
+                                            value={value}
+                                            name={`weddingMulti.${index}`}
+                                            defaultChecked={values.weddingMulti}
+                                            onChange={handleChange}
+                                        />
+                                    );
+                                })}
+
+                                {errors.weddingMulti &&
+                                    touched.weddingMulti && (
+                                        <div className="form__error-message">
+                                            {errors.weddingMulti}
+                                        </div>
+                                    )}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
 
                 <h4 className="form__header">
                     Will you be able to make it to the next day event?
@@ -121,7 +123,7 @@ const FormContainer = (props: FormProps) => {
                         labelName="Yes"
                         type="radio"
                         id="bbqRsvp-yes"
-                        value
+                        value="true"
                         name="bbqRsvp.0"
                         defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
@@ -130,7 +132,7 @@ const FormContainer = (props: FormProps) => {
                         labelName="No"
                         type="radio"
                         id="bbqRsvp-no"
-                        value={false}
+                        value="false"
                         name="bbqRsvp.0"
                         defaultChecked={values.bbqRsvp}
                         onChange={handleChange}
@@ -155,7 +157,7 @@ const FormContainer = (props: FormProps) => {
                                     'form__group form__group--checkbox',
                                     {
                                         'form__group--error':
-                                            errors.bbqRsvp && touched.bbqRsvp,
+                                            errors.bbqMulti && touched.bbqMulti,
                                     },
                                 )}
                             >
@@ -165,21 +167,21 @@ const FormContainer = (props: FormProps) => {
                                         .toLowerCase();
                                     return (
                                         <FormField
-                                            id={`bbqRsvp.${value}`}
+                                            id={`bbqMulti.${value}`}
                                             key={`${value}`}
                                             labelName={item.guestName}
                                             type="checkbox"
                                             value={value}
-                                            name={`bbqRsvp.${index}`}
-                                            defaultChecked={values.bbqRsvp}
+                                            name={`bbqMulti.${index}`}
+                                            defaultChecked={values.bbqMulti}
                                             onChange={handleChange}
                                         />
                                     );
                                 })}
-                                {errors.bbqRsvp &&
-                                    touched.bbqRsvp && (
+                                {errors.bbqMulti &&
+                                    touched.bbqMulti && (
                                         <div className="form__error-message">
-                                            {errors.bbqRsvp}
+                                            {errors.bbqMulti}
                                         </div>
                                     )}
                             </div>
@@ -189,7 +191,10 @@ const FormContainer = (props: FormProps) => {
                 {(values.weddingRsvp || values.bbqRsvp) && (
                     <div>
                         <h4 className="form__header">
-                            Does anyone have any dietry requirements
+                            {data.members && data.members.length === 1
+                                ? 'Do you '
+                                : 'Does anyone '}
+                            have any dietry requirements?
                         </h4>
                         <div
                             className={classNames(
@@ -204,7 +209,7 @@ const FormContainer = (props: FormProps) => {
                                 labelName="Yes"
                                 type="radio"
                                 id="diet-yes"
-                                value
+                                value="true"
                                 name="diet"
                                 defaultChecked={values.diet}
                                 onChange={handleChange}
@@ -213,7 +218,7 @@ const FormContainer = (props: FormProps) => {
                                 labelName="No"
                                 type="radio"
                                 id="diet-no"
-                                value={false}
+                                value="false"
                                 name="diet"
                                 defaultChecked={values.diet}
                                 onChange={handleChange}
@@ -229,8 +234,7 @@ const FormContainer = (props: FormProps) => {
                 )}
                 {data.members &&
                     data.members.length > 1 &&
-                    (values.weddingRsvp || values.bbqRsvp) &&
-                    values.diet && (
+                    values.diet === "true" && (
                         <div>
                             <h4 className="form__header">
                                 Who has dietry requirements
@@ -261,7 +265,7 @@ const FormContainer = (props: FormProps) => {
                                             {values.dietMulti &&
                                                 values.dietMulti[index] && (
                                                     <FormFieldText
-                                                        placeholder="Please enter requirement"
+                                                        labelName="Diet requirement"
                                                         key={`dietRequirement.${value}`}
                                                         type="text"
                                                         id={`dietRequirement.${value}`}
@@ -294,51 +298,8 @@ const FormContainer = (props: FormProps) => {
                             </div>
                         </div>
                     )}
-                {data.members &&
-                    data.members.length > 1 && (
-                        <div
-                            className={classNames(
-                                'form__group form__group--checkbox',
-                                {
-                                    'form__group--error':
-                                        errors.nominatedLeader &&
-                                        touched.nominatedLeader,
-                                },
-                            )}
-                        >
-                            <h4 className="form__header">
-                                Please choose a group leader we can contact if
-                                we need to
-                            </h4>
-                            {data.members.map((item, index) => {
-                                const value = item.guestName
-                                    .replace(' ', '-')
-                                    .toLowerCase();
-                                return (
-                                    <FormField
-                                        id={`nominatedLeader.${value}`}
-                                        key={`${value}`}
-                                        labelName={item.guestName}
-                                        type="radio"
-                                        value={value}
-                                        name="nominatedLeader"
-                                        defaultChecked={
-                                            values.nominatedLeader === value
-                                        }
-                                        onChange={handleChange}
-                                    />
-                                );
-                            })}
-                            {errors.nominatedLeader &&
-                                touched.nominatedLeader && (
-                                    <div className="form__error-message">
-                                        {errors.nominatedLeader}
-                                    </div>
-                                )}
-                        </div>
-                    )}
                 <h4 className="form__header">
-                    Please provide contact details for that person
+                    Please provide contact details if we need to get in touch.
                 </h4>
                 <div className="form__group form__group-text">
                     <div className="form__group-item">

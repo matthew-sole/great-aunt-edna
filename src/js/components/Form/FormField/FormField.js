@@ -2,7 +2,6 @@
 
 import React from 'react';
 import classNames from 'classnames';
-import { type FormikErrors } from 'formik';
 
 type FormFieldProps = {
     labelName: string,
@@ -10,10 +9,8 @@ type FormFieldProps = {
     id: string,
     value: string,
     name: string,
-    checked: boolean,
+    defaultChecked: Array<string>,
     onChange: Function,
-    errors: Object,
-    touched: boolean,
 };
 
 export default function(props: FormFieldProps) {
@@ -23,14 +20,11 @@ export default function(props: FormFieldProps) {
         id,
         value,
         name,
-        checked,
+        defaultChecked,
         onChange,
-        errors,
-        touched,
     } = props;
     const classes = classNames(`form__item form__item--${type}`, {
-        'form__item--active': checked,
-        'form__group--error': errors && touched,
+        'form__item--active': defaultChecked,
     });
     return (
         <div className={classes}>
@@ -41,13 +35,11 @@ export default function(props: FormFieldProps) {
                     type={type}
                     id={id}
                     name={name}
-                    checked={checked}
+                    defaultChecked={defaultChecked}
                     onChange={onChange}
                 />
                 {labelName}
             </label>
-            {errors &&
-                touched && <div className="form__error-message">{errors}</div>}
         </div>
     );
 }

@@ -1,14 +1,23 @@
+// @flow
+
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, type Match } from 'react-router-dom';
 import axios from 'axios';
 
 import Form from '../Form/Form.container';
-import Section from '../Section/Section';
 
 import './content.css';
 
-class Content extends Component {
-    constructor(props) {
+type ContentProps = {
+    match: Match,
+};
+
+type ContentState = {
+    data: ?Object,
+};
+
+class Content extends Component<ContentProps, ContentState> {
+    constructor(props: ContentProps) {
         super(props);
         this.state = {
             data: null,
@@ -27,13 +36,9 @@ class Content extends Component {
     }
 
     render() {
-        const { displayName } = this.state;
         return (
             <div className="app">
                 <div className="content">
-                    <Section>
-                        <h2>Hi {displayName}</h2>
-                    </Section>
                     <Route path="/:name">
                         {this.state.data && <Form data={this.state.data} />}
                     </Route>

@@ -1,40 +1,31 @@
+// @flow
+
 import React from 'react';
-import classNames from 'classnames';
 
-export default function(props) {
-    const {
-        labelName,
-        placeholder,
-        type,
-        id,
-        value,
-        name,
-        checked,
-        onChange,
-        errors,
-        touched,
-    } = props;
+type FormFieldTextProps = {
+    labelName: string,
+    type: string,
+    id: string,
+    value: string,
+    name: string,
+    onChange: Function,
+};
 
-    const classes = classNames('form__item form__item--text', {
-        'form__item--active': checked,
-    });
+export default function(props: FormFieldTextProps) {
+    const { labelName, type, id, value, name, onChange } = props;
     return (
-        <div className={classes}>
+        <div>
             <label className="form__label" htmlFor={id}>
                 {labelName}
+                <input
+                    className="form__input"
+                    value={value || ''}
+                    type={type}
+                    id={id}
+                    name={name}
+                    onChange={onChange}
+                />
             </label>
-            <input
-                className="form__input"
-                value={value || ''}
-                placeholder={placeholder}
-                type={type}
-                id={id}
-                name={name}
-                checked={checked}
-                onChange={onChange}
-            />
-            {errors &&
-                touched && <div className="form__error-message">{errors}</div>}
         </div>
     );
 }
