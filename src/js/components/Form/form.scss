@@ -2,8 +2,15 @@
 @import '../../../common/settings/settings';
 
 .form__error-message {
-  color: $color-red;
+    color: $color-red;
 }
+
+// .form__group-item {
+//     border: 1px solid #222;
+//     margin-bottom: 2rem;
+//     padding: 1rem;
+
+// }
 
 // // todo - make sure these are accessible
 // .form__item--checkbox,

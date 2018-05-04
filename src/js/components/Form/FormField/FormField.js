@@ -9,7 +9,7 @@ type FormFieldProps = {
     id: string,
     value: string,
     name: string,
-    defaultChecked: Array<string>,
+    defaultChecked: ?boolean,
     onChange: Function,
 };
 
@@ -31,7 +31,7 @@ export default function(props: FormFieldProps) {
             <label className="form__label" htmlFor={id}>
                 <input
                     className="form__input"
-                    value={value || ''}
+                    value={value}
                     type={type}
                     id={id}
                     name={name}

@@ -11,11 +11,11 @@ import FormFieldText from './FormFieldText/FormFieldText';
 import './form.css';
 
 export type Values = {
-    weddingRsvp: Array<string>,
-    weddingMulti: Array<string>,
-    bbqRsvp: Array<string>,
+    weddingRsvp: ?string,
+    weddingMulti: Array<boolean>,
+    bbqRsvp: ?string,
     bbqMulti: Array<string>,
-    diet: Array<string>,
+    diet: ?string,
     dietMulti: Array<string>,
     dietRequirement: string,
     address: string,
@@ -29,6 +29,7 @@ type FormProps = FormikProps<Values> & {
 
 const FormContainer = (props: FormProps) => {
     const { values, handleChange, errors, touched, data } = props;
+    console.log(values);
     return (
         <Section>
             <p>
@@ -46,8 +47,8 @@ const FormContainer = (props: FormProps) => {
                             type="radio"
                             id="rsvp-yes"
                             value="true"
-                            defaultChecked={values.weddingRsvp}
-                            name="weddingRsvp.0"
+                            defaultChecked={values.weddingRsvp === 'true'}
+                            name="weddingRsvp"
                             onChange={handleChange}
                         />
                         <FormField
@@ -55,8 +56,8 @@ const FormContainer = (props: FormProps) => {
                             type="radio"
                             id="rsvp-no"
                             value="false"
-                            name="weddingRsvp.0"
-                            defaultChecked={values.weddingRsvp}
+                            name="weddingRsvp"
+                            defaultChecked={values.weddingRsvp === 'false'}
                             onChange={handleChange}
                         />
                         {errors.weddingRsvp &&
@@ -67,7 +68,8 @@ const FormContainer = (props: FormProps) => {
                             )}
                     </div>
                 </div>
-                {data.members &&
+                {values.weddingRsvp === 'true' &&
+                    data.members &&
                     data.members.length > 1 && (
                         <div>
                             <h4 className="form__header">
@@ -95,7 +97,9 @@ const FormContainer = (props: FormProps) => {
                                             type="checkbox"
                                             value={value}
                                             name={`weddingMulti.${index}`}
-                                            defaultChecked={values.weddingMulti}
+                                            defaultChecked={
+                                                values.weddingMulti[index]
+                                            }
                                             onChange={handleChange}
                                         />
                                     );
@@ -124,8 +128,8 @@ const FormContainer = (props: FormProps) => {
                         type="radio"
                         id="bbqRsvp-yes"
                         value="true"
-                        name="bbqRsvp.0"
-                        defaultChecked={values.bbqRsvp}
+                        name="bbqRsvp"
+                        defaultChecked={values.bbqRsvp === 'true'}
                         onChange={handleChange}
                     />
                     <FormField
@@ -133,8 +137,8 @@ const FormContainer = (props: FormProps) => {
                         type="radio"
                         id="bbqRsvp-no"
                         value="false"
-                        name="bbqRsvp.0"
-                        defaultChecked={values.bbqRsvp}
+                        name="bbqRsvp"
+                        defaultChecked={values.bbqRsvp === 'false'}
                         onChange={handleChange}
                     />
                     {errors.bbqRsvp &&
@@ -173,7 +177,9 @@ const FormContainer = (props: FormProps) => {
                                             type="checkbox"
                                             value={value}
                                             name={`bbqMulti.${index}`}
-                                            defaultChecked={values.bbqMulti}
+                                            defaultChecked={
+                                                values.bbqMulti[index]
+                                            }
                                             onChange={handleChange}
                                         />
                                     );
@@ -194,7 +200,7 @@ const FormContainer = (props: FormProps) => {
                             {data.members && data.members.length === 1
                                 ? 'Do you '
                                 : 'Does anyone '}
-                            have any dietry requirements?
+                            have any dietary requirements?
                         </h4>
                         <div
                             className={classNames(
@@ -211,7 +217,7 @@ const FormContainer = (props: FormProps) => {
                                 id="diet-yes"
                                 value="true"
                                 name="diet"
-                                defaultChecked={values.diet}
+                                defaultChecked={values.diet === 'true'}
                                 onChange={handleChange}
                             />
                             <FormField
@@ -220,7 +226,7 @@ const FormContainer = (props: FormProps) => {
                                 id="diet-no"
                                 value="false"
                                 name="diet"
-                                defaultChecked={values.diet}
+                                defaultChecked={values.diet === 'false'}
                                 onChange={handleChange}
                             />
                             {errors.diet &&
@@ -229,12 +235,26 @@ const FormContainer = (props: FormProps) => {
                                         {errors.diet}
                                     </div>
                                 )}
+                            {data.members &&
+                                data.members.length <= 1 &&
+                                values.diet === 'true' && (
+                                    <FormFieldText
+                                        labelName="Diet requirement"
+                                        type="text"
+                                        id="dietRequirement.0"
+                                        onChange={handleChange}
+                                        value={values.dietRequirement[0]}
+                                        name="dietRequirement.0"
+                                        errors={errors.dietRequirement}
+                                        touched={touched.dietRequirement}
+                                    />
+                                )}
                         </div>
                     </div>
                 )}
                 {data.members &&
                     data.members.length > 1 &&
-                    values.diet === "true" && (
+                    values.diet === 'true' && (
                         <div>
                             <h4 className="form__header">
                                 Who has dietry requirements
@@ -258,7 +278,7 @@ const FormContainer = (props: FormProps) => {
                                                 value={value}
                                                 name={`dietMulti.${index}`}
                                                 defaultChecked={
-                                                    values.dietMulti
+                                                    values.dietMulti[index]
                                                 }
                                                 onChange={handleChange}
                                             />
@@ -302,7 +322,7 @@ const FormContainer = (props: FormProps) => {
                     Please provide contact details if we need to get in touch.
                 </h4>
                 <div className="form__group form__group-text">
-                    <div className="form__group-item">
+                    <div tabIndex="-1" className="form__group-item">
                         <FormFieldText
                             labelName="Address"
                             type="text"
@@ -319,7 +339,7 @@ const FormContainer = (props: FormProps) => {
                                 </div>
                             )}
                     </div>
-                    <div className="form__group-item">
+                    <div tabIndex="-1" className="form__group-item">
                         <FormFieldText
                             labelName="Contact number"
                             type="tel"
@@ -336,7 +356,7 @@ const FormContainer = (props: FormProps) => {
                                 </div>
                             )}
                     </div>
-                    <div className="form__group-item">
+                    <div tabIndex="-1" className="form__group-item">
                         <FormFieldText
                             labelName="Email"
                             type="text"
