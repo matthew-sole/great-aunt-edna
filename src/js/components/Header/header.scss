@@ -1,60 +1,72 @@
 @import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .header {
-  position: relative;
+    position: relative;
 }
 
 .header__content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .header__title {
-  @include small {
-    margin-bottom: $spacing-xs;
-    margin-top: 0.5rem;
-  }
+    animation: 3s fadein;
+    @include small {
+        margin-bottom: $spacing-xs;
+        margin-top: 0.5rem;
+    }
 }
 
 .header__intro {
-  @include small {
-    margin-top: 0;
-  }
+    opacity: 0;
+    animation: 4s fadein 2s;
+    @include small {
+        margin-top: 0;
+    }
 }
 
 .header__intro-item {
-  display: block;
-  margin-bottom: $spacing-xs;
-  font-size: rem(14);
-  @include medium {
-    font-size: rem(16);
-    display: inline-block;
-  }
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-size: rem(14);
+    @include medium {
+        font-size: rem(16);
+        display: inline-block;
+    }
 }
 
 .header__intro-item:first-of-type {
-  @include medium {
-    &:after {
-      content: '|';
-      margin-left: $spacing-xs;
-      margin-right: $spacing-xs;
+    @include medium {
+        &:after {
+            content: '|';
+            margin-left: $spacing-xs;
+            margin-right: $spacing-xs;
+        }
     }
-  }
 }
 
 .header__image {
-  background-color: rgba($color: #fff, $alpha: 0.65);
-  z-index: 99;
-  > * {
-    position: relative;
-    z-index: -1;
-  }
+    background-color: rgba($color: #fff, $alpha: 0.65);
+    z-index: 99;
+    > * {
+        position: relative;
+        z-index: -1;
+    }
 
-  @include medium {
-    background-color: rgba($color: #fff, $alpha: 0.3);
-  }
+    @include medium {
+        background-color: rgba($color: #fff, $alpha: 0.3);
+    }
 }
