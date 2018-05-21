@@ -40,7 +40,12 @@ class Content extends Component<ContentProps, ContentState> {
             <div className="app">
                 <div className="content">
                     <Route path="/:name">
-                        {this.state.data && <Form data={this.state.data} />}
+                        {this.state.data && (
+                            <Form
+                                data={this.state.data}
+                                name={this.props.match.params.name}
+                            />
+                        )}
                     </Route>
 
                     {/* <Section noTop>
