@@ -31,6 +31,7 @@ class Content extends Component<ContentProps, ContentState> {
                 .get(`https://great-aunt-edna.firebaseio.com/${name}.json`)
                 .then(response => {
                     this.setState({ data: response.data });
+                    console.log(this.state.data.displayName);
                 });
         }
     }
@@ -40,11 +41,16 @@ class Content extends Component<ContentProps, ContentState> {
             <div className="app">
                 <div className="content">
                     <Route path="/:name">
-                        {this.state.data && (
+                        {this.state.data &&
+                        this.state.data.submitted === false ? (
                             <Form
                                 data={this.state.data}
                                 name={this.props.match.params.name}
                             />
+                        ) : (
+                            <div>
+                                <h2>Your form has been submitted</h2>
+                            </div>
                         )}
                     </Route>
 

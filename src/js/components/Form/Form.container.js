@@ -56,7 +56,7 @@ export default withFormik({
 
     handleSubmit: (values, { props, setStatus }) => {
         const result = {
-            id: '',
+            submitted: true,
             displayName: props.data.displayName,
             members: [
                 ...props.data.members.map((item, index) => ({
