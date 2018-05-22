@@ -28,7 +28,7 @@ class Content extends Component<ContentProps, ContentState> {
         const { name } = this.props.match.params;
         if (name) {
             axios
-                .get(`https://great-aunt-edna.firebaseio.com/${name}.json`)
+                .get(`https://great-aunt-edna-2.firebaseio.com/${name}.json`)
                 .then(response => {
                     this.setState({ data: response.data });
                     console.log(this.state.data.displayName);

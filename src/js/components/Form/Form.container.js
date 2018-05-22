@@ -84,7 +84,7 @@ export default withFormik({
         }
         axios
             .patch(
-                `https://great-aunt-edna.firebaseio.com/${props.name}.json`,
+                `https://great-aunt-edna-2.firebaseio.com/${props.name}.json`,
                 result,
             )
             .then(() => {
