@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Route, type Match } from 'react-router-dom';
 import axios from 'axios';
+import Map from '../Map/Map';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
 import Footer from '../Footer/Footer';
@@ -57,6 +58,16 @@ class Content extends Component<ContentProps, ContentState> {
 
                     <Section noTop>
                         <h2>Location</h2>
+                        <Map
+                            isMarkerShown
+                            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWMDcwzPPDNag7ROpT0dncu6onGGWAU5A"
+                            loadingElement={<div style={{ height: `100%` }} />}
+                            containerElement={
+                                <div style={{ height: `400px` }} />
+                            }
+                            mapElement={<div style={{ height: `100%` }} />}
+                        />
+
                         <p>
                             The ceremony and wedding will all take place at the
                             The Boatshed on the Wellington waterfront.
