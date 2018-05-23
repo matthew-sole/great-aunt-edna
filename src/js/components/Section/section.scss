@@ -2,8 +2,12 @@
 @import '../../../common/settings/settings';
 
 .section {
-  padding: $spacing;
-  @include large {
-    padding: $spacing-l;
-  }
+    padding: $spacing;
+    @include large {
+        padding: $spacing-l;
+    }
+}
+
+.section--no-top {
+    padding-top: 0;
 }

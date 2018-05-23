@@ -8,34 +8,65 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: $line-height-base;
-  font-family: $font-family-headings;
+    line-height: $line-height-base;
+    font-family: $font-family-headings;
 }
 
 h1 {
-  font-size: rem(36);
-  @include medium {
-    font-size: rem(56);
-  }
+    font-size: rem(36);
+    @include medium {
+        font-size: rem(56);
+    }
 }
 
 h2 {
-  font-size: rem(24);
-  @include medium {
-    font-size: rem(36);
-  }
+    font-size: rem(24);
+    @include medium {
+        font-size: rem(36);
+    }
 }
 
 h3 {
-  font-size: rem(18);
-  @include medium {
-    font-size: rem(24);
-  }
+    font-size: rem(18);
+    @include medium {
+        font-size: rem(24);
+    }
 }
 
 h4 {
-  font-size: rem(16);
-  @include medium {
-    font-size: rem(18);
-  }
+    font-size: rem(16);
+    @include medium {
+        font-size: rem(18);
+    }
+}
+
+// ============================================================================
+// Resets
+// ============================================================================
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+form,
+fieldset,
+legend,
+figure,
+table,
+th,
+td,
+caption,
+hr {
+    margin: 0;
+    padding: 0;
 }
