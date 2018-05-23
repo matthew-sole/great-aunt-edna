@@ -1,5 +1,5 @@
 // @flow
-
+import React from 'react';
 import { withFormik } from 'formik';
 import axios from 'axios';
 import Yup from 'yup';
@@ -88,7 +88,9 @@ export default withFormik({
                 result,
             )
             .then(() => {
+                console.log('hello world');
                 setStatus('success');
+                return <h1>Boo</h1>;
             });
     },
 })(FormContainer);

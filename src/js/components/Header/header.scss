@@ -1,15 +1,6 @@
 @import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 .header {
     position: relative;
 }
@@ -23,7 +14,7 @@
 }
 
 .header__title {
-    animation: 3s fadein;
+    opacity: 0;
     @include small {
         margin-bottom: $spacing-xs;
         margin-top: 0.5rem;
@@ -32,10 +23,24 @@
 
 .header__intro {
     opacity: 0;
-    animation: 4s fadein 2s;
+
     @include small {
         margin-top: 0;
     }
+}
+
+.header__title--loaded,
+.header__intro--loaded {
+    opacity: 1;
+    transition: opacity 0.75s ease-in-out;
+}
+
+.header__title--loaded {
+    transition-delay: 0.3s;
+}
+
+.header__intro--loaded {
+    transition-delay: 1s;
 }
 
 .header__intro-item {
