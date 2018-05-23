@@ -4,7 +4,11 @@
 .section {
     padding: $spacing;
     @include large {
-        padding: $spacing-l;
+        padding: $spacing-xl;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
     }
 }
 

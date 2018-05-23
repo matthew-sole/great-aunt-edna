@@ -6,8 +6,7 @@ import axios from 'axios';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
 import Footer from '../Footer/Footer';
-import Map from '../Map/Map';
-
+import MapContainer from '../Map/MapContainer';
 import './content.css';
 
 type ContentProps = {
@@ -58,15 +57,7 @@ class Content extends Component<ContentProps, ContentState> {
 
                     <Section noTop>
                         <h2>Location</h2>
-                        <Map
-                            isMarkerShown
-                            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWMDcwzPPDNag7ROpT0dncu6onGGWAU5A"
-                            loadingElement={<div style={{ height: `100%` }} />}
-                            containerElement={
-                                <div style={{ height: `400px` }} />
-                            }
-                            mapElement={<div style={{ height: `100%` }} />}
-                        />
+                        <MapContainer />
                         <p>
                             Both Ceremony and Reception will take place at the{` `}
                             <a
