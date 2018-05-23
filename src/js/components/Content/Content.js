@@ -3,10 +3,10 @@
 import React, { Component } from 'react';
 import { Route, type Match } from 'react-router-dom';
 import axios from 'axios';
-import Map from '../Map/Map';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
 import Footer from '../Footer/Footer';
+import Map from '../Map/Map';
 
 import './content.css';
 
@@ -67,20 +67,58 @@ class Content extends Component<ContentProps, ContentState> {
                             }
                             mapElement={<div style={{ height: `100%` }} />}
                         />
-
                         <p>
-                            The ceremony and wedding will all take place at the
-                            The Boatshed on the Wellington waterfront.
+                            Both Ceremony and Reception will take place at the{` `}
+                            <a
+                                href="http://www.theboatshedvenue.co.nz/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                The Boatshed
+                            </a>
+                            {` `}
+                            on the Wellington waterfront.
                         </p>
                         <p>
-                            There is no parking on site at the venue, but there
-                            should be some free weekend parking spots nearby and
-                            around the city (time restrictions may apply).
+                            Please note that there is no on site parking at the
+                            venue. If you are driving, there is plenty of
+                            parking available around the city. This{' '}
+                            <a
+                                href="https://www.myguidewellington.com/usefulinfo/wellington-parking"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                handy guide
+                            </a>{' '}
+                            might be helpful in order to find the best place to
+                            leave you car on the day and/or the evening.
+                        </p>
+                        <h3>Public Transport</h3>
+                        <p>
+                            There is plenty of public transport to the venue no
+                            matter where you might be staying in the Wellington
+                            area. There are lots of bus stops, and the main
+                            Wellington railway station is a 10-15min walk away.
                         </p>
                         <p>
-                            Alternatively the train station is a 10min walk, and
-                            with ample bus stops nearby should you wish to
-                            arrive and depart via public transport
+                            All public transport can be found at{' '}
+                            <a
+                                href="https://www.metlink.org.nz/#plan"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Metlink
+                            </a>{' '}
+                            , and they have a helpful{' '}
+                            <a
+                                href="https://www.metlink.org.nz/#plan"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                online tool
+                            </a>{' '}
+                            to help plan your public transport to and from the
+                            greater Wellington region
                         </p>
                     </Section>
 
