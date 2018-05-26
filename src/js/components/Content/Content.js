@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Route, type Match, Switch, Link } from 'react-router-dom';
+import { Route, type Match, Switch } from 'react-router-dom';
 import axios from 'axios';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
@@ -10,6 +10,7 @@ import Accom from './Accom/Accom';
 import BridalParty from './BridalParty/BridalParty';
 import Gifts from './Gifts/Gifts';
 import Location from './Location/Location';
+import Navigation from '../Navigation/Navigation';
 
 import './content.css';
 
@@ -44,25 +45,7 @@ class Content extends Component<ContentProps, ContentState> {
         return (
             <div className="app">
                 <div className="content">
-                    <div>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/accom">Accom</Link>
-                            </li>
-                            <li>
-                                <Link to="/bridal-party">Bridal Party</Link>
-                            </li>
-                            <li>
-                                <Link to="/location">Location</Link>
-                            </li>
-                            <li>
-                                <Link to="/gifts">Gifts</Link>
-                            </li>
-                        </ul>
-                    </div>
+                <Navigation />
                     <Route path="/:name">
                         {this.state.data && (
                             <Section>
