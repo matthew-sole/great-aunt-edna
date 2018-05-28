@@ -7,7 +7,7 @@ import Profile from '../../Profile/Profile';
 export default function() {
     return (
         <Section>
-            <h2>Bridal Party</h2>
+            <h2 id="bridal-party">Bridal Party</h2>
             <Grid columns="2" rowSpacing columnSpacing>
                 <Profile
                     name="Mellissa Matthews"

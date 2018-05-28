@@ -64,14 +64,20 @@
 }
 
 .header__image {
-    background-color: rgba($color: #fff, $alpha: 0.65);
-    z-index: 99;
-    > * {
-        position: relative;
-        z-index: -1;
-    }
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-image: url(/assets/images/ccmatt.jpg);
+    // background-color: rgba($color: #fff, $alpha: 0.65);
+    // z-index: 99;
+    // > * {
+    //     position: relative;
+    //     z-index: -1;
+    // }
 
-    @include medium {
-        background-color: rgba($color: #fff, $alpha: 0.3);
-    }
+    // @include medium {
+    //     background-color: rgba($color: #fff, $alpha: 0.3);
+    // }
 }

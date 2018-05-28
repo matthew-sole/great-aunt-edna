@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Route, type Match, Switch } from 'react-router-dom';
+import { Route, type Match } from 'react-router-dom';
 import axios from 'axios';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
@@ -60,13 +60,11 @@ class Content extends Component<ContentProps, ContentState> {
                             </Section>
                         )}
                     </Route>
-
-                    <Switch>
-                        <Route path="/accom" component={Accom} />
-                        <Route path="/location" component={Location} />
-                        <Route path="/gifts" component={Gifts} />
-                        <Route path="/bridal-party" component={BridalParty} />
-                    </Switch>
+                    
+                    <Location />
+                    <Accom />
+                    <BridalParty />
+                    <Gifts />
 
                     <Section>
                         <Footer />

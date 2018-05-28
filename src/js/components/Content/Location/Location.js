@@ -6,7 +6,7 @@ import MapContainer from '../../Map/MapContainer';
 export default function() {
     return (
         <Section>
-            <h2>Location</h2>
+            <h2 id="location">Location</h2>
             <MapContainer />
             <p>
                 Both Ceremony and Reception will take place at the{` `}

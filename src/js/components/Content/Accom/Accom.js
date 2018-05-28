@@ -5,9 +5,9 @@ import Section from '../../Section/Section';
 export default function() {
     return (
         <Section>
-            <h2>Accommodation</h2>
+            <h2 id="accom">Accommodation</h2>
             <p>
-                There are an abundant amount of places to stay in the CBD, and
+                There is an abundant amount of places to stay in the CBD, and
                 within walking distance of the venue. We would recommend booked
                 earlier rather than later. So far there are no major events
                 scheduled for the same weekend, but if that changes -

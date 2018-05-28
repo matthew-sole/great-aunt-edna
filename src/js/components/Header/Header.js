@@ -26,7 +26,7 @@ class Header extends Component {
                             'header__title--loaded': this.state.loaded,
                         })}
                     >
-                        Jack &amp; Jill
+                        Claire &amp; Matt
                     </h1>
                     <p
                         className={classNames('header__intro', {
@@ -42,12 +42,12 @@ class Header extends Component {
                     </p>
                 </div>
                 <div className="header__image">
-                    <Image
+                    {/* <Image
                         className="image"
-                        src="/assets/images/flower-banner.jpg"
+                        src="/assets/images/ccmatt.jpg"
                         alt="flower banner"
                         height="900px"
-                    />
+                    /> */}
                 </div>
             </div>
         );
