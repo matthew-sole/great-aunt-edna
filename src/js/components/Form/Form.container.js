@@ -1,5 +1,4 @@
 // @flow
-import React from 'react';
 import { withFormik } from 'formik';
 import axios from 'axios';
 import Yup from 'yup';
@@ -7,44 +6,43 @@ import Yup from 'yup';
 import FormContainer from './Form';
 
 export default withFormik({
-    mapPropsToValues: ({ data }) => {
-        return {
-            weddingRsvp: null,
-            weddingMulti: data.members.map(item => item.weddingRsvp),
-            bbqRsvp: null,
-            bbqMulti: data.members.map(item => item.bbqRsvp),
-            diet: data.members.some(
-                member => member.diet === 'true' || member.diet === true,
-            )
-                ? 'true'
-                : 'false',
-            dietMulti: data.members.map(item => item.diet),
-            dietRequirement: data.members.map(item => item.dietRequirement),
-            address: data.contactDetails.address,
-            phone: data.contactDetails.phone,
-            email: data.contactDetails.email,
-        };
-    },
+    mapPropsToValues: ({ data }) => ({
+        weddingRsvp: null,
+        weddingMulti: data.members.map(item => item.weddingRsvp),
+        bbqRsvp: null,
+        bbqMulti: data.members.map(item => item.bbqRsvp),
+        diet: null,
+        dietMulti: data.members.map(item => item.diet),
+        dietRequirement: data.members.map(item => item.dietRequirement),
+        address: data.contactDetails.address,
+        phone: data.contactDetails.phone,
+        email: data.contactDetails.email,
+    }),
 
     validationSchema: Yup.object().shape({
         weddingRsvp: Yup.string()
             .nullable()
             .required('Required'),
-        weddingMulti: Yup.array().required(
-            'Please select at least one person attending',
-        ),
+        weddingMulti: Yup.array().when('diet', {
+            is: 'true',
+            then: Yup.boolean().required(
+                'Please select at least one person attending',
+            ),
+        }),
         bbqRsvp: Yup.string()
             .nullable()
             .required('Required'),
         bbqMulti: Yup.array().required(
             'Please choose at least one person attending',
         ),
-        diet: Yup.bool().required('Required'),
+        diet: Yup.string()
+            .nullable()
+            .required('Required'),
         dietMulti: Yup.string().required(
             'Please select each person with a dietery requirment',
         ),
         dietRequirement: Yup.string().when('diet', {
-            is: true,
+            is: 'true',
             then: Yup.string().required('Please enter a diet requirement'),
         }),
         address: Yup.string().required('Required'),
@@ -76,9 +74,11 @@ export default withFormik({
         if (props.data.members.length <= 1) {
             result.members = props.data.members.map((item, index) => ({
                 ...item,
-                bbqRsvp: values.bbqRsvp,
-                weddingRsvp: values.weddingRsvp,
-                diet: values.diet,
+                bbqRsvp: values.bbqRsvp === 'false' ? false : values.bbqRsvp,
+                weddingRsvp:
+                    values.weddingRsvp === 'false' ? false : values.weddingRsvp,
+                diet:
+                    values.weddingRsvp === 'false' ? false : values.weddingRsvp,
                 dietRequirement: values.dietRequirement[index],
             }));
         }
@@ -88,9 +88,8 @@ export default withFormik({
                 result,
             )
             .then(() => {
-                console.log('hello world');
+                props.submitSuccess(result);
                 setStatus('success');
-                return <h1>Boo</h1>;
             });
     },
 })(FormContainer);

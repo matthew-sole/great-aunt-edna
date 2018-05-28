@@ -51,21 +51,23 @@ class FormContainer extends Component<FormProps, FormState> {
     }
 
     render() {
-        const {
-            values,
-            handleChange,
-            errors,
-            touched,
-            data,
-            status,
-        } = this.props;
+        const { values, handleChange, errors, touched, data } = this.props;
+        console.log(values);
         return (
             <Section>
                 {this.state.show && (
                     <div>
+                        <h2>RSVP</h2>
                         <p>
-                            Please let us know if you are able to make it by
-                            filling out the below form
+                            Please let us know if you will be able to celebrate
+                            with us, and what requirements you may have.
+                        </p>
+                        <p>
+                            If you would like to change some details once the
+                            form has been submitted, please don`t hesitate to
+                            get in touch! The email address you received your
+                            invite from would be the best way for us to keep
+                            everyone`s details in check.
                         </p>
                         <Form>
                             <div>
