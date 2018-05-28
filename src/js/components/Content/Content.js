@@ -5,12 +5,15 @@ import { Route, type Match } from 'react-router-dom';
 import axios from 'axios';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
+
 import Footer from '../Footer/Footer';
 import Accom from './Accom/Accom';
 import BridalParty from './BridalParty/BridalParty';
 import Gifts from './Gifts/Gifts';
 import Location from './Location/Location';
 import Navigation from '../Navigation/Navigation';
+import MapContainer from '../Map/MapContainer';
+import Summary from '../Summary/Summary';
 
 import './content.css';
 
@@ -28,6 +31,7 @@ class Content extends Component<ContentProps, ContentState> {
         this.state = {
             data: null,
         };
+        (this: any).submitSuccess = this.submitSuccess.bind(this);
     }
 
     componentDidMount() {
@@ -41,26 +45,28 @@ class Content extends Component<ContentProps, ContentState> {
         }
     }
 
+    submitSuccess(data: Object) {
+        this.setState({ data });
+    }
+
     render() {
         return (
             <div className="app">
                 <div className="content">
                 <Navigation />
                     <Route path="/:name">
-                        {this.state.data && (
-                            <Section>
-                                {this.state.data.submitted === false ? (
-                                    <Form
-                                        data={this.state.data}
-                                        name={this.props.match.params.name}
-                                    />
-                                ) : (
-                                    <h2>Your Form has been submitted</h2>
-                                )}
-                            </Section>
-                        )}
+                        {this.state.data &&
+                            (this.state.data.submitted ? (
+                                <Summary data={this.state.data} />
+                            ) : (
+                                <Form
+                                    data={this.state.data}
+                                    name={this.props.match.params.name}
+                                    submitSuccess={this.submitSuccess}
+                                />
+                            ))}
                     </Route>
-                    
+
                     <Location />
                     <Accom />
                     <BridalParty />
