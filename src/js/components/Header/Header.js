@@ -42,7 +42,7 @@ class Header extends Component {
                     </p>
                 </div>
                 <div className="header__image">
-                    {/* <Image
+                    {/*<Image
                         className="image"
                         src="/assets/images/ccmatt.jpg"
                         alt="flower banner"

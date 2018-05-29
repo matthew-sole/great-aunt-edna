@@ -6,11 +6,11 @@ import Profile from '../../Profile/Profile';
 
 export default function() {
     return (
-        <Section>
+        <Section themeClass="grey" content>
             <h2 id="bridal-party">Bridal Party</h2>
             <Grid columns="2" rowSpacing columnSpacing>
                 <Profile
-                    name="Mellissa Matthews"
+                    name="Melissa Matthews"
                     profileRole="Maid of Honour"
                     imageSrc="/assets/images/missy.png"
                 />
@@ -22,7 +22,7 @@ export default function() {
                 <Profile
                     name="Sally Taylor"
                     profileRole="Bridesmaid"
-                    imageSrc="/assets/images/sally1.png"
+                    imageSrc="/assets/images/sally.png"
                 />
 
                 <Profile

@@ -6,12 +6,11 @@ import axios from 'axios';
 import Section from '../Section/Section';
 import Form from '../Form/Form.container';
 
-import Footer from '../Footer/Footer';
 import Accom from './Accom/Accom';
 import BridalParty from './BridalParty/BridalParty';
 import Gifts from './Gifts/Gifts';
 import Location from './Location/Location';
-import Navigation from '../Navigation/Navigation';
+// import Navigation from '../Navigation/Navigation';
 import MapContainer from '../Map/MapContainer';
 import Summary from '../Summary/Summary';
 
@@ -52,30 +51,22 @@ class Content extends Component<ContentProps, ContentState> {
     render() {
         return (
             <div className="app">
-                <div className="content">
-                <Navigation />
-                    <Route path="/:name">
-                        {this.state.data &&
-                            (this.state.data.submitted ? (
-                                <Summary data={this.state.data} />
-                            ) : (
-                                <Form
-                                    data={this.state.data}
-                                    name={this.props.match.params.name}
-                                    submitSuccess={this.submitSuccess}
-                                />
-                            ))}
-                    </Route>
-
-                    <Location />
-                    <Accom />
-                    <BridalParty />
-                    <Gifts />
-
-                    <Section>
-                        <Footer />
-                    </Section>
-                </div>
+                <Route path="/:name">
+                    {this.state.data &&
+                        (this.state.data.submitted ? (
+                            <Summary data={this.state.data} />
+                        ) : (
+                            <Form
+                                data={this.state.data}
+                                name={this.props.match.params.name}
+                                submitSuccess={this.submitSuccess}
+                            />
+                        ))}
+                </Route>
+                <Location />
+                <Accom />
+                <BridalParty />
+                <Gifts />
             </div>
         );
     }

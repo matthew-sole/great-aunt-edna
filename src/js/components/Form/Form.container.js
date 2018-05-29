@@ -23,27 +23,37 @@ export default withFormik({
         weddingRsvp: Yup.string()
             .nullable()
             .required('Required'),
-        weddingMulti: Yup.array().when('diet', {
+        weddingMulti: Yup.array().when('weddingRsvp', {
             is: 'true',
-            then: Yup.boolean().required(
-                'Please select at least one person attending',
-            ),
+            then: Yup.array()
+                .compact()
+                .required('Please select at least one guest that will attend'),
         }),
         bbqRsvp: Yup.string()
             .nullable()
             .required('Required'),
-        bbqMulti: Yup.array().required(
-            'Please choose at least one person attending',
-        ),
+        bbqMulti: Yup.array().when('bbqRsvp', {
+            is: 'true',
+            then: Yup.array()
+                .compact()
+                .required('Please select at least one guest that will attend'),
+        }),
         diet: Yup.string()
             .nullable()
             .required('Required'),
-        dietMulti: Yup.string().required(
-            'Please select each person with a dietery requirment',
-        ),
-        dietRequirement: Yup.string().when('diet', {
+        dietMulti: Yup.array().when('diet', {
             is: 'true',
-            then: Yup.string().required('Please enter a diet requirement'),
+            then: Yup.array()
+                .compact()
+                .required(
+                    'Please select at least one guest with a dietary requirement',
+                ),
+        }),
+        dietRequirement: Yup.array().when('diet', {
+            is: 'true',
+            then: Yup.array()
+                .compact()
+                .required('Please enter a diet requirement'),
         }),
         address: Yup.string().required('Required'),
         phone: Yup.string().required('Required'),
