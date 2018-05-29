@@ -6,7 +6,7 @@ import Profile from '../../Profile/Profile';
 
 export default function() {
     return (
-        <Section themeClass="grey" content>
+        <Section themeClass="grey">
             <h2 id="bridal-party">Bridal Party</h2>
             <Grid columns="2" rowSpacing columnSpacing>
                 <Profile

@@ -3,8 +3,11 @@
 
 .section {
     padding: $spacing;
+    max-width: 940px;
+    margin: auto;
+
     @include large {
-        padding: 2rem;
+        padding: 4.5rem;
     }
 
     > *:last-child {

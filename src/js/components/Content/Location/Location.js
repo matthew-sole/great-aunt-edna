@@ -5,7 +5,7 @@ import MapContainer from '../../Map/MapContainer';
 
 export default function() {
     return (
-        <Section>
+        <Section themeClass="grey">
             <h2 id="location">Location</h2>
             <MapContainer />
             <p>

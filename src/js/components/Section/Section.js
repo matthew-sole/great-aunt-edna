@@ -2,12 +2,12 @@ import React from 'react';
 import Themes from '../Themes/Themes';
 import './section.css';
 
-export default function({ children, className, themeClass }) {
+export default function({ children, content, themeClass }) {
     return themeClass ? (
         <Themes themeClass={themeClass}>
-            <div className={`section ${className}`}>{children}</div>;
+            <div className="section">{children}</div>;
         </Themes>
     ) : (
-        <div className={`section ${className}`}>{children}</div>
+        <div className="section">{children}</div>
     );
 }

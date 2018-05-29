@@ -24,7 +24,7 @@ h1 {
 h2 {
     font-size: rem(24);
     margin-bottom: $spacing-l;
-
+    text-align: center;
     @include medium {
         font-size: rem(36);
     }
