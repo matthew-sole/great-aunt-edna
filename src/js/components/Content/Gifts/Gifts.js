@@ -7,8 +7,9 @@ export default function() {
         <Section>
             <h2 id="gifts">Gifts</h2>
             <p>
-                Your presence at our wedding is the best present we can get. However, if you would like to bring a gift, we would be
-                grateful for a cash donation towards a little romantic getaway.
+                Your presence at our wedding is the best present we can get.
+                However, if you would like to bring a gift, we would be grateful
+                for a financial contribution towards a little romantic getaway.
             </p>
         </Section>
     );
