@@ -382,6 +382,12 @@ class FormContainer extends Component<FormProps, FormState> {
                                                                     }
                                                                 />
                                                             )}
+                                                            {errors.dietRequirement &&
+                                                                    touched.dietRequirement && (
+                                                                        <div className="form__error-message">
+                                                                            {errors.dietRequirement}
+                                                                        </div>
+                                                                    )}
                                                     </div>
                                                 );
                                             })}

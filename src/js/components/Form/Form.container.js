@@ -51,9 +51,10 @@ export default withFormik({
 
         values.dietMulti.forEach((member, index) => {
             if (member && !values.dietRequirement[index]) {
-                errors.dietRequirement = [...errors.dietRequirement];
-                errors.dietRequirement[index] =
-                    'Please select one person to attend';
+                console.log(errors)
+                // errors.dietRequirement = [...errors.dietRequirement];    
+                errors.dietRequirement =
+                    'Please select one person to eaf';
             }
         });
 

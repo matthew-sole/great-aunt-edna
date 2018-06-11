@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Image from '../Image/Image';
 import classNames from 'classnames';
 import './header.css';
 
