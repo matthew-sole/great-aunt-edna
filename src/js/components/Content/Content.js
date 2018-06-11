@@ -11,7 +11,7 @@ import BridalParty from './BridalParty/BridalParty';
 import Gifts from './Gifts/Gifts';
 import Location from './Location/Location';
 // import Navigation from '../Navigation/Navigation';
-import MapContainer from '../Map/MapContainer';
+// import MapContainer from '../Map/MapContainer';
 import Summary from '../Summary/Summary';
 
 import './content.css';
@@ -37,7 +37,9 @@ class Content extends Component<ContentProps, ContentState> {
         const { name } = this.props.match.params;
         if (name) {
             axios
-                .get(`https://great-aunt-edna-2.firebaseio.com/${name}.json`)
+                .get(
+                    `https://great-aunt-edna-2.firebaseio.com/guests/${name}.json`,
+                )
                 .then(response => {
                     this.setState({ data: response.data });
                 });
@@ -51,18 +53,16 @@ class Content extends Component<ContentProps, ContentState> {
     render() {
         return (
             <div className="app">
-                <Route path="/:name">
-                    {this.state.data &&
-                        (this.state.data.submitted ? (
-                            <Summary data={this.state.data} />
-                        ) : (
-                            <Form
-                                data={this.state.data}
-                                name={this.props.match.params.name}
-                                submitSuccess={this.submitSuccess}
-                            />
-                        ))}
-                </Route>
+                {this.state.data &&
+                    (this.state.data.submitted ? (
+                        <Summary data={this.state.data} />
+                    ) : (
+                        <Form
+                            data={this.state.data}
+                            name={this.props.match.params.name}
+                            submitSuccess={this.submitSuccess}
+                        />
+                    ))}
                 <Location />
                 <Accom />
                 <BridalParty />
