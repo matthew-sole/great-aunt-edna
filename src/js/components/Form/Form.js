@@ -52,7 +52,6 @@ class FormContainer extends Component<FormProps, FormState> {
 
     render() {
         const { values, handleChange, errors, touched, data } = this.props;
-        console.log(values);
         return (
             <Section>
                 {this.state.show && (
