@@ -14,7 +14,7 @@ export default function(props) {
                 height="125px"
             />
             <div className="profile__content">
-                <p>{props.name}</p>
+                <h4>{props.name}</h4>
                 <p>{props.profileRole}</p>
             </div>
         </div>

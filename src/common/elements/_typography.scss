@@ -11,7 +11,6 @@ h4,
 h5,
 h6 {
     line-height: $line-height-base;
-    font-family: $font-family-headings;
 }
 
 h1 {
@@ -32,17 +31,24 @@ h2 {
 
 h3 {
     font-size: rem(18);
-    margin-top: $spacing-l;
+    padding-top: $spacing-l;
     margin-bottom: $spacing;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: $font-weight-light;
+    text-align: center;
     @include medium {
-        font-size: rem(24);
+        font-size: rem(22);
     }
 }
 
 h4 {
     font-size: rem(16);
+    letter-spacing: 0.75px;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
     @include medium {
-        font-size: rem(18);
+        font-size: rem(16);
     }
 }
 

@@ -1,12 +1,8 @@
 @import '../../../common/settings/settings';
 
 .map__container {
-    padding: 1.5rem;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 3px;
-    height: 400px;
-    margin-bottom: $spacing;
+    height: 300px;
+    margin-bottom: $spacing-l;
 }
 
 .map {

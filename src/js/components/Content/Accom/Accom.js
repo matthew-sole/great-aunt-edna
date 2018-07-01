@@ -1,11 +1,20 @@
 import React from 'react';
 
 import Section from '../../Section/Section';
+import Image from '../../Image/Image';
 
 export default function() {
     return (
         <Section>
-            <h2 id="accom">Accommodation</h2>
+            <h2 id="accom">
+                <span className="u-accessible">Accommodation</span>
+                <Image
+                    className=""
+                    src='/assets/images/accom.png'
+                    alt=""
+                    height="100"
+                />
+            </h2>
             <p>
                 There is an abundant amount of places to stay in the CBD, and
                 within walking distance of the venue. We would recommend booked

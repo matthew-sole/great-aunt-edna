@@ -1,8 +1,7 @@
 .profile {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid #eee;
+    text-align: center;   
+    // margin-left: 0;
+    // margin-right: auto; 
 }
 
 .profile__image {
@@ -11,8 +10,5 @@
 }
 
 .profile__content {
-    display: inline-block;
-    margin-left: 2rem;
-    vertical-align: top;
-    margin-top: 2rem;
+    
 }
