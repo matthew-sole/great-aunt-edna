@@ -23,7 +23,11 @@ h1 {
 h2 {
     font-size: rem(24);
     margin-bottom: $spacing-l;
-    text-align: center;
+    text-align: right;
+    img {
+        max-width: 300px;
+        height: auto;
+    }
     @include medium {
         font-size: rem(36);
     }
@@ -31,12 +35,12 @@ h2 {
 
 h3 {
     font-size: rem(18);
-    padding-top: $spacing-l;
+    // padding-top: $spacing-l;
     margin-bottom: $spacing;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: $font-weight-light;
-    text-align: center;
+    text-align: right;
     @include medium {
         font-size: rem(22);
     }

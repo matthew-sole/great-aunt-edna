@@ -1,4 +1,16 @@
 .content {
-    max-width: 940px;
-    margin: auto;
+    max-width: 600px;
+    // margin: auto;
+    // border-left: 5px solid rgba(73, 5, 32, 0.5);
+    border-left: 3px solid #B3b5C6;
+    padding-left: 3rem;
+}
+.sidebar {
+    text-align: right !important;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 300px 75%;
+    grid-gap: 3rem;
 }
