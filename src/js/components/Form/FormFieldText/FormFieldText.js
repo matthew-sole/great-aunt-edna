@@ -14,7 +14,7 @@ type FormFieldTextProps = {
 export default function(props: FormFieldTextProps) {
     const { labelName, type, id, value, name, onChange } = props;
     return (
-        <div>
+        <div className="form__input--text">
             <label className="form__label" htmlFor={id}>
                 {labelName}
                 <input

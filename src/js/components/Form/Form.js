@@ -337,7 +337,10 @@ class FormContainer extends Component<FormProps, FormState> {
                                                     .replace(' ', '-')
                                                     .toLowerCase();
                                                 return (
-                                                    <div key={`${value}`}>
+                                                    <div
+                                                        className="form__group-stacked-item"
+                                                        key={`${value}`}
+                                                    >
                                                         <FormField
                                                             id={`dietMulti.${value}`}
                                                             labelName={
@@ -361,7 +364,7 @@ class FormContainer extends Component<FormProps, FormState> {
                                                                 index
                                                             ] && (
                                                                 <FormFieldText
-                                                                    labelName="Diet requirement"
+                                                                    labelName="Requirement:"
                                                                     key={`dietRequirement.${value}`}
                                                                     type="text"
                                                                     id={`dietRequirement.${value}`}
@@ -400,8 +403,8 @@ class FormContainer extends Component<FormProps, FormState> {
                                 Please provide contact details if we need to get
                                 in touch.
                             </h4>
-                            <div className="form__group form__group-text">
-                                <div tabIndex="-1" className="form__group-item">
+                            <div className="form__group">
+                                <div tabIndex="-1" className="">
                                     <FormFieldText
                                         labelName="Address"
                                         type="text"
@@ -418,7 +421,7 @@ class FormContainer extends Component<FormProps, FormState> {
                                             </div>
                                         )}
                                 </div>
-                                <div tabIndex="-1" className="form__group-item">
+                                <div tabIndex="-1" className="">
                                     <FormFieldText
                                         labelName="Contact number"
                                         type="tel"
@@ -435,7 +438,7 @@ class FormContainer extends Component<FormProps, FormState> {
                                             </div>
                                         )}
                                 </div>
-                                <div tabIndex="-1" className="form__group-item">
+                                <div tabIndex="-1" className="">
                                     <FormFieldText
                                         labelName="Email"
                                         type="text"
