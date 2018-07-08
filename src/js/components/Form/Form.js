@@ -1,8 +1,7 @@
-// @flow
-
 import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Form, type FormikProps } from 'formik';
+import { Form } from 'formik';
+import PropTypes from 'prop-types';
 
 import Section from '../Section/Section';
 import FormField from './FormField/FormField';
@@ -10,37 +9,15 @@ import FormFieldText from './FormFieldText/FormFieldText';
 
 import './form.css';
 
-export type Values = {
-    weddingRsvp: ?string,
-    weddingMulti: Array<boolean>,
-    bbqRsvp: ?string,
-    bbqMulti: Array<string>,
-    diet: ?string,
-    dietMulti: Array<string>,
-    dietRequirement: string,
-    address: string,
-    phone: string,
-    email: string,
-    status: ?'success',
-};
-
-type FormProps = FormikProps<Values> & {
-    data: Object,
-};
-
-type FormState = {
-    show: boolean,
-};
-
-class FormContainer extends Component<FormProps, FormState> {
-    constructor(props: FormProps) {
+class FormContainer extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             show: true,
         };
     }
 
-    componentWillReceiveProps(nextProps: FormProps) {
+    componentWillReceiveProps(nextProps) {
         if (nextProps.status !== this.props.status) {
             this.toggleForm();
         }
@@ -468,3 +445,17 @@ class FormContainer extends Component<FormProps, FormState> {
 }
 
 export default FormContainer;
+
+FormContainer.propTpes = {
+    weddingRsvp: PropTypes.string,
+    weddingMulti: PropTypes.array.isRequired,
+    bbqRsvp: PropTypes.string,
+    bbqMulti: PropTypes.isRequired,
+    diet: PropTypes.string,
+    dietMulti: PropTypes.isRequired,
+    dietRequirement: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+};

@@ -1,19 +1,8 @@
-// @flow
-
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-type FormFieldProps = {
-    labelName: string,
-    type: string,
-    id: string,
-    value: string,
-    name: string,
-    defaultChecked: ?boolean,
-    onChange: Function,
-};
-
-export default function(props: FormFieldProps) {
+const FormField = props => {
     const {
         labelName,
         type,
@@ -42,4 +31,16 @@ export default function(props: FormFieldProps) {
             </label>
         </div>
     );
-}
+};
+
+export default FormField;
+
+FormField.propTypes = {
+    labelName: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    defaultChecked: PropTypes.boolean,
+    onChange: PropTypes.func.isRequired,
+};

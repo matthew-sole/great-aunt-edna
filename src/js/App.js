@@ -11,7 +11,7 @@ export default function() {
     return (
         <div className="app">
             <Header />
-            <Route path="/guest/:name?" component={Content} />
+            <Route path="/guests/:name?" component={Content} />
             <Route path="/foobar" component={Dashboard} />
             <Footer />
         </div>

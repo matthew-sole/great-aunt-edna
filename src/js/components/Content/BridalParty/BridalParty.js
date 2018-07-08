@@ -7,12 +7,12 @@ import Image from '../../Image/Image';
 
 export default function() {
     return (
-        <Section themeClass="grey">
+        <Section>
             <h2 id="bridal-party">
                 <span className="u-accessible">Bridal Party</span>
                 <Image
                     className=""
-                    src='/assets/images/bridal-party.png'
+                    src="/assets/images/bridal-party.png"
                     alt=""
                     height="150"
                 />

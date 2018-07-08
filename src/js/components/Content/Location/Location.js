@@ -6,12 +6,12 @@ import Image from '../../Image/Image';
 
 export default function() {
     return (
-        <Section themeClass="grey">
+        <Section>
             <h2 id="location">
                 <span className="u-accessible">Location</span>
                 <Image
                     className=""
-                    src='/assets/images/location.png'
+                    src="/assets/images/location.png"
                     alt=""
                     height="100"
                 />

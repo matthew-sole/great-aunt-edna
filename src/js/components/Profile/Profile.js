@@ -9,7 +9,7 @@ export default function(props) {
             <Image
                 className="profile__image"
                 src={props.imageSrc}
-                alt=""
+                alt={`Profile image of ${props.name}`}
                 width="125px"
                 height="125px"
             />

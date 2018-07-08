@@ -1,7 +1,7 @@
-// @flow
 import { withFormik } from 'formik';
 import axios from 'axios';
 import Yup from 'yup';
+import PropTypes from 'prop-types';
 
 import FormContainer from './Form';
 
@@ -94,7 +94,9 @@ export default withFormik({
         }
         axios
             .patch(
-                `https://great-aunt-edna-2.firebaseio.com/${props.name}.json`,
+                `https://great-aunt-edna-2.firebaseio.com/guests/${
+                    props.name
+                }.json`,
                 result,
             )
             .then(() => {
@@ -103,3 +105,16 @@ export default withFormik({
             });
     },
 })(FormContainer);
+
+FormContainer.propTypes = {
+    weddingRsvp: PropTypes.string,
+    weddingMulti: PropTypes.array,
+    bbqRsvp: PropTypes.string,
+    bbqMulti: PropTypes.array,
+    diet: PropTypes.string,
+    dietMulti: PropTypes.array,
+    dietRequirement: PropTypes.array,
+    address: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+};
