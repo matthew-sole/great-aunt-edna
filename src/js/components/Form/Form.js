@@ -29,7 +29,6 @@ class FormContainer extends Component {
 
     render() {
         const { values, handleChange, errors, touched, data } = this.props;
-        console.log(values);
         return (
             <Section>
                 {this.state.show && (
@@ -40,11 +39,9 @@ class FormContainer extends Component {
                             with us, and what requirements you may have.
                         </p>
                         <p>
-                            If you would like to change some details once the
-                            form has been submitted, please don`t hesitate to
-                            get in touch! The email address you received your
-                            invite from would be the best way for us to keep
-                            everyone`s details in check.
+                            If you would like to make changes once the form has
+                            been submitted, please contact us so we can update
+                            your details.
                         </p>
                         <Form>
                             <div>

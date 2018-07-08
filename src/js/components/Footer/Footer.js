@@ -6,7 +6,7 @@ import './footer.css';
 export default function() {
     return (
         <div className="footer">
-            <Section className="content">
+            <Section>
                 <p>
                     <a href="/">Back to top</a>
                 </p>

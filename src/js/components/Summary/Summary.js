@@ -1,34 +1,45 @@
 import React from 'react';
+import Section from '../Section/Section';
 
 export default function({ data }) {
+    console.log(data);
     const bbqMembers = data.members.reduce((members, item) => {
         if (item.bbqRsvp) {
             members.push(item);
         }
         return members;
     }, []);
+
+    const weddingGuests = data.members.reduce((members, item) => {
+        if (item.weddingRsvp) {
+            members.push(item);
+        }
+        return members;
+    }, []);
     return (
-        <div>
+        <Section>
             <h3>
                 Your submission has been successful. Here is the information we
                 have collected:
             </h3>
             <p>{data.displayName}</p>
-            <h3>Contact Details</h3>
-            <p>{data.contactDetails.address}</p>
-            <p>{data.contactDetails.email}</p>
-            <p>{data.contactDetails.phone}</p>
-            <h3>RSVP details</h3>
+            <h4>RSVP details</h4>
             <h4>Wedding</h4>
-            {data.members.map(
-                item => item.weddingRsvp && <p>{item.guestName}</p>,
+            {weddingGuests.length > 0 ? (
+                weddingGuests.map(item => <p>{item.guestName}</p>)
+            ) : (
+                <p>No one will be attending</p>
             )}
             <h4>BBQ</h4>
             {bbqMembers.length > 0 ? (
                 bbqMembers.map(item => <p>{item.guestName}</p>)
             ) : (
-                <p>We don't have any down for the BBQ</p>
+                <p>No one will be attending</p>
             )}
-        </div>
+            <h4>Contact Details</h4>
+            <p>{data.contactDetails.address}</p>
+            <p>{data.contactDetails.email}</p>
+            <p>{data.contactDetails.phone}</p>
+        </Section>
     );
 }
