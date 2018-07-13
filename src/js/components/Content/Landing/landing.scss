@@ -1,11 +1,11 @@
-@import '../../../common/tools/tools';
-@import '../../../common/settings/settings';
+@import '../../../../common/tools/tools';
+@import '../../../../common/settings/settings';
 
-.header {
+.landing {
     position: relative;
 }
 
-.header__content {
+.landing__content {
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 8rem;
@@ -20,7 +20,7 @@
     // }
 }
 
-.header__title {
+.landing__title {
     opacity: 0;
     @include small {
         margin-top: 0.5rem;
@@ -28,7 +28,7 @@
     }
 }
 
-.header__intro {
+.landing__intro {
     text-transform: uppercase;
     opacity: 0;
 
@@ -37,21 +37,21 @@
     }
 }
 
-.header__title--loaded,
-.header__intro--loaded {
+.landing__title--loaded,
+.landing__intro--loaded {
     opacity: 1;
     transition: opacity 0.75s ease-in-out;
 }
 
-.header__title--loaded {
+.landing__title--loaded {
     transition-delay: 0.3s;
 }
 
-.header__intro--loaded {
+.landing__intro--loaded {
     transition-delay: 1s;
 }
 
-.header__intro-item {
+.landing__intro-item {
     display: block;
     margin-bottom: $spacing-s;
     font-size: 1.125rem;
@@ -73,7 +73,7 @@
     }
 }
 
-.header__intro-item:first-of-type {
+.landing__intro-item:first-of-type {
     @include medium {
         &:after {
             content: '|';
@@ -83,7 +83,7 @@
     }
 }
 
-.header__image {
+.landing__image {
     // background-image: url(/assets/images/ccmatt.jpg);
     // height: 600px;
     // background-size: cover;
