@@ -2,21 +2,11 @@ import React from 'react';
 
 import Section from '../../Section/Section';
 import MapContainer from '../../Map/MapContainer';
-import Image from '../../Image/Image';
 
 export default function() {
     return (
         <Section>
-            <h2 id="location">
-                Location
-                {/* <span className="u-accessible">Location</span>
-                <Image
-                    className=""
-                    src="/assets/images/location.png"
-                    alt=""
-                    height="100"
-                /> */}
-            </h2>
+            <h2 id="location">Location</h2>
             <MapContainer />
             <p>
                 Both Ceremony and Reception will take place at the{` `}
