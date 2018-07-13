@@ -5,36 +5,31 @@
             "displayName": "Barb & Warwick",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Barbara Phillips"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Warwick Phillips"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Erin Phillips"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Linda Phillips"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Nana Snakes"
@@ -51,8 +46,7 @@
             "displayName": "Lisa Bastik",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Lisa Bastik"
@@ -69,8 +63,7 @@
             "displayName": "Robert Campbell",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Robert Campbell"
@@ -87,15 +80,13 @@
             "displayName": "Steve & Jo Sexton",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Jo Sexton"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Steve Sexton"
@@ -112,15 +103,13 @@
             "displayName": "Andrea & Michael Diamond",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Andrea Diamond"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Michael Diamond"
@@ -137,15 +126,13 @@
             "displayName": "Gary Sundgren & Jodi Olsen",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Gary Sundgren"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Jodi Olsen"
@@ -162,15 +149,13 @@
             "displayName": "Missy & Dave Matthews",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Missy Matthews"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Dave Matthews"
@@ -187,15 +172,13 @@
             "displayName": "Sally & Kirk Taylor",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Sally Taylor"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Kirk Taylor"
@@ -212,8 +195,7 @@
             "displayName": "Charlotte Griffin",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Charlotte Griffin"
@@ -230,8 +212,7 @@
             "displayName": "Ellie Kelman",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Ellie Kelman"
@@ -248,15 +229,13 @@
             "displayName": "Anneke & Dan",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Anneke Gough"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Dan TODO"
@@ -273,15 +252,13 @@
             "displayName": "Josh & Ali",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Ali Churchill"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Josh Whittiker"
@@ -298,15 +275,13 @@
             "displayName": "Leonie & Marty",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Leonie James"
                 },
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Martin Yeatman"
@@ -323,8 +298,7 @@
             "displayName": "Debra Buckingham",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Debra Buckingham"
@@ -341,8 +315,7 @@
             "displayName": "Mrs Harvey",
             "members": [
                 {
-                    "bbqRsvp": false,
-                    "weddingRsvp": false,
+                    "rsvp": false,
                     "diet": false,
                     "dietRequirement": "",
                     "guestName": "Geri Harvey"

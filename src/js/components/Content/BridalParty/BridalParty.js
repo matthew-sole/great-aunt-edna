@@ -9,13 +9,14 @@ export default function() {
     return (
         <Section>
             <h2 id="bridal-party">
-                <span className="u-accessible">Bridal Party</span>
+                Bridal Party
+                {/* <span className="u-accessible">Bridal Party</span>
                 <Image
                     className=""
                     src="/assets/images/bridal-party.png"
                     alt=""
                     height="150"
-                />
+                /> */}
             </h2>
             <Grid columns="2" rowSpacing columnSpacing>
                 <Profile

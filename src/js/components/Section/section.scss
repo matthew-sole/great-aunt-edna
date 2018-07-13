@@ -2,8 +2,7 @@
 @import '../../../common/settings/settings';
 
 .section {
-    padding: $spacing;
-    max-width: 700px;
+    padding: $spacing-l $spacing;
     margin: auto;
 
     @include large {

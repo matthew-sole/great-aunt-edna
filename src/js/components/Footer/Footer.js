@@ -8,7 +8,7 @@ export default function() {
         <div className="footer">
             <Section>
                 <p>
-                    <a href="/">Back to top</a>
+                    <a href="TODO">Back to top</a>
                 </p>
             </Section>
         </div>

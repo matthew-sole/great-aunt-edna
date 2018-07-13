@@ -46,7 +46,7 @@ class FormContainer extends Component {
                         <Form>
                             <div>
                                 <h4 className="form__header">
-                                    Will you be able to make it to the big day?
+                                    Will you be able to make the wedding?
                                 </h4>
                                 <div className="form__group form__group--radio">
                                     <FormField
@@ -54,10 +54,8 @@ class FormContainer extends Component {
                                         type="radio"
                                         id="rsvp-yes"
                                         value="true"
-                                        defaultChecked={
-                                            values.weddingRsvp === 'true'
-                                        }
-                                        name="weddingRsvp"
+                                        defaultChecked={values.rsvp === 'true'}
+                                        name="rsvp"
                                         onChange={handleChange}
                                     />
                                     <FormField
@@ -65,21 +63,19 @@ class FormContainer extends Component {
                                         type="radio"
                                         id="rsvp-no"
                                         value="false"
-                                        name="weddingRsvp"
-                                        defaultChecked={
-                                            values.weddingRsvp === 'false'
-                                        }
+                                        name="rsvp"
+                                        defaultChecked={values.rsvp === 'false'}
                                         onChange={handleChange}
                                     />
-                                    {errors.weddingRsvp &&
-                                        touched.weddingRsvp && (
+                                    {errors.rsvp &&
+                                        touched.rsvp && (
                                             <div className="form__error-message">
-                                                {errors.weddingRsvp}
+                                                {errors.rsvp}
                                             </div>
                                         )}
                                 </div>
                             </div>
-                            {values.weddingRsvp === 'true' &&
+                            {values.rsvp === 'true' &&
                                 data.members &&
                                 data.members.length > 1 && (
                                     <div>
@@ -129,97 +125,7 @@ class FormContainer extends Component {
                                         </div>
                                     </div>
                                 )}
-
-                            <h4 className="form__header">
-                                Will you be able to make it to the next day
-                                event?
-                            </h4>
-                            <div
-                                className={classNames(
-                                    'form__group form__group--radio',
-                                    {
-                                        'form__group--error':
-                                            errors.bbqRsvp && touched.bbqRsvp,
-                                    },
-                                )}
-                            >
-                                <FormField
-                                    labelName="Yes"
-                                    type="radio"
-                                    id="bbqRsvp-yes"
-                                    value="true"
-                                    name="bbqRsvp"
-                                    defaultChecked={values.bbqRsvp === 'true'}
-                                    onChange={handleChange}
-                                />
-                                <FormField
-                                    labelName="No"
-                                    type="radio"
-                                    id="bbqRsvp-no"
-                                    value="false"
-                                    name="bbqRsvp"
-                                    defaultChecked={values.bbqRsvp === 'false'}
-                                    onChange={handleChange}
-                                />
-                                {errors.bbqRsvp &&
-                                    touched.bbqRsvp && (
-                                        <div className="form__error-message">
-                                            {errors.bbqRsvp}
-                                        </div>
-                                    )}
-                            </div>
-
-                            {data.members &&
-                                data.members.length > 1 &&
-                                values.bbqRsvp === 'true' && (
-                                    <div>
-                                        <h4 className="form__header">
-                                            Who will be able to make it?
-                                        </h4>
-                                        <div
-                                            className={classNames(
-                                                'form__group form__group--checkbox',
-                                                {
-                                                    'form__group--error':
-                                                        errors.bbqMulti &&
-                                                        touched.bbqMulti,
-                                                },
-                                            )}
-                                        >
-                                            {data.members.map((item, index) => {
-                                                const value = item.guestName
-                                                    .replace(' ', '-')
-                                                    .toLowerCase();
-                                                return (
-                                                    <FormField
-                                                        id={`bbqMulti.${value}`}
-                                                        key={`${value}`}
-                                                        labelName={
-                                                            item.guestName
-                                                        }
-                                                        type="checkbox"
-                                                        value={value}
-                                                        name={`bbqMulti.${index}`}
-                                                        defaultChecked={
-                                                            values.bbqMulti[
-                                                                index
-                                                            ]
-                                                        }
-                                                        onChange={handleChange}
-                                                    />
-                                                );
-                                            })}
-                                            {errors.bbqMulti &&
-                                                touched.bbqMulti && (
-                                                    <div className="form__error-message">
-                                                        {errors.bbqMulti}
-                                                    </div>
-                                                )}
-                                        </div>
-                                    </div>
-                                )}
-
-                            {(values.weddingRsvp || values.bbqRsvp) && (
+                            {(values.rsvp || values.bbqRsvp) && (
                                 <div>
                                     <h4 className="form__header">
                                         {data.members &&
@@ -444,7 +350,7 @@ class FormContainer extends Component {
 export default FormContainer;
 
 FormContainer.propTpes = {
-    weddingRsvp: PropTypes.string,
+    rsvp: PropTypes.string,
     weddingMulti: PropTypes.array.isRequired,
     bbqRsvp: PropTypes.string,
     bbqMulti: PropTypes.isRequired,

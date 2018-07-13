@@ -28,9 +28,9 @@ class Header extends Component {
                     >
                         <Image
                             className=""
-                            src='/assets/images/logo.png'
+                            src="/assets/images/logo.png"
                             alt=""
-                            width="400px"
+                            width="600px"
                         />
                     </h1>
                     <h3
@@ -38,9 +38,7 @@ class Header extends Component {
                             'header__intro--loaded': this.state.loaded,
                         })}
                     >
-                        <span className="header__intro-item">
-                            April 6 2019
-                        </span>
+                        <span className="header__intro-item">April 6 2019</span>
                         <span className="header__intro-item">
                             Wellington NZ
                         </span>

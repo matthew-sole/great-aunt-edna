@@ -7,10 +7,8 @@ import FormContainer from './Form';
 
 export default withFormik({
     mapPropsToValues: ({ data }) => ({
-        weddingRsvp: null,
-        weddingMulti: data.members.map(item => item.weddingRsvp),
-        bbqRsvp: null,
-        bbqMulti: data.members.map(item => item.bbqRsvp),
+        rsvp: null,
+        weddingMulti: data.members.map(item => item.rsvp),
         diet: null,
         dietMulti: data.members.map(item => item.diet),
         dietRequirement: data.members.map(item => item.dietRequirement),
@@ -19,49 +17,6 @@ export default withFormik({
         email: data.contactDetails.email,
     }),
 
-    // validationSchema: Yup.object().shape({
-    //     weddingRsvp: Yup.string()
-    //         .nullable()
-    //         .required('Required'),
-    //     weddingMulti: Yup.array().when('weddingRsvp', {
-    //         is: 'true',
-    //         then: Yup.array()
-    //             .compact()
-    //             .required('Please select at least one guest that will attend'),
-    //     }),
-    //     bbqRsvp: Yup.string()
-    //         .nullable()
-    //         .required('Required'),
-    //     bbqMulti: Yup.array().when('bbqRsvp', {
-    //         is: 'true',
-    //         then: Yup.array()
-    //             .compact()
-    //             .required('Please select at least one guest that will attend'),
-    //     }),
-    //     diet: Yup.string()
-    //         .nullable()
-    //         .required('Required'),
-    //     dietMulti: Yup.array().when('diet', {
-    //         is: 'true',
-    //         then: Yup.array()
-    //             .compact()
-    //             .required(
-    //                 'Please select at least one guest with a dietary requirement',
-    //             ),
-    //     }),
-    //     dietRequirement: Yup.array().when('diet', {
-    //         is: 'true',
-    //         then: Yup.array()
-    //             .compact()
-    //             .required('Please enter a diet requirement'),
-    //     }),
-    //     address: Yup.string().required('Required'),
-    //     phone: Yup.string().required('Required'),
-    //     email: Yup.string()
-    //         .email('Invalid email address')
-    //         .required('Required'),
-    // }),
-
     handleSubmit: (values, { props, setStatus }) => {
         const result = {
             submitted: true,
@@ -69,8 +24,7 @@ export default withFormik({
             members: [
                 ...props.data.members.map((item, index) => ({
                     ...item,
-                    bbqRsvp: values.bbqMulti[index],
-                    weddingRsvp: values.weddingMulti[index],
+                    rsvp: values.weddingMulti[index],
                     diet: values.dietMulti[index],
                     dietRequirement: values.dietRequirement[index],
                 })),
@@ -84,11 +38,8 @@ export default withFormik({
         if (props.data.members.length <= 1) {
             result.members = props.data.members.map((item, index) => ({
                 ...item,
-                bbqRsvp: values.bbqRsvp === 'false' ? false : values.bbqRsvp,
-                weddingRsvp:
-                    values.weddingRsvp === 'false' ? false : values.weddingRsvp,
-                diet:
-                    values.weddingRsvp === 'false' ? false : values.weddingRsvp,
+                rsvp: values.rsvp === 'false' ? false : values.rsvp,
+                diet: values.rsvp === 'false' ? false : values.rsvp,
                 dietRequirement: values.dietRequirement[index],
             }));
         }
@@ -107,10 +58,8 @@ export default withFormik({
 })(FormContainer);
 
 FormContainer.propTypes = {
-    weddingRsvp: PropTypes.string,
+    rsvp: PropTypes.string,
     weddingMulti: PropTypes.array,
-    bbqRsvp: PropTypes.string,
-    bbqMulti: PropTypes.array,
     diet: PropTypes.string,
     dietMulti: PropTypes.array,
     dietRequirement: PropTypes.array,

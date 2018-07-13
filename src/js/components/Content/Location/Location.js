@@ -8,13 +8,14 @@ export default function() {
     return (
         <Section>
             <h2 id="location">
-                <span className="u-accessible">Location</span>
+                Location
+                {/* <span className="u-accessible">Location</span>
                 <Image
                     className=""
                     src="/assets/images/location.png"
                     alt=""
                     height="100"
-                />
+                /> */}
             </h2>
             <MapContainer />
             <p>
