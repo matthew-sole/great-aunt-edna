@@ -1,6 +1,5 @@
 import { withFormik } from 'formik';
 import axios from 'axios';
-import Yup from 'yup';
 import PropTypes from 'prop-types';
 
 import FormContainer from './Form';
