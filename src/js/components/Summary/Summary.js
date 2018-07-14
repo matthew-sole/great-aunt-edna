@@ -2,8 +2,6 @@ import React from 'react';
 import Section from '../Section/Section';
 
 export default function({ data }) {
-    console.log(data);
-
     const weddingGuests = data.members.reduce((members, item) => {
         if (item.weddingRsvp) {
             members.push(item);

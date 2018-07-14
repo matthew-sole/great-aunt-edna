@@ -38,7 +38,6 @@ class Content extends Component {
 
     render() {
         const url = this.props.match.url;
-        console.log(url);
         return (
             <div className="content">
                 <Header url={url} />
