@@ -5,8 +5,8 @@ import MapContainer from '../../Map/MapContainer';
 
 export default function() {
     return (
-        <Section>
-            <h2 id="location">Location</h2>
+        <Section textLength>
+            <h2>Location</h2>
             <MapContainer />
             <p>
                 Both Ceremony and Reception will take place at the{` `}
@@ -60,6 +60,15 @@ export default function() {
                 </a>{' '}
                 to help plan your public transport to and from the greater
                 Wellington region
+            </p>
+            <h3>Accommodation</h3>
+            <p>
+                There is an abundant amount of places to stay in the CBD, and
+                within walking distance of the venue. We would recommend booked
+                earlier rather than later. So far there are no major events
+                scheduled for the same weekend, but if that changes -
+                accommodation can get snapped up very quickly and become hard to
+                find or expensive.
             </p>
         </Section>
     );

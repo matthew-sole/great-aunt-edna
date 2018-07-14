@@ -1,4 +1,46 @@
-.content {
-    max-width: 940px;
-    margin: auto;
+@import '../../../common/settings/settings';
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+    width: 100%;
+    margin-left: auto;
+    // position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 99;
+    height: 100px;
+}
+
+.navigation {
+    list-style: none;
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.navigation__item {
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+.navigation__link {
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px solid $color-lavendar-grey;
+    }
+
+    .navigation__item--button & {
+        border: 1px solid $color-lavendar-grey;
+        padding: 0.25rem 1rem;
+    }
+    .navigation__item--button &:hover {
+        color: $color-white;
+        background-color: $color-lavendar-grey;
+        transition: 0.1s all ease-in;
+    }
+}
+
+.navigation__item--active {
+    border-bottom: 1px solid $color-lavendar-grey;
 }
