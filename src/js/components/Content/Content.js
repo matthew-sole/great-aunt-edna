@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
 
+import GUEST_LIST from '../../utils/var';
+
 import Header from '../Header/Header';
 import Form from '../Form/Form.container';
 import Details from './Details/Details';
@@ -24,13 +26,9 @@ class Content extends Component {
     componentDidMount() {
         const { name } = this.props.match.params;
         if (name) {
-            axios
-                .get(
-                    `https://great-aunt-edna-2.firebaseio.com/guests/${name}.json`,
-                )
-                .then(response => {
-                    this.setState({ data: response.data });
-                });
+            axios.get(`${GUEST_LIST}${name}.json`).then(response => {
+                this.setState({ data: response.data });
+            });
         }
     }
 

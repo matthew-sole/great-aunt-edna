@@ -24,3 +24,5 @@ yarn-error.log*
 
 src/App.css
 src/**/*.css
+
+src/js/utils/
