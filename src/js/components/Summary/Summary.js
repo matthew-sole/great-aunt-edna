@@ -3,12 +3,6 @@ import Section from '../Section/Section';
 
 export default function({ data }) {
     console.log(data);
-    const bbqMembers = data.members.reduce((members, item) => {
-        if (item.bbqRsvp) {
-            members.push(item);
-        }
-        return members;
-    }, []);
 
     const weddingGuests = data.members.reduce((members, item) => {
         if (item.weddingRsvp) {

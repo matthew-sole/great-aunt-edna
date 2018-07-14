@@ -9,9 +9,9 @@ import '../../src/App.css';
 export default function() {
     return (
         <div className="app">
-            <Route path="/guests/:name?" component={Content} />
+            <Route exact path="/" component={Landing} />
             <Route path="/foobar" component={Dashboard} />
-            <Route path="/" component={Landing} />
+            <Route path="/guests/:name?" component={Content} />
         </div>
     );
 }

@@ -30,7 +30,7 @@ class FormContainer extends Component {
     render() {
         const { values, handleChange, errors, touched, data } = this.props;
         return (
-            <Section>
+            <Section textLength>
                 {this.state.show && (
                     <div>
                         <h2>RSVP</h2>
@@ -125,7 +125,7 @@ class FormContainer extends Component {
                                         </div>
                                     </div>
                                 )}
-                            {(values.rsvp || values.bbqRsvp) && (
+                            {values.rsvp && (
                                 <div>
                                     <h4 className="form__header">
                                         {data.members &&
@@ -352,8 +352,6 @@ export default FormContainer;
 FormContainer.propTpes = {
     rsvp: PropTypes.string,
     weddingMulti: PropTypes.array.isRequired,
-    bbqRsvp: PropTypes.string,
-    bbqMulti: PropTypes.isRequired,
     diet: PropTypes.string,
     dietMulti: PropTypes.isRequired,
     dietRequirement: PropTypes.string.isRequired,
