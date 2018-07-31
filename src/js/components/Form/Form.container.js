@@ -11,9 +11,7 @@ export default withFormik({
         diet: null,
         dietMulti: data.members.map(item => item.diet),
         dietRequirement: data.members.map(item => item.dietRequirement),
-        address: data.contactDetails.address,
-        phone: data.contactDetails.phone,
-        email: data.contactDetails.email,
+        email: data.contactEmail.email,
     }),
 
     handleSubmit: (values, { props, setStatus }) => {
@@ -28,11 +26,7 @@ export default withFormik({
                     dietRequirement: values.dietRequirement[index],
                 })),
             ],
-            contactDetails: {
-                address: values.address,
-                email: values.email,
-                phone: values.phone,
-            },
+            contactEmail: values.email,
         };
         if (props.data.members.length <= 1) {
             result.members = props.data.members.map((item, index) => ({
@@ -62,7 +56,5 @@ FormContainer.propTypes = {
     diet: PropTypes.string,
     dietMulti: PropTypes.array,
     dietRequirement: PropTypes.array,
-    address: PropTypes.string,
-    phone: PropTypes.string,
     email: PropTypes.string,
 };

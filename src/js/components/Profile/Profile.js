@@ -10,8 +10,6 @@ export default function(props) {
                 className="profile__image"
                 src={props.imageSrc}
                 alt={`Profile image of ${props.name}`}
-                width="125px"
-                height="125px"
             />
             <div className="profile__content">
                 <h4>{props.name}</h4>

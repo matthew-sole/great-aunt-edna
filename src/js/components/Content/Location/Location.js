@@ -2,10 +2,11 @@ import React from 'react';
 
 import Section from '../../Section/Section';
 import MapContainer from '../../Map/MapContainer';
+import Header from '../../Header/Header';
 
 export default function() {
     return (
-        <Section textLength>
+        <Section textLength superTop>
             <h2>Location</h2>
             <MapContainer />
             <p>
@@ -36,9 +37,10 @@ export default function() {
             </p>
             <h3>Public Transport</h3>
             <p>
-                There is plenty of public transport to the venue no matter where
-                you might be staying in the Wellington area. There are lots of
-                bus stops, and the main Wellington railway station is a 10-15min
+                There will be public transport that will be able to get you
+                close to the venue no matter where you might be staying. There
+                are bus stops that will run a few blocks away from the the
+                venue, and the main Wellington railway station is a 10-15min
                 walk away.
             </p>
             <p>

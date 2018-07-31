@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Image from '../../Image/Image';
+import Header from '../../Header/Header';
 import classNames from 'classnames';
 import './landing.css';
 
@@ -27,10 +28,9 @@ class Landing extends Component {
                         })}
                     >
                         <Image
-                            className=""
+                            className="image landing__logo"
                             src="/assets/images/logo.png"
-                            alt=""
-                            width="600px"
+                            alt="Claire and Matt heading"
                         />
                     </h1>
                     <h3
@@ -45,14 +45,6 @@ class Landing extends Component {
                             Wellington NZ
                         </span>
                     </h3>
-                </div>
-                <div className="landing__image">
-                    {/*<Image
-                        className="image"
-                        src="/assets/images/ccmatt.jpg"
-                        alt="flower banner"
-                        height="900px"
-                    /> */}
                 </div>
             </div>
         );

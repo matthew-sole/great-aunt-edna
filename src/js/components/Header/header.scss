@@ -1,52 +1,105 @@
 @import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
-.header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 1rem 0;
+.header__container {
+    position: absolute;
+    left: 0;
     width: 100%;
-    margin-left: auto;
-    // position: fixed;
-    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.25fr 1.75fr;
+    padding: 1rem;
+    width: 100%;
+    margin: 0 auto;
     z-index: 99;
-    height: 100px;
+    @include large {
+        width: 960px;
+    }
+}
+
+.header--full-width {
+    display: block;
+    @include large {
+        position: absolute;
+        right: 0;
+    }
+}
+
+.header__logo {
+    width: 150px;
+    @include medium {
+        width: 80px;
+    }
 }
 
 .navigation {
     list-style: none;
     text-align: right;
-    margin-top: 1rem;
+    @include medium {
+        margin-top: 1rem;
+    }
+    .header--full-width & {
+        @include small {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
 }
 
 .navigation__item {
-    display: inline-block;
     margin-left: 1.5rem;
+    @include medium {
+        display: inline-block;
+    }
+    .header--full-width & {
+        @include small {
+            display: inline-block;
+            margin: 0;
+        }
+    }
 }
 
 .navigation__link {
     text-decoration: none;
+    color: #b3b5c6;
+    text-transform: uppercase;
+    font-size: rem(14);
 
     &:hover {
         border-bottom: 1px solid $color-lavendar-grey;
     }
+    &:hover {
+        color: $color-lavendar-grey;
+    }
 
     .navigation__item--button & {
-        border: 1px solid $color-lavendar-grey;
-        padding: 0.25rem 1rem;
+        border: 1px solid #b3b5c6;
+        padding: 0.35rem 1rem 0.25rem 1rem;
     }
     .navigation__item--button &:hover {
         color: $color-white;
         background-color: $color-lavendar-grey;
+        border: 1px solid $color-lavendar-grey;
         transition: 0.1s all ease-in;
     }
-}
 
-.navigation__item--active {
-    border-bottom: 1px solid $color-lavendar-grey;
-}
+    &.navigation__item--button {
+        @include small {
+            margin-top: 0.75rem;
+        }
+    }
 
-.navigation__item--active-button {
-    color: $color-white;
-    background-color: $color-lavendar-grey;
+    &.navigation__link--active {
+        color: $color-lavendar-grey;
+        border-bottom: 1px solid $color-lavendar-grey;
+    }
+
+    &.navigation__link--active-button {
+        color: $color-white;
+        background-color: $color-lavendar-grey;
+        border: 1px solid $color-lavendar-grey;
+    }
 }

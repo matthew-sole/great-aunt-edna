@@ -25,3 +25,10 @@
 .section--text-length {
     max-width: 800px;
 }
+
+.section--top-extra {
+    padding-top: 13rem;
+    @include medium {
+        padding-top: 8rem;
+    }
+}

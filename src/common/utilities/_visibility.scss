@@ -18,6 +18,6 @@
     clip-path: inset(1px); // New (experimental) CSS property
 }
 
-.u-hidden {
-    display: none;
+.u-opaque {
+    opacity: 0;
 }

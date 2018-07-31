@@ -21,11 +21,12 @@ h1 {
 }
 
 h2 {
-    font-size: rem(36);
+    font-size: rem(30);
+    font-weight: $font-weight-light;
     margin-bottom: $spacing-l;
-    // text-align: center;
+    text-transform: uppercase;
     @include medium {
-        font-size: rem(48);
+        font-size: rem(36);
     }
 }
 
@@ -34,9 +35,7 @@ h3 {
     padding-top: $spacing-l;
     margin-bottom: $spacing;
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-weight: $font-weight-light;
-    // text-align: center;
     @include medium {
         font-size: rem(22);
     }
@@ -44,9 +43,9 @@ h3 {
 
 h4 {
     font-size: rem(16);
-    letter-spacing: 0.75px;
     font-weight: $font-weight-medium;
     text-transform: uppercase;
+    margin-bottom: $spacing;
     @include medium {
         font-size: rem(16);
     }

@@ -1,43 +1,29 @@
 import React from 'react';
 
 import Section from '../../Section/Section';
-import Grid from '../../Grid/Grid';
-import Profile from '../../Profile/Profile';
 
-export default function() {
+export default function({ url }) {
     return (
-        <Section textLength>
-            <h2>Children</h2>
-            <h2>Bridal Party</h2>
-            <Grid columns="2" rowSpacing columnSpacing>
-                <Profile
-                    name="Melissa Matthews"
-                    profileRole="Maid of Honour"
-                    imageSrc="/assets/images/missy.png"
-                />
-                <Profile
-                    name="Ben McKeown"
-                    profileRole="Best Man"
-                    imageSrc="/assets/images/ben1.png"
-                />
-                <Profile
-                    name="Sally Taylor"
-                    profileRole="Bridesmaid"
-                    imageSrc="/assets/images/sally.png"
-                />
-
-                <Profile
-                    name="Matthew Lister"
-                    profileRole="Groomsman"
-                    imageSrc="/assets/images/stiff1.png"
-                />
-            </Grid>
-            <h2>Gifts</h2>
-            <p>
-                Your presence at our wedding is the best present we can get.
-                However, if you would like to bring a gift, we would be grateful
-                for a financial contribution towards a little romantic getaway.
-            </p>
-        </Section>
+        <React.Fragment>
+            <Section textLength superTop>
+                <h2>Children</h2>
+                <p>
+                    In order to allow all guests, including parents, an evening
+                    of relaxation we have chosen for our wedding day to be an
+                    adult-only occasion. We hope this advance notice means you
+                    are still able to share our big day and will enjoy having
+                    the evening off!
+                </p>
+            </Section>
+            <Section textLength>
+                <h2>Gifts</h2>
+                <p>
+                    Your presence at our wedding is the best present we can get.
+                    However, if you would like to bring a gift, we would be
+                    grateful for a financial contribution towards a little
+                    romantic getaway.
+                </p>
+            </Section>
+        </React.Fragment>
     );
 }

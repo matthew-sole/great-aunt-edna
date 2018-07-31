@@ -28,9 +28,9 @@ class FormContainer extends Component {
     }
 
     render() {
-        const { values, handleChange, errors, touched, data } = this.props;
+        const { values, handleChange, errors, touched, data, url } = this.props;
         return (
-            <Section textLength>
+            <Section textLength superTop>
                 {this.state.show && (
                     <div>
                         <h2>RSVP</h2>
@@ -284,40 +284,6 @@ class FormContainer extends Component {
                                 in touch.
                             </h4>
                             <div className="form__group">
-                                <div tabIndex="-1" className="">
-                                    <FormFieldText
-                                        labelName="Address"
-                                        type="text"
-                                        id="address"
-                                        onChange={handleChange}
-                                        value={values.address}
-                                        name="address"
-                                        errors={errors.address}
-                                    />
-                                    {errors.address &&
-                                        touched.address && (
-                                            <div className="form__error-message">
-                                                {errors.address}
-                                            </div>
-                                        )}
-                                </div>
-                                <div tabIndex="-1" className="">
-                                    <FormFieldText
-                                        labelName="Contact number"
-                                        type="tel"
-                                        id="phone"
-                                        onChange={handleChange}
-                                        value={values.phone}
-                                        name="phone"
-                                        errors={errors.phone}
-                                    />
-                                    {errors.phone &&
-                                        touched.phone && (
-                                            <div className="form__error-message">
-                                                {errors.phone}
-                                            </div>
-                                        )}
-                                </div>
                                 <div tabIndex="-1" className="">
                                     <FormFieldText
                                         labelName="Email"

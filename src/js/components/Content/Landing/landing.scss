@@ -2,30 +2,30 @@
 @import '../../../../common/settings/settings';
 
 .landing {
+    height: 100vh;
     position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .landing__content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 8rem;
-    // width: 100%;
-    // position: absolute;
-    // left: 50%;
-    // top: 45%;
-    // transform: translate(-50%, -50%);
-    // text-align: center;
-    // @include medium {
-    //     top: 50%;
-    // }
+}
+
+.landing__logo {
+    max-width: 400px;
+    @include large {
+        max-width: 500px;
+    }
 }
 
 .landing__title {
     opacity: 0;
-    @include small {
-        margin-top: 0.5rem;
-        margin-bottom: 4.5rem;
-    }
 }
 
 .landing__intro {
@@ -81,18 +81,4 @@
             margin-right: $spacing-s;
         }
     }
-}
-
-.landing__image {
-    // background-image: url(/assets/images/ccmatt.jpg);
-    // height: 600px;
-    // background-size: cover;
-    // background-position: 50%;
-    // @include medium {
-    //     background-attachment: fixed;
-    //     background-position: top;
-    //     background-repeat: no-repeat;
-    //     background-size: cover;
-    //     height: 100vh;
-    // }
 }

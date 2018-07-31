@@ -3,32 +3,32 @@
 // ============================================================================
 
 html {
-  font-family: $font-family-text;
-  font-size: rem($font-size-base);
-  font-weight: $font-weight-light;
-  line-height: $line-height-base;
-  background-color: $color-white;
-  color: $color-black;
-  -webkit-tap-highlight-color: transparent;
-  min-height: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    font-family: $font-family-text;
+    font-size: rem($font-size-base);
+    font-weight: $font-weight-light;
+    line-height: $line-height-base;
+    background-color: $color-white;
+    color: $color-black;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  position: relative;
-  min-height: 100%;
-  font-size: rem(16);
-  margin: 0;
+    position: relative;
+    min-height: 100%;
+    font-size: rem(16);
+    margin: 0;
 }
 
 * {
-  &,
-  &:before,
-  &:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-  }
+    &,
+    &:before,
+    &:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+    }
 }

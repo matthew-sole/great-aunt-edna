@@ -1,6 +1,7 @@
 {
     "guests": {
         "phillips": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Barb & Warwick",
             "members": [
@@ -34,14 +35,10 @@
                     "dietRequirement": "",
                     "guestName": "Nana Snakes"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "lisa-bastik": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Lisa Bastik",
             "members": [
@@ -51,14 +48,10 @@
                     "dietRequirement": "",
                     "guestName": "Lisa Bastik"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "rob-campbell": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Robert Campbell",
             "members": [
@@ -68,14 +61,10 @@
                     "dietRequirement": "",
                     "guestName": "Robert Campbell"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "sexton": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Steve & Jo Sexton",
             "members": [
@@ -91,14 +80,10 @@
                     "dietRequirement": "",
                     "guestName": "Steve Sexton"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "diamond": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Andrea & Michael Diamond",
             "members": [
@@ -114,14 +99,10 @@
                     "dietRequirement": "",
                     "guestName": "Michael Diamond"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "sundgren": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Gary Sundgren & Jodi Olsen",
             "members": [
@@ -137,14 +118,10 @@
                     "dietRequirement": "",
                     "guestName": "Jodi Olsen"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "matthews": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Missy & Dave Matthews",
             "members": [
@@ -160,14 +137,10 @@
                     "dietRequirement": "",
                     "guestName": "Dave Matthews"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "taylor": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Sally & Kirk Taylor",
             "members": [
@@ -183,14 +156,10 @@
                     "dietRequirement": "",
                     "guestName": "Kirk Taylor"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "charlotte-griffin": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Charlotte Griffin",
             "members": [
@@ -200,14 +169,10 @@
                     "dietRequirement": "",
                     "guestName": "Charlotte Griffin"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "ellie-kelman": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Ellie Kelman",
             "members": [
@@ -217,14 +182,10 @@
                     "dietRequirement": "",
                     "guestName": "Ellie Kelman"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "gough": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Anneke & Dan",
             "members": [
@@ -240,14 +201,10 @@
                     "dietRequirement": "",
                     "guestName": "Dan TODO"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "churchill": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Josh & Ali",
             "members": [
@@ -263,14 +220,10 @@
                     "dietRequirement": "",
                     "guestName": "Josh Whittiker"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "james": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Leonie & Marty",
             "members": [
@@ -286,14 +239,10 @@
                     "dietRequirement": "",
                     "guestName": "Martin Yeatman"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "debra-buckingham": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Debra Buckingham",
             "members": [
@@ -303,14 +252,10 @@
                     "dietRequirement": "",
                     "guestName": "Debra Buckingham"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         },
         "geri-harvey": {
+            "contactEmail": "",
             "submitted": false,
             "displayName": "Mrs Harvey",
             "members": [
@@ -320,12 +265,7 @@
                     "dietRequirement": "",
                     "guestName": "Geri Harvey"
                 }
-            ],
-            "contactDetails": {
-                "address": "",
-                "email": "",
-                "phone": ""
-            }
+            ]
         }
     }
 }
