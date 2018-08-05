@@ -54,7 +54,7 @@ class Content extends Component {
         const guestData = this.state.data;
 
         return (
-            <div class="app__container">
+            <React.Fragment>
                 <Route exact path={`${url}`} component={Landing} />
                 <Header url={url} loaded={this.resetLoadHandler} />
                 <div
@@ -85,7 +85,7 @@ class Content extends Component {
                             />
                         ))}
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
