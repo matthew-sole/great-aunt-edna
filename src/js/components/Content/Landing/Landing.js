@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Image from '../../Image/Image';
-import Header from '../../Header/Header';
 import classNames from 'classnames';
 import './landing.css';
 

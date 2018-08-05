@@ -2,7 +2,6 @@ import React from 'react';
 
 import Section from '../../Section/Section';
 import MapContainer from '../../Map/MapContainer';
-import Header from '../../Header/Header';
 
 export default function() {
     return (

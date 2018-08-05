@@ -9,14 +9,9 @@ export default function() {
         <React.Fragment>
             <Section textLength superTop>
                 <h2>Schedule</h2>
-                <h4>Coming soon</h4>
                 <p>
                     We're still working on the finer details of the day. We will
-                    be hosting a BBQ the next day, so keep the Sunday free!
-                </p>
-                <p>
-                    Check here in the New Year for the full run down of the day
-                    and day after
+                    email everyone when this is available.
                 </p>
             </Section>
             <Section textLength>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Section from '../../Section/Section';
 
-export default function({ url }) {
+export default function() {
     return (
         <React.Fragment>
             <Section textLength superTop>

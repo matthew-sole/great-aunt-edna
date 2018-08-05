@@ -1,64 +1,38 @@
 @import '../../../common/tools/tools';
 @import '../../../common/settings/settings';
 
-.header__container {
-    position: absolute;
-    left: 0;
-    width: 100%;
-}
-
 .header {
-    position: relative;
-    display: grid;
-    grid-template-columns: 0.25fr 1.75fr;
-    padding: 1rem;
-    width: 100%;
     margin: 0 auto;
-    z-index: 99;
+    padding-top: 0.5rem;
     @include large {
+        padding-top: 2rem;
         width: 960px;
     }
 }
 
-.header--full-width {
-    display: block;
-    @include large {
-        position: absolute;
-        right: 0;
-    }
-}
-
 .header__logo {
+    padding-bottom: 1.5rem;
     width: 150px;
-    @include medium {
-        width: 80px;
-    }
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .navigation {
     list-style: none;
-    text-align: right;
+    text-align: center;
     @include medium {
         margin-top: 1rem;
-    }
-    .header--full-width & {
-        @include small {
-            display: flex;
-            justify-content: space-around;
-        }
     }
 }
 
 .navigation__item {
-    margin-left: 1.5rem;
+    margin: 0.5rem 1rem;
+    text-align: center;
+    display: inline-block;
     @include medium {
-        display: inline-block;
-    }
-    .header--full-width & {
-        @include small {
-            display: inline-block;
-            margin: 0;
-        }
+        margin-left: 1.5rem;
+        margin-bottom: 0;
     }
 }
 

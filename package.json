@@ -13,7 +13,8 @@
         "react-dom": "^16.3.1",
         "react-google-maps": "^9.4.5",
         "react-router-dom": "^4.2.2",
-        "react-scripts": "1.1.1"
+        "react-scripts": "1.1.1",
+        "yup": "^0.26.0"
     },
     "browserslist": [
         "ie >= 11",

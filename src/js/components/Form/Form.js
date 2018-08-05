@@ -28,7 +28,7 @@ class FormContainer extends Component {
     }
 
     render() {
-        const { values, handleChange, errors, touched, data, url } = this.props;
+        const { values, handleChange, errors, touched, data } = this.props;
         return (
             <Section textLength superTop>
                 {this.state.show && (

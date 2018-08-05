@@ -50,8 +50,12 @@ class Content extends Component {
 
     render() {
         const url = this.props.match.url;
+        const name = this.props.match.params.name;
+        const guestData = this.state.data;
+
         return (
-            <div>
+            <div class="app__container">
+                <Route exact path={`${url}`} component={Landing} />
                 <Header url={url} loaded={this.resetLoadHandler} />
                 <div
                     className={classNames('content', {
@@ -59,40 +63,23 @@ class Content extends Component {
                         'content--pre-loaded': !this.state.loaded,
                     })}
                 >
-                    <Route
-                        exact
-                        path={`${url}`}
-                        render={() => <Landing url={url} />}
-                    />
-                    <Route
-                        path={`${url}/schedule`}
-                        render={() => <Schedule url={url} />}
-                    />
-                    <Route
-                        path={`${url}/location`}
-                        render={() => <Location url={url} />}
-                    />
-                    <Route
-                        path={`${url}/details`}
-                        render={() => <Details url={url} />}
-                    />
-                    {this.state.data &&
-                        (this.state.data.submitted ? (
+                    <Route path={`${url}/schedule`} component={Schedule} />
+                    <Route path={`${url}/location`} component={Location} />
+                    <Route path={`${url}/details`} component={Details} />
+                    {guestData &&
+                        (guestData.submitted ? (
                             <Route
                                 path={`${url}/rsvp`}
-                                render={() => (
-                                    <Summary data={this.state.data} url={url} />
-                                )}
+                                render={() => <Summary data={guestData} />}
                             />
                         ) : (
                             <Route
                                 path={`${url}/rsvp`}
                                 render={() => (
                                     <Form
-                                        data={this.state.data}
-                                        name={this.props.match.params.name}
+                                        data={guestData}
+                                        name={name}
                                         submitSuccess={this.submitSuccess}
-                                        url={url}
                                     />
                                 )}
                             />

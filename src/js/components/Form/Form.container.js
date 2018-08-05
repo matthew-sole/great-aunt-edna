@@ -1,6 +1,7 @@
 import { withFormik } from 'formik';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import * as Yup from 'yup';
 
 import FormContainer from './Form';
 
@@ -12,6 +13,31 @@ export default withFormik({
         dietMulti: data.members.map(item => item.diet),
         dietRequirement: data.members.map(item => item.dietRequirement),
         email: data.contactEmail.email,
+    }),
+
+    validationSchema: Yup.object().shape({
+        rsvp: Yup.string()
+            .nullable()
+            .required('Required'),
+        weddingMulti: Yup.array().when('rsvp', {
+            is: 'true',
+            then: Yup.array()
+                .oneOf([true])
+                .required(),
+        }),
+        diet: Yup.string()
+            .nullable()
+            .required('Required'),
+        dietMulti: Yup.string().required(
+            'Please select each person with a dietery requirment',
+        ),
+        dietRequirement: Yup.string().when('diet', {
+            is: 'true',
+            then: Yup.string().required('Please enter a diet requirement'),
+        }),
+        email: Yup.string()
+            .email('Invalid email address')
+            .required('Required'),
     }),
 
     handleSubmit: (values, { props, setStatus }) => {

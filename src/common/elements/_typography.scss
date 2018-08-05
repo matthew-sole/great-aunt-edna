@@ -51,6 +51,15 @@ h4 {
     }
 }
 
+h5 {
+    font-size: rem(16);
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    @include medium {
+        font-size: rem(16);
+    }
+}
+
 p {
     margin-bottom: $spacing;
 }

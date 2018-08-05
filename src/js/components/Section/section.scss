@@ -6,7 +6,7 @@
     margin: auto;
 
     @include large {
-        padding: 4.5rem;
+        padding: 2.5rem 4.5rem;
     }
 
     > *:last-child {
@@ -27,7 +27,7 @@
 }
 
 .section--top-extra {
-    padding-top: 13rem;
+    padding-top: $spacing-xl;
     @include medium {
         padding-top: 8rem;
     }

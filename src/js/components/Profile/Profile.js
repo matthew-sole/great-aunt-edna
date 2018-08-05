@@ -12,7 +12,7 @@ export default function(props) {
                 alt={`Profile image of ${props.name}`}
             />
             <div className="profile__content">
-                <h4>{props.name}</h4>
+                <h5>{props.name}</h5>
                 <p>{props.profileRole}</p>
             </div>
         </div>
