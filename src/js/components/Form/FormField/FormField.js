@@ -19,7 +19,7 @@ const FormField = props => {
         <div className={classes}>
             <label className="form__label" htmlFor={id}>
                 <input
-                    className="form__input"
+                    className={`form__input form__input--${type}`}
                     value={value}
                     type={type}
                     id={id}

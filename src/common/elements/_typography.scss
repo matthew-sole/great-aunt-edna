@@ -55,6 +55,7 @@ h5 {
     font-size: rem(16);
     font-weight: $font-weight-medium;
     text-transform: uppercase;
+    margin-bottom: 0.5rem;
     @include medium {
         font-size: rem(16);
     }
@@ -62,4 +63,8 @@ h5 {
 
 p {
     margin-bottom: $spacing;
+}
+
+input[type='text'] {
+    font-size: 1rem;
 }

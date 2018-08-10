@@ -13,6 +13,7 @@ export default withFormik({
         dietMulti: data.members.map(item => item.diet),
         dietRequirement: data.members.map(item => item.dietRequirement),
         email: data.contactEmail.email,
+        songRequest: data.songRequest,
     }),
 
     validationSchema: Yup.object().shape({
@@ -77,10 +78,11 @@ export default withFormik({
 })(FormContainer);
 
 FormContainer.propTypes = {
-    rsvp: PropTypes.string,
-    weddingMulti: PropTypes.array,
-    diet: PropTypes.string,
-    dietMulti: PropTypes.array,
-    dietRequirement: PropTypes.array,
-    email: PropTypes.string,
+    rsvp: PropTypes.string.isRequired,
+    weddingMulti: PropTypes.array.isRequired,
+    diet: PropTypes.string.isRequired,
+    dietMulti: PropTypes.array.isRequired,
+    dietRequirement: PropTypes.array.isRequired,
+    email: PropTypes.string.isRequired,
+    songRequest: PropTypes.string.isRequired,
 };

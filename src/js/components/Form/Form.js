@@ -45,9 +45,9 @@ class FormContainer extends Component {
                         </p>
                         <Form>
                             <div>
-                                <h4 className="form__header">
+                                <h5 className="form__header">
                                     Will you be able to make the wedding?
-                                </h4>
+                                </h5>
                                 <div className="form__group form__group--radio">
                                     <FormField
                                         labelName="Yes"
@@ -79,9 +79,9 @@ class FormContainer extends Component {
                                 data.members &&
                                 data.members.length > 1 && (
                                     <div>
-                                        <h4 className="form__header">
+                                        <h5 className="form__header">
                                             Who will be able to make it?
-                                        </h4>
+                                        </h5>
                                         <div
                                             className={classNames(
                                                 'form__group form__group--checkbox',
@@ -127,13 +127,13 @@ class FormContainer extends Component {
                                 )}
                             {values.rsvp && (
                                 <div>
-                                    <h4 className="form__header">
+                                    <h5 className="form__header">
                                         {data.members &&
                                         data.members.length === 1
                                             ? 'Do you '
                                             : 'Does anyone '}
                                         have any dietary requirements?
-                                    </h4>
+                                    </h5>
                                     <div
                                         className={classNames(
                                             'form__group form__group--radio',
@@ -199,12 +199,12 @@ class FormContainer extends Component {
                                 data.members.length > 1 &&
                                 values.diet === 'true' && (
                                     <div>
-                                        <h4 className="form__header">
+                                        <h5 className="form__header">
                                             Who has dietry requirements
-                                        </h4>
+                                        </h5>
                                         <div
                                             className={classNames(
-                                                'form__group-stacked',
+                                                'form__group',
                                                 {
                                                     'form__group--error':
                                                         errors.diet &&
@@ -217,10 +217,7 @@ class FormContainer extends Component {
                                                     .replace(' ', '-')
                                                     .toLowerCase();
                                                 return (
-                                                    <div
-                                                        className="form__group-stacked-item"
-                                                        key={`${value}`}
-                                                    >
+                                                    <div key={`${value}`}>
                                                         <FormField
                                                             id={`dietMulti.${value}`}
                                                             labelName={
@@ -279,15 +276,15 @@ class FormContainer extends Component {
                                         </div>
                                     </div>
                                 )}
-                            <h4 className="form__header">
-                                Please provide contact details if we need to get
-                                in touch.
-                            </h4>
                             <div className="form__group">
-                                <div tabIndex="-1" className="">
+                                <h5 className="form__header">
+                                    Please provide contact details if we need to
+                                    get in touch.
+                                </h5>
+                                <div tabIndex="-1" className="form__single">
                                     <FormFieldText
                                         labelName="Email"
-                                        type="text"
+                                        type="email"
                                         id="email"
                                         onChange={handleChange}
                                         value={values.email}
@@ -302,8 +299,30 @@ class FormContainer extends Component {
                                         )}
                                 </div>
                             </div>
+                            <div className="form__group">
+                                <h5 className="form__header">Add song</h5>
+                                <div tabIndex="-1" className="form__single">
+                                    <FormFieldText
+                                        labelName="songRequest"
+                                        type="text"
+                                        id="songRequest"
+                                        onChange={handleChange}
+                                        value={values.songRequest}
+                                        name="songRequest"
+                                        errors={errors.songRequest}
+                                    />
+                                    {errors.songRequest &&
+                                        touched.songRequest && (
+                                            <div className="form__error-message">
+                                                {errors.songRequest}
+                                            </div>
+                                        )}
+                                </div>
+                            </div>
                             <div>
-                                <button type="submit">Submit</button>
+                                <button className="form__button" type="submit">
+                                    Submit
+                                </button>
                             </div>
                         </Form>
                     </div>

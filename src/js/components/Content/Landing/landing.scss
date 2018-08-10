@@ -2,11 +2,9 @@
 @import '../../../../common/settings/settings';
 
 .landing {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 3rem;
+    padding: 2rem 1.5rem 3rem;
     @include medium {
-        padding-top: 5rem;
+        padding: 4rem 1.5rem 2rem;
         margin: 0 auto;
     }
 }
