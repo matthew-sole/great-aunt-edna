@@ -12,11 +12,12 @@ const FormField = props => {
         defaultChecked,
         onChange,
     } = props;
-    const classes = classNames(`form__item form__item--${type}`, {
-        'form__item--active': defaultChecked,
-    });
     return (
-        <div className={classes}>
+        <div
+            className={classNames(`form__item form__item--${type}`, {
+                'form__item--active': defaultChecked,
+            })}
+        >
             <label className="form__label" htmlFor={id}>
                 <input
                     className={`form__input form__input--${type}`}

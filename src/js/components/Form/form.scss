@@ -10,17 +10,40 @@
     margin-right: 1rem;
 }
 
+.form__label {
+    font-size: rem(18);
+}
+
 .form__error-message {
     color: $color-red;
     margin-top: 0;
 }
 
+.form__item--radio,
+.form__item--checkbox {
+    position: relative;
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
 .form__input--radio,
 .form__input--checkbox {
-    position: relative;
-    padding-left: 28px;
-    display: inline-block;
+    opacity: 0;
     margin-right: 0.5rem;
+}
+
+.form__input--text,
+.form__input--email {
+    .form__input {
+        display: block;
+        margin-top: 0.25rem;
+        width: 100%;
+        line-height: 1.5;
+        padding: 0.25rem 0.5rem;
+        @include medium {
+            width: 60%;
+        }
+    }
 }
 
 .form__item--checkbox {
@@ -28,28 +51,28 @@
     margin-bottom: 0.5rem;
 }
 
-.form__input--radio:before,
-.form__input--checkbox:before {
+.form__item--radio:before,
+.form__item--checkbox:before {
     content: '';
     position: absolute;
     left: -2px;
-    top: -2px;
-    width: 16px;
-    height: 16px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
     border: 1px solid #a6a6a6;
     border-radius: 100%;
     background: #fff;
 }
 
-.form__input--radio:after,
-.form__input--checkbox:after {
+.form__item--radio:after,
+.form__item--checkbox:after {
     content: '';
     width: 10px;
     height: 10px;
     background: $color-lavendar-grey;
     position: absolute;
-    top: 1px;
-    left: 1px;
+    top: 9px;
+    left: 2px;
     border-radius: 100%;
     transition: all 0.2s ease;
     opacity: 0;
@@ -57,20 +80,19 @@
     transform: scale(0);
 }
 
-.form__input--checkbox:before,
-.form__input--checkbox:after {
-    border-radius: 25%;
+.form__item--checkbox:before,
+.form__item--checkbox:after {
+    border-radius: 0%;
 }
 
-.form__input--checkbox:before {
-    top: -3px;
+.form__item--checkbox:before {
+    top: 4px;
 }
-.form__input--checkbox:after {
-    top: 0px;
+.form__item--checkbox:after {
+    top: 8px;
 }
 
-.form__input--radio[type='radio']:checked,
-.form__input--checkbox[type='checkbox']:checked {
+.form__item--active {
     &:after {
         opacity: 1;
         -webkit-transform: scale(1);
@@ -80,15 +102,10 @@
 
 .form__input--text .form__label {
     display: block;
-    margin: -0.5rem 0 0 2rem;
-    .form__single & {
-        margin-left: 0;
-        margin-top: 0;
-    }
+}
 
-    .form__input {
-        margin-left: 0.5rem;
-    }
+.form__input--nested {
+    margin: -0.5rem 0 0.5rem 2rem;
 }
 
 .form__button {

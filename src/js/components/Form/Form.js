@@ -45,9 +45,9 @@ class FormContainer extends Component {
                         </p>
                         <Form>
                             <div>
-                                <h5 className="form__header">
+                                <h4 className="form__header">
                                     Will you be able to make the wedding?
-                                </h5>
+                                </h4>
                                 <div className="form__group form__group--radio">
                                     <FormField
                                         labelName="Yes"
@@ -79,9 +79,9 @@ class FormContainer extends Component {
                                 data.members &&
                                 data.members.length > 1 && (
                                     <div>
-                                        <h5 className="form__header">
+                                        <h4 className="form__header">
                                             Who will be able to make it?
-                                        </h5>
+                                        </h4>
                                         <div
                                             className={classNames(
                                                 'form__group form__group--checkbox',
@@ -127,13 +127,13 @@ class FormContainer extends Component {
                                 )}
                             {values.rsvp && (
                                 <div>
-                                    <h5 className="form__header">
+                                    <h4 className="form__header">
                                         {data.members &&
                                         data.members.length === 1
                                             ? 'Do you '
                                             : 'Does anyone '}
                                         have any dietary requirements?
-                                    </h5>
+                                    </h4>
                                     <div
                                         className={classNames(
                                             'form__group form__group--radio',
@@ -199,9 +199,9 @@ class FormContainer extends Component {
                                 data.members.length > 1 &&
                                 values.diet === 'true' && (
                                     <div>
-                                        <h5 className="form__header">
+                                        <h4 className="form__header">
                                             Who has dietry requirements
-                                        </h5>
+                                        </h4>
                                         <div
                                             className={classNames(
                                                 'form__group',
@@ -240,28 +240,30 @@ class FormContainer extends Component {
                                                             values.dietMulti[
                                                                 index
                                                             ] && (
-                                                                <FormFieldText
-                                                                    labelName="Requirement:"
-                                                                    key={`dietRequirement.${value}`}
-                                                                    type="text"
-                                                                    id={`dietRequirement.${value}`}
-                                                                    onChange={
-                                                                        handleChange
-                                                                    }
-                                                                    value={
-                                                                        values
-                                                                            .dietRequirement[
-                                                                            index
-                                                                        ]
-                                                                    }
-                                                                    name={`dietRequirement.${index}`}
-                                                                    errors={
-                                                                        errors.dietRequirement
-                                                                    }
-                                                                    touched={
-                                                                        touched.dietRequirement
-                                                                    }
-                                                                />
+                                                                <div className="form__input--nested">
+                                                                    <FormFieldText
+                                                                        labelName="Requirement"
+                                                                        key={`dietRequirement.${value}`}
+                                                                        type="text"
+                                                                        id={`dietRequirement.${value}`}
+                                                                        onChange={
+                                                                            handleChange
+                                                                        }
+                                                                        value={
+                                                                            values
+                                                                                .dietRequirement[
+                                                                                index
+                                                                            ]
+                                                                        }
+                                                                        name={`dietRequirement.${index}`}
+                                                                        errors={
+                                                                            errors.dietRequirement
+                                                                        }
+                                                                        touched={
+                                                                            touched.dietRequirement
+                                                                        }
+                                                                    />
+                                                                </div>
                                                             )}
                                                     </div>
                                                 );
@@ -276,12 +278,35 @@ class FormContainer extends Component {
                                         </div>
                                     </div>
                                 )}
+                            {values.rsvp === 'true' &&
+                                data.members &&
+                                data.members.length > 1 && (
+                                    <div className="form__group">
+                                        <div tabIndex="-1">
+                                            <FormFieldText
+                                                labelName="Add a song that will get you up on the dance floor:"
+                                                type="text"
+                                                id="songRequest"
+                                                onChange={handleChange}
+                                                value={values.songRequest}
+                                                name="songRequest"
+                                                errors={errors.songRequest}
+                                            />
+                                            {errors.songRequest &&
+                                                touched.songRequest && (
+                                                    <div className="form__error-message">
+                                                        {errors.songRequest}
+                                                    </div>
+                                                )}
+                                        </div>
+                                    </div>
+                                )}
                             <div className="form__group">
-                                <h5 className="form__header">
+                                <h4 className="form__header">
                                     Please provide contact details if we need to
                                     get in touch.
-                                </h5>
-                                <div tabIndex="-1" className="form__single">
+                                </h4>
+                                <div tabIndex="-1">
                                     <FormFieldText
                                         labelName="Email"
                                         type="email"
@@ -295,26 +320,6 @@ class FormContainer extends Component {
                                         touched.email && (
                                             <div className="form__error-message">
                                                 {errors.email}
-                                            </div>
-                                        )}
-                                </div>
-                            </div>
-                            <div className="form__group">
-                                <h5 className="form__header">Add song</h5>
-                                <div tabIndex="-1" className="form__single">
-                                    <FormFieldText
-                                        labelName="songRequest"
-                                        type="text"
-                                        id="songRequest"
-                                        onChange={handleChange}
-                                        value={values.songRequest}
-                                        name="songRequest"
-                                        errors={errors.songRequest}
-                                    />
-                                    {errors.songRequest &&
-                                        touched.songRequest && (
-                                            <div className="form__error-message">
-                                                {errors.songRequest}
                                             </div>
                                         )}
                                 </div>
