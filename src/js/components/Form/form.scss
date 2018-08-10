@@ -34,12 +34,16 @@
 
 .form__input--text,
 .form__input--email {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     .form__input {
         display: block;
-        margin-top: 0.25rem;
         width: 100%;
         line-height: 1.5;
         padding: 0.25rem 0.5rem;
+        border-radius: 0;
+        box-shadow: 0;
+        margin-top: 0.5rem;
         @include medium {
             width: 60%;
         }
@@ -105,7 +109,7 @@
 }
 
 .form__input--nested {
-    margin: -0.5rem 0 0.5rem 2rem;
+    margin: 0 0 0.5rem 2rem;
 }
 
 .form__button {
