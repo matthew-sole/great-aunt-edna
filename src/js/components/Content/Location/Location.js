@@ -31,8 +31,8 @@ export default function() {
                 >
                     handy guide
                 </a>{' '}
-                might be helpful for you to find the best place to leave you
-                car on the day and/or the evening.
+                might be helpful for you to find the best place to leave your
+                car on the day and/or evening.
             </p>
             <h3>Public Transport</h3>
             <p>
