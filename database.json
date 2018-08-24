@@ -1,7 +1,10 @@
 {
     "guests": {
         "phillips": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Barb & Warwick",
             "songRequest": "",
@@ -39,7 +42,10 @@
             ]
         },
         "lisa-bastik": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Lisa Bastik",
             "songRequest": "",
@@ -53,7 +59,10 @@
             ]
         },
         "rob-campbell": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Robert Campbell",
             "songRequest": "",
@@ -67,7 +76,10 @@
             ]
         },
         "sexton": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Steve & Jo Sexton",
             "songRequest": "",
@@ -87,7 +99,10 @@
             ]
         },
         "diamond": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Andrea & Michael Diamond",
             "songRequest": "",
@@ -107,7 +122,10 @@
             ]
         },
         "sundgren": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Gary Sundgren & Jodi Olsen",
             "songRequest": "",
@@ -127,7 +145,10 @@
             ]
         },
         "matthews": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Missy & Dave Matthews",
             "songRequest": "",
@@ -147,7 +168,10 @@
             ]
         },
         "taylor": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Sally & Kirk Taylor",
             "songRequest": "",
@@ -167,7 +191,10 @@
             ]
         },
         "charlotte-griffin": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Charlotte Griffin",
             "songRequest": "",
@@ -181,7 +208,10 @@
             ]
         },
         "ellie-kelman": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Ellie Kelman",
             "songRequest": "",
@@ -195,7 +225,10 @@
             ]
         },
         "gough": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Anneke & Dan",
             "songRequest": "",
@@ -215,7 +248,10 @@
             ]
         },
         "churchill": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Josh & Ali",
             "songRequest": "",
@@ -235,7 +271,10 @@
             ]
         },
         "james": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Leonie & Marty",
             "songRequest": "",
@@ -255,7 +294,10 @@
             ]
         },
         "debra-buckingham": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Debra Buckingham",
             "songRequest": "",
@@ -269,7 +311,10 @@
             ]
         },
         "geri-harvey": {
-            "contactEmail": "",
+            "contactDetails": {
+                "email": "",
+                "phone": ""
+            },
             "submitted": false,
             "displayName": "Mrs Harvey",
             "songRequest": "",

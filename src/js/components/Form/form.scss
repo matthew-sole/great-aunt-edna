@@ -11,7 +11,7 @@
 }
 
 .form__label {
-    font-size: rem(18);
+    font-size: rem(16);
 }
 
 .form__error-message {
@@ -29,7 +29,7 @@
 .form__input--radio,
 .form__input--checkbox {
     opacity: 0;
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
 }
 
 .form__input--text,
@@ -60,7 +60,7 @@
     content: '';
     position: absolute;
     left: -2px;
-    top: 5px;
+    top: 4px;
     width: 18px;
     height: 18px;
     border: 1px solid #a6a6a6;
@@ -75,7 +75,7 @@
     height: 10px;
     background: $color-lavendar-grey;
     position: absolute;
-    top: 9px;
+    top: 8px;
     left: 2px;
     border-radius: 100%;
     transition: all 0.2s ease;

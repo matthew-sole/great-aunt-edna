@@ -70,7 +70,9 @@ class Content extends Component {
                         (guestData.submitted ? (
                             <Route
                                 path={`${url}/rsvp`}
-                                render={() => <Summary data={guestData} />}
+                                render={() => (
+                                    <Summary data={guestData} name={name} />
+                                )}
                             />
                         ) : (
                             <Route

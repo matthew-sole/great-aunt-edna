@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FormFieldText = props => {
-    const { labelName, type, id, value, name, onChange } = props;
+    const { labelcontent, type, id, value, name, onChange } = props;
     return (
         <div className="form__input--text">
             <label className="form__label" htmlFor={id}>
-                {labelName}
+                {labelcontent}
                 <input
                     className="form__input"
                     value={value || ''}
@@ -23,10 +23,10 @@ const FormFieldText = props => {
 export default FormFieldText;
 
 FormFieldText.propTypes = {
-    labelName: PropTypes.string.isRequired,
+    labelcontent: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
 };
