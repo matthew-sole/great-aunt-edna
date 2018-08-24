@@ -29,7 +29,7 @@ class Landing extends Component {
                         <Image
                             className="image landing__logo"
                             src="/assets/images/logo.png"
-                            alt="Claire and Matt heading"
+                            alt="Claire and Matt"
                         />
                     </h1>
                     <h3

@@ -29,56 +29,55 @@ class FormContainer extends Component {
 
     render() {
         const { values, handleChange, errors, touched, data } = this.props;
+
         return (
             <Section textLength superTop>
                 {this.state.show && (
                     <div>
-                        <h2>RSVP</h2>
+                        <h2>{`Hi ${data.displayName}`}</h2>
                         <p>
-                            Please let us know if you will be able to celebrate
-                            with us, and what requirements you may have.
+                            We hope that you will be able to celebrate this
+                            wonderful day with us. Please fill in the form below
+                            to let us know whether or not you will be able to
+                            attend.
                         </p>
-                        <p>
-                            If you would like to make changes once the form has
-                            been submitted, please contact us so we can update
-                            your details.
-                        </p>
+                        <h3>RSVP</h3>
                         <Form>
-                            <div>
-                                <h4 className="form__header">
-                                    Will you be able to make the wedding?
-                                </h4>
-                                <div className="form__group form__group--radio">
-                                    <FormField
-                                        labelName="Yes"
-                                        type="radio"
-                                        id="rsvp-yes"
-                                        value="true"
-                                        defaultChecked={values.rsvp === 'true'}
-                                        name="rsvp"
-                                        onChange={handleChange}
-                                    />
-                                    <FormField
-                                        labelName="No"
-                                        type="radio"
-                                        id="rsvp-no"
-                                        value="false"
-                                        name="rsvp"
-                                        defaultChecked={values.rsvp === 'false'}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.rsvp &&
-                                        touched.rsvp && (
-                                            <div className="form__error-message">
-                                                {errors.rsvp}
-                                            </div>
-                                        )}
-                                </div>
+                            <h4 className="form__header">
+                                Will you be able to make the wedding?
+                            </h4>
+
+                            <div className="form__group form__group--radio">
+                                <FormField
+                                    labelcontent="Yes"
+                                    type="radio"
+                                    id="rsvp-yes"
+                                    value="true"
+                                    defaultChecked={values.rsvp === 'true'}
+                                    name="rsvp"
+                                    onChange={handleChange}
+                                />
+                                <FormField
+                                    labelcontent="No"
+                                    type="radio"
+                                    id="rsvp-no"
+                                    value="false"
+                                    name="rsvp"
+                                    defaultChecked={values.rsvp === 'false'}
+                                    onChange={handleChange}
+                                />
+                                {errors.rsvp &&
+                                    touched.rsvp && (
+                                        <div className="form__error-message">
+                                            {errors.rsvp}
+                                        </div>
+                                    )}
                             </div>
+
                             {values.rsvp === 'true' &&
                                 data.members &&
                                 data.members.length > 1 && (
-                                    <div>
+                                    <React.Fragment>
                                         <h4 className="form__header">
                                             Who will be able to make it?
                                         </h4>
@@ -100,7 +99,7 @@ class FormContainer extends Component {
                                                     <FormField
                                                         id={`weddingMulti.${value}`}
                                                         key={`${value}`}
-                                                        labelName={
+                                                        labelcontent={
                                                             item.guestName
                                                         }
                                                         type="checkbox"
@@ -123,82 +122,80 @@ class FormContainer extends Component {
                                                     </div>
                                                 )}
                                         </div>
-                                    </div>
+                                        <h4 className="form__header">
+                                            {data.members &&
+                                            data.members.length === 1
+                                                ? 'Do you '
+                                                : 'Does anyone '}
+                                            have any dietary requirements?
+                                        </h4>
+                                        <div
+                                            className={classNames(
+                                                'form__group form__group--radio',
+                                                {
+                                                    'form__group--error':
+                                                        errors.diet &&
+                                                        touched.diet,
+                                                },
+                                            )}
+                                        >
+                                            <FormField
+                                                labelcontent="Yes"
+                                                type="radio"
+                                                id="diet-yes"
+                                                value="true"
+                                                name="diet"
+                                                defaultChecked={
+                                                    values.diet === 'true'
+                                                }
+                                                onChange={handleChange}
+                                            />
+                                            <FormField
+                                                labelcontent="No"
+                                                type="radio"
+                                                id="diet-no"
+                                                value="false"
+                                                name="diet"
+                                                defaultChecked={
+                                                    values.diet === 'false'
+                                                }
+                                                onChange={handleChange}
+                                            />
+                                            {errors.diet &&
+                                                touched.diet && (
+                                                    <div className="form__error-message">
+                                                        {errors.diet}
+                                                    </div>
+                                                )}
+                                            {data.members &&
+                                                data.members.length <= 1 &&
+                                                values.diet === 'true' && (
+                                                    <FormFieldText
+                                                        labelcontent="Diet requirement"
+                                                        type="text"
+                                                        id="dietRequirement.0"
+                                                        onChange={handleChange}
+                                                        value={
+                                                            values
+                                                                .dietRequirement[0]
+                                                        }
+                                                        name="dietRequirement.0"
+                                                        errors={
+                                                            errors.dietRequirement
+                                                        }
+                                                        touched={
+                                                            touched.dietRequirement
+                                                        }
+                                                    />
+                                                )}
+                                        </div>
+                                    </React.Fragment>
                                 )}
-                            {values.rsvp && (
-                                <div>
-                                    <h4 className="form__header">
-                                        {data.members &&
-                                        data.members.length === 1
-                                            ? 'Do you '
-                                            : 'Does anyone '}
-                                        have any dietary requirements?
-                                    </h4>
-                                    <div
-                                        className={classNames(
-                                            'form__group form__group--radio',
-                                            {
-                                                'form__group--error':
-                                                    errors.diet && touched.diet,
-                                            },
-                                        )}
-                                    >
-                                        <FormField
-                                            labelName="Yes"
-                                            type="radio"
-                                            id="diet-yes"
-                                            value="true"
-                                            name="diet"
-                                            defaultChecked={
-                                                values.diet === 'true'
-                                            }
-                                            onChange={handleChange}
-                                        />
-                                        <FormField
-                                            labelName="No"
-                                            type="radio"
-                                            id="diet-no"
-                                            value="false"
-                                            name="diet"
-                                            defaultChecked={
-                                                values.diet === 'false'
-                                            }
-                                            onChange={handleChange}
-                                        />
-                                        {errors.diet &&
-                                            touched.diet && (
-                                                <div className="form__error-message">
-                                                    {errors.diet}
-                                                </div>
-                                            )}
-                                        {data.members &&
-                                            data.members.length <= 1 &&
-                                            values.diet === 'true' && (
-                                                <FormFieldText
-                                                    labelName="Diet requirement"
-                                                    type="text"
-                                                    id="dietRequirement.0"
-                                                    onChange={handleChange}
-                                                    value={
-                                                        values
-                                                            .dietRequirement[0]
-                                                    }
-                                                    name="dietRequirement.0"
-                                                    errors={
-                                                        errors.dietRequirement
-                                                    }
-                                                    touched={
-                                                        touched.dietRequirement
-                                                    }
-                                                />
-                                            )}
-                                    </div>
-                                </div>
-                            )}
+
                             {data.members &&
                                 data.members.length > 1 &&
                                 values.diet === 'true' && (
-                                    <div>
+                                    <React.Fragment>
                                         <h4 className="form__header">
                                             Who has dietry requirements
                                         </h4>
@@ -220,7 +217,7 @@ class FormContainer extends Component {
                                                     <div key={`${value}`}>
                                                         <FormField
                                                             id={`dietMulti.${value}`}
-                                                            labelName={
+                                                            labelcontent={
                                                                 item.guestName
                                                             }
                                                             type="checkbox"
@@ -242,7 +239,7 @@ class FormContainer extends Component {
                                                             ] && (
                                                                 <div className="form__input--nested">
                                                                     <FormFieldText
-                                                                        labelName="Requirement"
+                                                                        labelcontent="Requirement"
                                                                         key={`dietRequirement.${value}`}
                                                                         type="text"
                                                                         id={`dietRequirement.${value}`}
@@ -276,7 +273,7 @@ class FormContainer extends Component {
                                                     </div>
                                                 )}
                                         </div>
-                                    </div>
+                                    </React.Fragment>
                                 )}
                             {values.rsvp === 'true' &&
                                 data.members &&
@@ -284,7 +281,7 @@ class FormContainer extends Component {
                                     <div className="form__group">
                                         <div tabIndex="-1">
                                             <FormFieldText
-                                                labelName="Add a song that will get you up on the dance floor:"
+                                                labelcontent="What song would be great for the dancefloor?"
                                                 type="text"
                                                 id="songRequest"
                                                 onChange={handleChange}
@@ -306,9 +303,9 @@ class FormContainer extends Component {
                                     Please provide contact details if we need to
                                     get in touch.
                                 </h4>
-                                <div tabIndex="-1">
+                                <div>
                                     <FormFieldText
-                                        labelName="Email"
+                                        labelcontent="Email"
                                         type="email"
                                         id="email"
                                         onChange={handleChange}
@@ -323,12 +320,31 @@ class FormContainer extends Component {
                                             </div>
                                         )}
                                 </div>
+                                <div>
+                                    <FormFieldText
+                                        labelcontent="Phone"
+                                        type="phone"
+                                        id="phone"
+                                        onChange={handleChange}
+                                        value={values.phone}
+                                        name="phone"
+                                        errors={errors.phone}
+                                    />
+                                    {errors.phone &&
+                                        touched.phone && (
+                                            <div className="form__error-message">
+                                                {errors.phone}
+                                            </div>
+                                        )}
+                                </div>
                             </div>
-                            <div>
-                                <button className="form__button" type="submit">
-                                    Submit
-                                </button>
-                            </div>
+                            <p>
+                                If you need to make any changes once you have
+                                submitted, please get in touch.
+                            </p>
+                            <button className="form__button" type="submit">
+                                Submit
+                            </button>
                         </Form>
                     </div>
                 )}
@@ -348,5 +364,6 @@ FormContainer.propTpes = {
     address: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
 };

@@ -18,9 +18,9 @@ export default function() {
             <Section textLength>
                 <h2>Gifts</h2>
                 <p>
-                    Your presence at our wedding is gift enough, but if you do wish
-                    to make a gesture, a contribution towards our dream honeymoon 
-                    would be much appreciated.
+                    Your presence at our wedding is gift enough, but if you do
+                    wish to make a gesture, a contribution towards our dream
+                    honeymoon would be much appreciated.
                 </p>
             </Section>
         </React.Fragment>
