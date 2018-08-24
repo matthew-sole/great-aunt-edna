@@ -9,7 +9,7 @@ export default function() {
             <h2>Location</h2>
             <MapContainer />
             <p>
-                Both Ceremony and Reception will take place at the{` `}
+                Both our Ceremony and Reception will take place at {` `}
                 <a
                     href="http://www.theboatshedvenue.co.nz/"
                     target="_blank"
@@ -22,8 +22,8 @@ export default function() {
             </p>
             <p>
                 Please note that there is no on site parking at the venue. If
-                you are driving, there is plenty of parking available around the
-                city. This{' '}
+                you are driving, there is plenty of parking available close by in the city.
+                This{' '}
                 <a
                     href="https://www.myguidewellington.com/usefulinfo/wellington-parking"
                     target="_blank"
@@ -31,7 +31,7 @@ export default function() {
                 >
                     handy guide
                 </a>{' '}
-                might be helpful in order to find the best place to leave you
+                might be helpful for you to find the best place to leave you
                 car on the day and/or the evening.
             </p>
             <h3>Public Transport</h3>
@@ -60,16 +60,16 @@ export default function() {
                     online tool
                 </a>{' '}
                 to help plan your public transport to and from the greater
-                Wellington region
+                Wellington region.
             </p>
             <h3>Accommodation</h3>
             <p>
                 There is an abundant amount of places to stay in the CBD, and
-                within walking distance of the venue. We would recommend booked
+                within walking distance of the venue. We would recommend booking
                 earlier rather than later. So far there are no major events
-                scheduled for the same weekend, but if that changes -
-                accommodation can get snapped up very quickly and become hard to
-                find or expensive.
+                scheduled for the same weekend - but if that changes,
+                accommodation can get snapped up very quickly and become expensive or 
+                hard to find.
             </p>
         </Section>
     );
